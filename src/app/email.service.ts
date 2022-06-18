@@ -1,6 +1,6 @@
 import {Injectable} from "@angular/core";
 import {environment} from "../environments/environment";
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {Registration} from "./email";
 
@@ -22,5 +22,10 @@ export class RegistrationService {
 
   public getUsers(): Observable<Registration[]>{
     return this.http.get<Registration[]>(`${this.apiServerUrl}/api/v1/registration/all`);
+  }
+
+  public login(email:string, password:string){
+    const headers=new HttpHeaders({Authorization: 'Basic '+email+":"+password});
+    return this.http.get(`${this.apiServerUrl}/api/v1/registration/login`,{headers,responseType:'text' as 'json'});
   }
 }

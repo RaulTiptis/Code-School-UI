@@ -9,13 +9,23 @@ import { RegistrationService } from './email.service';
 import { HomePageComponent } from './home-page/home-page.component';
 import { RegisterSuccessComponent } from './register-success/register-success.component';
 import { MainMenuComponent } from './main-menu/main-menu.component';
+import { JavaModuleComponent } from './java-module/java-module.component';
+import { PythonModuleComponent } from './python-module/python-module.component';
+import { CModuleComponent } from './c-module/c-module.component';
+import { AchievementComponent } from './achievement/achievement.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
     RegisterSuccessComponent,
-    MainMenuComponent
+    MainMenuComponent,
+    JavaModuleComponent,
+    PythonModuleComponent,
+    CModuleComponent,
+    AchievementComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

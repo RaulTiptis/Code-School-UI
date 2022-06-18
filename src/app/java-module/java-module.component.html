@@ -1,0 +1,78 @@
+<div *ngIf="javaIntro" class="row">
+  <div class="col-lg-12">
+    <h1>Java Module</h1>
+    <p>Welcome to the Java module!</p>
+    <p>You may start your Java learning journey by clicking the 'NEXT' button, or click any of the chapters below and go from there.</p>
+    <div class="navbar-header col-lg-12">
+      <button class="btn-menu btn btn-success btn-toggle-menu" type="button" data-toggle="collapsible" data-target="#sidebar-wrapper">
+        Chapter II
+      </button>
+      <a class="btn-logout btn btn-success btn-toggle-menu pull-right" type="button" (click)="chapterI()">Next
+        <i class="fa fa-solid fa-arrow-right"></i></a>
+    </div>
+  </div>
+</div>
+
+<!-- Chapter I ex 1 -->
+
+<div *ngIf="javaIOne" class="row">
+  <div class="col-lg-12">
+    <h1>Chapter I</h1>
+    <p>This is just an example exercise</p>
+    <p>The desired answer is x = 5</p>
+    <p>x = 0<br>for(i = {{exOneArray[0]}};i <= {{exOneArray[1]}}; i++)&#123;<br>&nbsp;&nbsp;&nbsp;&nbsp;x = x + i<br>&#125;</p>
+    <div class="navbar-header col-lg-12">
+      <button style="margin-right: 10px;" class="btn-menu btn btn-success btn-toggle-menu" type="button" (click)="addSolution(0)" [disabled]="disableSolution">
+        0
+      </button>
+      <button style="margin-right: 10px;" class="btn-menu btn btn-success btn-toggle-menu" type="button" (click)="addSolution(-1)" [disabled]="disableSolution">
+        -1
+      </button>
+      <button style="margin-right: 10px;" class="btn-menu btn btn-success btn-toggle-menu" type="button" (click)="addSolution(3)" [disabled]="disableSolution">
+        3
+      </button>
+      <button style="margin-right: 10px;" class="btn-menu btn btn-success btn-toggle-menu" type="button" (click)="addSolution(5)" [disabled]="disableSolution">
+        5
+      </button>
+      <button style="margin-right: 10px;" class="btn-menu btn btn-success btn-toggle-menu" type="button" (click)="undo()">
+        Undo&nbsp;<i class="fa fa-solid fa-rotate-left"></i>
+      </button>
+      <button style="margin-right: 10px;" class="btn-menu btn btn-success btn-toggle-menu" type="button" (click)="exOne()">
+        Try Solution
+      </button>
+      <i *ngIf="exOneCorrect" style="color: chartreuse" class="fa fa-solid fa-check"></i>
+      <button class="btn-logout btn btn-success btn-toggle-menu pull-right" type="button" (click)="goToTwo()" [disabled]="nextOne">Next
+        <i class="fa fa-solid fa-arrow-right"></i></button>
+    </div>
+  </div>
+</div>
+
+<!-- Chapter I ex 2 -->
+
+<div *ngIf="javaITwo" class="row">
+  <div class="col-lg-12">
+    <h1>Chapter I</h1>
+    <p>THIS IS THE TEXT FOR EXERCISE TWO FOR TESTING PURPOSES</p>
+    <p>The desired answer is x = 5</p>
+    <p>x = 0<br>for(i = {{exOneArray[0]}};i <= {{exOneArray[1]}}; i++)&#123;<br>&nbsp;&nbsp;&nbsp;&nbsp;x = x + i<br>&#125;</p>
+    <div class="navbar-header col-lg-12">
+      <button style="margin-right: 10px;" class="btn-menu btn btn-success btn-toggle-menu" type="button" disabled="disableSolution">
+        0
+      </button>
+      <button style="margin-right: 10px;" class="btn-menu btn btn-success btn-toggle-menu" type="button">
+        -1
+      </button>
+      <button style="margin-right: 10px;" class="btn-menu btn btn-success btn-toggle-menu" type="button">
+        3
+      </button>
+      <button style="margin-right: 10px;" class="btn-menu btn btn-success btn-toggle-menu" type="button" (click)="addSolution(5)">
+        5
+      </button>
+      <button style="margin-right: 10px;" class="btn-menu btn btn-success btn-toggle-menu" type="button">
+        Try Solution
+      </button>
+      <a class="btn-logout btn btn-success btn-toggle-menu pull-right" type="button" (click)="goToTwo()">Next
+        <i class="fa fa-solid fa-arrow-right"></i></a>
+    </div>
+  </div>
+</div>

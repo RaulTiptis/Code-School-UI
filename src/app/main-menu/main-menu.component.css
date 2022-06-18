@@ -21,7 +21,6 @@ body{
   width: 0;
   height: 100%;
   margin-left: -250px;
-  overflow-y: auto;
   background:#fff;
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
@@ -80,7 +79,7 @@ body{
 }
 
 .sidebar-nav > .sidebar-brand {
-  height: 65px;
+  height: 87px;
   font-size: 18px;
   line-height: 60px;
 }
@@ -113,6 +112,9 @@ body{
 
   #page-content-wrapper {
     padding: 20px;
+    background-color: #f4f3ef;
+    height: 100%;
+    overflow-x: auto;
     position: relative;
   }
 
@@ -137,8 +139,8 @@ body{
 }
 
 .sidebar-brand {
-  padding: 18px 0px;
-  margin: 0 20px;
+  padding: 40px 0px;
+  margin: 0 0px;
 }
 
 .navbar .navbar-nav > li > a p {
@@ -151,7 +153,6 @@ p {
 }
 
 .navbar-default {
-  background-color: #f4f3ef;
   border:0px;
   border-bottom: 1px solid #DDDDDD;
 }
@@ -162,4 +163,12 @@ p {
   margin: 14px 5px 5px 20px;
   font-size: 14px;
   float: left;
+}
+
+.btn-logout {
+  border-radius: 3px;
+  padding: 4px 12px;
+  margin: 14px 0 5px 20px;
+  font-size: 14px;
+  float: right;
 }
