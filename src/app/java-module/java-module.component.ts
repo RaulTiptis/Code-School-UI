@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import {ProgressService} from '../progress.service';
 
 @Component({
   selector: 'app-java-module',
@@ -7,27 +8,47 @@ import { Component, OnInit } from '@angular/core';
 })
 export class JavaModuleComponent implements OnInit {
 
-  exercisesDone
+  @Input() login;
+  currentPosition = 0;
   javaIntro = true;
   javaIOne = false;
   javaITwo = false;
+  javaIZeroDoc = false;
+  javaIOneDoc = false;
+  javaITwoDoc = false;
   exOneArray = ['/.../', '/.../'];
   disableSolution = false;
   nextOne = true;
   exOneCorrect = false;
+  changePageArray = [this.javaIntro, this.javaIZeroDoc, this.javaIOneDoc, this.javaITwoDoc, this.javaIOne, this.javaITwo]
 
-  constructor() {
+    constructor(private progressService: ProgressService) {
   }
 
   ngOnInit(): void {
-    if(this.exOneCorrect){
-      this.nextOne = false;
-    }
+    this.progressService.updateProgress(this.login.progress).subscribe();
+    localStorage.setItem('currentUser', JSON.stringify(this.login));
+  }
+
+  goForward(){
+    this.changePageArray[this.currentPosition] = false;
+    this.currentPosition++;
+    this.changePageArray[this.currentPosition] = true;
+    this.progressService.updateProgress(this.login.progress).subscribe();
+    localStorage.setItem('currentUser', JSON.stringify(this.login));
+  }
+
+  goBack(){
+    this.changePageArray[this.currentPosition] = false;
+    this.currentPosition--;
+    this.changePageArray[this.currentPosition] = true;
+    this.progressService.updateProgress(this.login.progress).subscribe();
+    localStorage.setItem('currentUser', JSON.stringify(this.login));
   }
 
   chapterI(){
     this.javaIntro = false;
-    this.javaIOne = true;
+    this.javaIZeroDoc = true;
   }
 
   goToTwo(){

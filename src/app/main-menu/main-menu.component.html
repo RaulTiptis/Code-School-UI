@@ -3,21 +3,22 @@
   <div id="sidebar-wrapper" class="collapsible">
     <ul class="sidebar-nav">
       <li class="sidebar-brand">
-        <a>
-          CodeSchool
-        </a>
+          Hello Raul!
       </li>
-      <li>
-        <a type="button" (click)="java()">Java</a>
+      <li id="main">
+        <a style="font-size: 20px" type="button" (click)="main()">Main Menu</a>
       </li>
-      <li>
-        <a type="button" (click)="python()">Python</a>
+      <li id="javaButton">
+        <a style="font-size: 20px" type="button" (click)="java()">Java</a>
       </li>
-      <li>
-        <a type="button" (click)="c()">C/C++</a>
+      <li id="pythonButton">
+        <a style="font-size: 20px" type="button" (click)="python()">Python</a>
       </li>
-      <li class="active">
-        <a type="button" (click)="achievements()">Achievements</a>
+      <li id="cButton">
+        <a style="font-size: 20px" type="button" (click)="c()">C/C++</a>
+      </li>
+      <li id="achievementButton">
+        <a style="font-size: 20px" type="button" (click)="achievements()">Achievements</a>
       </li>
     </ul>
   </div>
@@ -29,24 +30,25 @@
           <button class="btn-menu btn btn-success btn-toggle-menu" type="button" data-toggle="collapsible" data-target="#sidebar-wrapper">
             <i class="fa fa-solid fa-bars"></i>
           </button>
-          <a href="http://localhost:8080/logout" class="btn-logout btn btn-success btn-toggle-menu pull-right" type="button">Logout</a>
+          <a href="http://localhost:4200/logout" class="btn-red btn btn-success btn-toggle-menu pull-right" type="button">Logout</a>
+          <a class="btn-logout btn btn-success btn-toggle-menu pull-right" type="button">Feedback</a>
         </div>
       </div>
     </nav>
     <div *ngIf="defaultMessage" class="container-fluid">
       <div class="row">
         <div class="col-lg-12">
-          <h1>Sidebar Menu</h1>
-          <p>This template has a responsive menu toggling system. The menu will appear collapsed on smaller screens,
-            and will appear non-collapsed on larger screens.<br>This template has a responsive menu toggling system. The menu will appear collapsed on smaller screens,
-            and will appear non-collapsed on larger screensThis template has a responsive menu toggling system. The menu will appear collapsed on smaller screens,
-            and will appear non-collapsed on larger screensThis template has a responsive menu toggling system. The menu will appear collapsed on smaller screens,
-            and will appear non-collapsed on larger screens</p>
+          <h1>CodeSchool Main Menu</h1>
+          <h5><br>Welcome to the CodeSchool main menu! You may select what interface you want to see by clicking on any of the links on the right side of the screen.</h5>
+          <h5><br>Do not worry if you change from one interface to another, as your progress will always be automatically saved.</h5>
+          <h5><br>If you wish to hide the interface buttons, you may click the button with the 3 lines to toggle them on/off.</h5>
+          <h5><br>Please feel free to give us any feedback on how we may improve your user experience.</h5>
+          <h3 style="text-align: center"><br>Have fun learning!</h3>
         </div>
       </div>
     </div>
     <div *ngIf="javaModuleSelected" class="container-fluid">
-      <app-java-module></app-java-module>
+      <app-java-module [login]="login"></app-java-module>
     </div>
     <div *ngIf="pythonModuleSelected" class="container-fluid">
       <app-python-module></app-python-module>

@@ -172,3 +172,13 @@ p {
   font-size: 14px;
   float: right;
 }
+
+.btn-red {
+  background-color: brown;
+  border-color: brown;
+  border-radius: 3px;
+  padding: 4px 12px;
+  margin: 14px 0 5px 20px;
+  font-size: 14px;
+  float: right;
+}

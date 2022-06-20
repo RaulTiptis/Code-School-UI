@@ -1,5 +1,5 @@
-export class Progress {
-  id: number;
+export interface Progress {
+  id: string;
   javaLevelOne: boolean;
   javaLevelTwo: boolean;
   javaLevelThree: boolean;

@@ -1,11 +1,14 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 <div class="container">
   <div class="row justify-content-center">
-    <img src="src/codelogo.png">
+    <img style="width: 60%; height: 60%" src="assets/images/codelogo.png" alt=""/>
     <div class="col-md-8">
       <div class="card-group mb-0">
         <div class="card p-4">
           <div class="card-body">
+            <div *ngIf="accountExists" class="alert alert-error">
+              Account already exists
+            </div>
             <form #userForm="ngForm" (ngSubmit)="addAccount(userForm)">
               <fieldset>
                 <h1>Register</h1>
@@ -20,7 +23,7 @@
                 </div>
                 <div class="row">
                   <div class="col-6">
-                    <button [disabled]="userForm.invalid" type="submit" class="btn btn-primary px-4">Register</button>
+                    <button [disabled]="userForm.invalid" style="background-color: green; border: green" type="submit" class="btn btn-primary px-4">Register</button>
                   </div>
                 </div>
               </fieldset>

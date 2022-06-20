@@ -1,26 +1,148 @@
-<div *ngIf="javaIntro" class="row">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css" integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7" crossorigin="anonymous">
+<style>
+  table, th, td {
+    border:1px solid black;
+  }
+</style>
+<div *ngIf="changePageArray[0]" class="row">
   <div class="col-lg-12">
     <h1>Java Module</h1>
-    <p>Welcome to the Java module!</p>
-    <p>You may start your Java learning journey by clicking the 'NEXT' button, or click any of the chapters below and go from there.</p>
+    <h5><br>Welcome to the Java module!</h5>
+    <h5><br>You may start your Java learning journey by clicking the 'NEXT' button, or click any of the chapters below and go from there.</h5>
     <div class="navbar-header col-lg-12">
-      <button class="btn-menu btn btn-success btn-toggle-menu" type="button" data-toggle="collapsible" data-target="#sidebar-wrapper">
+      <button style="margin-top: 30px" class="btn-menu btn btn-success btn-toggle-menu" type="button" data-toggle="collapsible" data-target="#sidebar-wrapper">
         Chapter II
       </button>
-      <a class="btn-logout btn btn-success btn-toggle-menu pull-right" type="button" (click)="chapterI()">Next
+      <button style="margin-top: 30px;margin-left: 30px" class="btn-menu btn btn-success btn-toggle-menu" type="button" data-toggle="collapsible" data-target="#sidebar-wrapper">
+        Chapter III
+      </button>
+      <a style="margin-top: 30px" class="btn-logout btn btn-success btn-toggle-menu pull-right" type="button" (click)="goForward()">Next
         <i class="fa fa-solid fa-arrow-right"></i></a>
     </div>
   </div>
 </div>
 
-<!-- Chapter I ex 1 -->
+<!-- Chapter I Intro -->
 
-<div *ngIf="javaIOne" class="row">
+<div *ngIf="changePageArray[1]" class="row">
   <div class="col-lg-12">
     <h1>Chapter I</h1>
-    <p>This is just an example exercise</p>
-    <p>The desired answer is x = 5</p>
-    <p>x = 0<br>for(i = {{exOneArray[0]}};i <= {{exOneArray[1]}}; i++)&#123;<br>&nbsp;&nbsp;&nbsp;&nbsp;x = x + i<br>&#125;</p>
+    <p style="font-size: 20px">Before we begin there are a few things you must know:<br><br>A Java program is collection of objects that communicate via invoking each other's methods. As a starter let's look at what do class, object, methods, and instance variables mean.</p>
+    <p style="font-size: 20px"><span style="font-weight: bold"> Object</span> − Objects have states and behaviors. As an example a car has both states (color, number of tires) and behaviors (accelerate, break). An object is an instance of a class.</p>
+    <p style="font-size: 20px"><span style="font-weight: bold">Class</span> - A class can be defined as a template that describes the behavior/state that the object of its type supports.</p>
+    <p style="font-size: 20px"><span style="font-weight: bold">Methods</span> - A method refers to a behaviour. A class can contain many methods.</p>
+    <p style="font-size: 20px"><span style="font-weight: bold">Instance Variables</span> - Each object has its unique set of instance variables. An object's state is created by the values assigned to these instance variables.<br></p>
+    <p style="font-size: 20px">For now this is all that you need to know. All this information might seem like a lot at first, but as you go through the module, all of this information will become easier to digest.</p>
+    <p style="font-size: 20px">Now that you are equipped with the basics of Java, we may start with <span style="font-weight: bold">Primitive Data Types</span></p>
+    <button class="btn-logout btn btn-success btn-toggle-menu pull-right" type="button" (click)="goForward()">Next
+      <i class="fa fas-solid fa-arrow-right"></i></button>
+    <button class="btn-logout btn btn-success btn-toggle-menu pull-right" style="margin-right: 10px" type="button" (click)="goBack()">
+      <i style="margin-right: 5px" class="fa fas-solid fa-arrow-left"></i>Go Back
+    </button>
+  </div>
+</div>
+
+<!-- Chapter I documentation I -->
+
+<div *ngIf="changePageArray[2]" class="row">
+  <div class="col-lg-12">
+    <h1>Chapter I</h1>
+    <h5>Primitive Data Types</h5>
+    <br>
+    <table style="width: 100%">
+      <tr>
+        <th style="text-align: center">Data Type</th>
+        <th style="text-align: center">Description</th>
+        <th style="text-align: center">Default value</th>
+        <th style="text-align: center">Possible values</th>
+        <th style="text-align: center">Example</th>
+      </tr>
+      <tr>
+        <th style="text-align: center">byte</th>
+        <th style="text-align: center">Byte data type is used to save space since a byte is four times smaller than an integer.</th>
+        <th style="text-align: center">0</th>
+        <th style="text-align: center">-128 to 127</th>
+        <th style="text-align: center">byte a = 50, byte b = -100</th>
+      </tr>
+      <tr>
+        <th style="text-align: center">short</th>
+        <th style="text-align: center">Short data type can also be used to save memory as byte data type. A short is 2 times smaller than an integer</th>
+        <th style="text-align: center">0</th>
+        <th style="text-align: center">-32,768 to 32,767</th>
+        <th style="text-align: center">short s = 20000, short r = -20000</th>
+      </tr>
+      <tr>
+        <th style="text-align: center">int</th>
+        <th style="text-align: center">Integer is generally used as the default data type for integral values</th>
+        <th style="text-align: center">0</th>
+        <th style="text-align: center">-2,147,483,648 to 2,147,483,647</th>
+        <th style="text-align: center">int a = 200000, int b = -200000</th>
+      </tr>
+      <tr>
+        <th style="text-align: center">long</th>
+        <th style="text-align: center">This type is used when a wider range than int is needed</th>
+        <th style="text-align: center">0L</th>
+        <th style="text-align: center">-9,223,372,036,854,775,808 to 9,223,372,036,854,775,807</th>
+        <th style="text-align: center">long a = 200000L, long b = -200000L</th>
+      </tr>
+      <tr>
+        <th style="text-align: center">float</th>
+        <th style="text-align: center">Float is mainly used to save memory in large arrays of floating point numbers</th>
+        <th style="text-align: center">0.0f</th>
+        <th style="text-align: center">3.40282347 x 10^38 to 1.40239846 x 10^(-45)</th>
+        <th style="text-align: center">float f1 = 234.5f</th>
+      </tr>
+      <tr>
+        <th style="text-align: center">double</th>
+        <th style="text-align: center">This data type is generally used as the default data type for decimal values</th>
+        <th style="text-align: center">0.0d</th>
+        <th style="text-align: center">1.7976931348623157 x 10^308 to 4.9406564584124654 x 10^(-324)</th>
+        <th style="text-align: center">double d1 = 123.4</th>
+      </tr>
+      <tr>
+        <th style="text-align: center">boolean</th>
+        <th style="text-align: center">This data type is used for simple flags that track true/false conditions</th>
+        <th style="text-align: center">false</th>
+        <th style="text-align: center">true or false</th>
+        <th style="text-align: center">boolean b = true</th>
+      </tr>
+      <tr>
+        <th style="text-align: center">char</th>
+        <th style="text-align: center">Char data type is used to store any character</th>
+        <th style="text-align: center">0</th>
+        <th style="text-align: center">\u0000 (null) to \uffff (invalid) </th>
+        <th style="text-align: center">char letterC = 'C'</th>
+      </tr>
+    </table>
+    <br>
+    <button class="btn-logout btn btn-success btn-toggle-menu pull-right" type="button" (click)="goForward()">Next
+      <i class="fa fas-solid fa-arrow-right"></i></button>
+    <button class="btn-logout btn btn-success btn-toggle-menu pull-right" style="margin-right: 10px" type="button" (click)="goBack()">
+      <i style="margin-right: 5px" class="fa fas-solid fa-arrow-left"></i>Go Back
+    </button>
+  </div>
+</div>
+
+<!-- Chapter I ex 1 -->
+
+<div *ngIf="changePageArray[3]" class="row">
+  <div class="col-lg-12">
+    <h1>Chapter I</h1>
+    <br>
+    <button class="btn-logout btn btn-success btn-toggle-menu pull-right" type="button" (click)="goForward()">Next
+      <i class="fa fas-solid fa-arrow-right"></i></button>
+    <button class="btn-logout btn btn-success btn-toggle-menu pull-right" style="margin-right: 10px" type="button" (click)="goBack()">
+      <i style="margin-right: 5px" class="fa fas-solid fa-arrow-left"></i>Go Back
+    </button>
+  </div>
+</div>
+
+<div *ngIf="changePageArray[4]" class="row">
+  <div class="col-lg-12">
+    <h1>Chapter I</h1>
+    <h5>Loops in Java</h5>
+    <p style="font-size: 20px">The desired answer is x = 5</p>
+    <p style="font-size: 20px">x = 0<br>for(i = {{exOneArray[0]}} ;i <= {{exOneArray[1]}} ; i++) &#123;<br>&nbsp;&nbsp;&nbsp;&nbsp;x = x + i<br>&#125;</p>
     <div class="navbar-header col-lg-12">
       <button style="margin-right: 10px;" class="btn-menu btn btn-success btn-toggle-menu" type="button" (click)="addSolution(0)" [disabled]="disableSolution">
         0
@@ -40,16 +162,22 @@
       <button style="margin-right: 10px;" class="btn-menu btn btn-success btn-toggle-menu" type="button" (click)="exOne()">
         Try Solution
       </button>
+      <button style="margin-right: 10px; background-color: #006DFE; border-color: #006DFE" class="btn-menu btn btn-success btn-toggle-menu" type="button" (click)="exOne()">
+        Help&nbsp;<i class="fa fa-solid fa-lightbulb-o"></i>
+      </button>
       <i *ngIf="exOneCorrect" style="color: chartreuse" class="fa fa-solid fa-check"></i>
-      <button class="btn-logout btn btn-success btn-toggle-menu pull-right" type="button" (click)="goToTwo()" [disabled]="nextOne">Next
-        <i class="fa fa-solid fa-arrow-right"></i></button>
+      <button class="btn-logout btn btn-success btn-toggle-menu pull-right" type="button" (click)="goForward()" [disabled]="nextOne">Next
+        <i class="fa fas-solid fa-arrow-right"></i></button>
+      <button class="btn-logout btn btn-success btn-toggle-menu pull-right" style="margin-right: 10px" type="button" (click)="goBack()">
+        <i style="margin-right: 5px" class="fa fas-solid fa-arrow-left"></i>Go Back
+      </button>
     </div>
   </div>
 </div>
 
 <!-- Chapter I ex 2 -->
 
-<div *ngIf="javaITwo" class="row">
+<div *ngIf="changePageArray[5]" class="row">
   <div class="col-lg-12">
     <h1>Chapter I</h1>
     <p>THIS IS THE TEXT FOR EXERCISE TWO FOR TESTING PURPOSES</p>
@@ -71,7 +199,7 @@
       <button style="margin-right: 10px;" class="btn-menu btn btn-success btn-toggle-menu" type="button">
         Try Solution
       </button>
-      <a class="btn-logout btn btn-success btn-toggle-menu pull-right" type="button" (click)="goToTwo()">Next
+      <a class="btn-logout btn btn-success btn-toggle-menu pull-right" type="button" (click)="goForward()">Next
         <i class="fa fa-solid fa-arrow-right"></i></a>
     </div>
   </div>

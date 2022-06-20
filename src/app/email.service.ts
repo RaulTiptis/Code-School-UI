@@ -3,6 +3,7 @@ import {environment} from "../environments/environment";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {Registration} from "./email";
+import {Progress} from './progress';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,8 @@ export class RegistrationService {
 
   constructor(private http: HttpClient) {}
 
-  public register(registration: Registration): Observable<Registration>{
+  public register(registration: Registration, progress: Progress): Observable<Registration>{
+    registration.progress = progress;
     return this.http.post<Registration>(`${this.apiServerUrl}/api/v1/registration`, registration);
   }
 

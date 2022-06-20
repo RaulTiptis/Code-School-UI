@@ -16,6 +16,8 @@ export class HomePageComponent implements OnInit {
 
   public users: Registration[];
   public progress: Progress;
+  public success: boolean = false;
+  public accountExists = false;
 
   constructor(private registrationService: RegistrationService,private progressService: ProgressService, private router: Router) { }
 
@@ -27,15 +29,19 @@ export class HomePageComponent implements OnInit {
   public addAccount(userForm: NgForm): void{
     console.log("id",this.progress.id)
     console.log(userForm.value)
-    this.registrationService.register(userForm.value).subscribe(
-      (response: Registration) => {
-        console.log(response);
+    this.registrationService.register(userForm.value, this.progress).subscribe(
+      response => {
+        console.log("response",response);
         userForm.reset();
-        this.router.navigate(['./register-success']);
+        this.success = true;
       },
       (error: HttpErrorResponse) => {
-        console.log(error.message);
-        console.log(error);
+        console.log(error.status.toString())
+        if(error.status == 200){
+          this.router.navigate(['./register-success']);
+        }else if(error.status == 500){
+          this.accountExists = true;
+        }
       });
   }
 
