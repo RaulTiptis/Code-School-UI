@@ -125,9 +125,10 @@
 
 <!-- Chapter I ex 1 -->
 
-<div *ngIf="changePageArray[3]" class="row">
+<div *ngIf="false" class="row">
   <div class="col-lg-12">
     <h1>Chapter I</h1>
+    <h5>Primitive Data Types</h5>
     <br>
     <button class="btn-logout btn btn-success btn-toggle-menu pull-right" type="button" (click)="goForward()">Next
       <i class="fa fas-solid fa-arrow-right"></i></button>
@@ -137,35 +138,57 @@
   </div>
 </div>
 
+<!-- Chapter I Documentation Loops -->
+
+<div *ngIf="changePageArray[3]" class="row">
+  <div class="col-lg-12">
+    <h1>Chapter I</h1>
+    <h5>Loop Control</h5>
+    <p style="font-size: 20px">There may be a situation when you need to execute a block of code several number of times. In general, statements are executed sequentially: The first statement in a function is executed first, followed by the second, and so on.</p>
+    <p style="font-size: 20px">A <span style="font-weight: bold">loop</span> statement allows us to execute a statement or group of statements multiple times. There are three kind of loops in Java.</p>
+    <p style="font-size: 20px"><span style="font-weight: bold">for loop</span> - Execute a sequence of statements multiple times and abbreviates the code that manages the loop variable.</p>
+    <p style="font-size: 20px"><span style="font-weight: bold">while loop</span> - Repeats a statement or group of statements while a given condition is true. It tests the condition before executing the loop body.</p>
+    <p style="font-size: 20px"><span style="font-weight: bold">do while</span> - Like a while statement, except that it tests the condition at the end of the loop body.</p>
+    <br>
+    <button class="btn-logout btn btn-success btn-toggle-menu pull-right" type="button" (click)="goForward()">Next
+      <i class="fa fas-solid fa-arrow-right"></i></button>
+    <button class="btn-logout btn btn-success btn-toggle-menu pull-right" style="margin-right: 10px" type="button" (click)="goBack()">
+      <i style="margin-right: 5px" class="fa fas-solid fa-arrow-left"></i>Go Back
+    </button>
+  </div>
+</div>
+
+<!-- Chapter I ex 2 -->
+
 <div *ngIf="changePageArray[4]" class="row">
   <div class="col-lg-12">
     <h1>Chapter I</h1>
-    <h5>Loops in Java</h5>
+    <h5>Loop Control</h5>
     <p style="font-size: 20px">The desired answer is x = 5</p>
-    <p style="font-size: 20px">x = 0<br>for(i = {{exOneArray[0]}} ;i <= {{exOneArray[1]}} ; i++) &#123;<br>&nbsp;&nbsp;&nbsp;&nbsp;x = x + i<br>&#125;</p>
+    <p style="font-size: 20px">x = 0<br>for(i = {{exTwoArray[0]}} ;i <= {{exTwoArray[1]}} ; i++) &#123;<br>&nbsp;&nbsp;&nbsp;&nbsp;x = x + i<br>&#125;</p>
     <div class="navbar-header col-lg-12">
-      <button style="margin-right: 10px;" class="btn-menu btn btn-success btn-toggle-menu" type="button" (click)="addSolution(0)" [disabled]="disableSolution">
+      <button style="margin-right: 10px;" class="btn-menu btn btn-success btn-toggle-menu" type="button" (click)="addSolutionExTwo(0)" [disabled]="disableSolution">
         0
       </button>
-      <button style="margin-right: 10px;" class="btn-menu btn btn-success btn-toggle-menu" type="button" (click)="addSolution(-1)" [disabled]="disableSolution">
+      <button style="margin-right: 10px;" class="btn-menu btn btn-success btn-toggle-menu" type="button" (click)="addSolutionExTwo(-1)" [disabled]="disableSolution">
         -1
       </button>
-      <button style="margin-right: 10px;" class="btn-menu btn btn-success btn-toggle-menu" type="button" (click)="addSolution(3)" [disabled]="disableSolution">
+      <button style="margin-right: 10px;" class="btn-menu btn btn-success btn-toggle-menu" type="button" (click)="addSolutionExTwo(3)" [disabled]="disableSolution">
         3
       </button>
-      <button style="margin-right: 10px;" class="btn-menu btn btn-success btn-toggle-menu" type="button" (click)="addSolution(5)" [disabled]="disableSolution">
+      <button style="margin-right: 10px;" class="btn-menu btn btn-success btn-toggle-menu" type="button" (click)="addSolutionExTwo(5)" [disabled]="disableSolution">
         5
       </button>
-      <button style="margin-right: 10px;" class="btn-menu btn btn-success btn-toggle-menu" type="button" (click)="undo()">
+      <button style="margin-right: 10px;" class="btn-menu btn btn-success btn-toggle-menu" type="button" (click)="undoTwoEx()">
         Undo&nbsp;<i class="fa fa-solid fa-rotate-left"></i>
       </button>
-      <button style="margin-right: 10px;" class="btn-menu btn btn-success btn-toggle-menu" type="button" (click)="exOne()">
+      <button style="margin-right: 10px;" class="btn-menu btn btn-success btn-toggle-menu" type="button" (click)="exTwo()">
         Try Solution
       </button>
-      <button style="margin-right: 10px; background-color: #006DFE; border-color: #006DFE" class="btn-menu btn btn-success btn-toggle-menu" type="button" (click)="exOne()">
+      <button style="margin-right: 10px; background-color: #006DFE; border-color: #006DFE" class="btn-menu btn btn-success btn-toggle-menu" type="button" (click)="exTwo()">
         Help&nbsp;<i class="fa fa-solid fa-lightbulb-o"></i>
       </button>
-      <i *ngIf="exOneCorrect" style="color: chartreuse" class="fa fa-solid fa-check"></i>
+      <i *ngIf="exTwoCorrect" style="color: chartreuse" class="fa fa-solid fa-check"></i>
       <button class="btn-logout btn btn-success btn-toggle-menu pull-right" type="button" (click)="goForward()" [disabled]="nextOne">Next
         <i class="fa fas-solid fa-arrow-right"></i></button>
       <button class="btn-logout btn btn-success btn-toggle-menu pull-right" style="margin-right: 10px" type="button" (click)="goBack()">
@@ -175,32 +198,12 @@
   </div>
 </div>
 
-<!-- Chapter I ex 2 -->
+<!-- Chapter I last ex -->
 
 <div *ngIf="changePageArray[5]" class="row">
   <div class="col-lg-12">
     <h1>Chapter I</h1>
-    <p>THIS IS THE TEXT FOR EXERCISE TWO FOR TESTING PURPOSES</p>
-    <p>The desired answer is x = 5</p>
-    <p>x = 0<br>for(i = {{exOneArray[0]}};i <= {{exOneArray[1]}}; i++)&#123;<br>&nbsp;&nbsp;&nbsp;&nbsp;x = x + i<br>&#125;</p>
-    <div class="navbar-header col-lg-12">
-      <button style="margin-right: 10px;" class="btn-menu btn btn-success btn-toggle-menu" type="button" disabled="disableSolution">
-        0
-      </button>
-      <button style="margin-right: 10px;" class="btn-menu btn btn-success btn-toggle-menu" type="button">
-        -1
-      </button>
-      <button style="margin-right: 10px;" class="btn-menu btn btn-success btn-toggle-menu" type="button">
-        3
-      </button>
-      <button style="margin-right: 10px;" class="btn-menu btn btn-success btn-toggle-menu" type="button" (click)="addSolution(5)">
-        5
-      </button>
-      <button style="margin-right: 10px;" class="btn-menu btn btn-success btn-toggle-menu" type="button">
-        Try Solution
-      </button>
-      <a class="btn-logout btn btn-success btn-toggle-menu pull-right" type="button" (click)="goForward()">Next
-        <i class="fa fa-solid fa-arrow-right"></i></a>
-    </div>
+    <p>This is a text for testing purposes</p>
   </div>
 </div>
+

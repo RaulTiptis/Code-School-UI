@@ -14,6 +14,7 @@ import { PythonModuleComponent } from './python-module/python-module.component';
 import { CModuleComponent } from './c-module/c-module.component';
 import { AchievementComponent } from './achievement/achievement.component';
 import { LoginComponent } from './login/login.component';
+import { LogoutComponent } from './logout/logout.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { LoginComponent } from './login/login.component';
     PythonModuleComponent,
     CModuleComponent,
     AchievementComponent,
-    LoginComponent
+    LoginComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,

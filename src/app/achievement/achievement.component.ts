@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-achievement',
@@ -9,7 +9,13 @@ export class AchievementComponent implements OnInit {
 
   constructor() { }
 
+  @Input() login;
+  javaProgress = 0;
+
   ngOnInit(): void {
+    if (this.login.progress.javaLevelOne) {
+      this.javaProgress = 100;
+    }
   }
 
 }
