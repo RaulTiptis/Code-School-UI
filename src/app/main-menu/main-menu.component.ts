@@ -4,6 +4,9 @@ import {RegistrationService} from '../email.service';
 import {Progress} from '../progress';
 import {Registration} from '../email';
 import {ProgressService} from '../progress.service';
+import {NgForm} from '@angular/forms';
+import {SuggestionService} from '../suggestion.service';
+import {Suggestion} from '../suggestion';
 
 @Component({
   selector: 'app-main-menu',
@@ -18,7 +21,8 @@ export class MainMenuComponent implements OnInit {
   pythonModuleSelected = false;
   cModuleSelected = false;
   achievementModuleSelected = false;
-  constructor(private progressService: ProgressService, private registrationService: RegistrationService, private router: Router) { }
+  showFeedbackModal = false;
+  constructor(private suggestionService: SuggestionService, private progressService: ProgressService, private registrationService: RegistrationService, private router: Router) { }
 
   ngOnInit(): void {
     document.getElementById('main').className = "active";
@@ -98,7 +102,20 @@ export class MainMenuComponent implements OnInit {
     this.achievementModuleSelected = false;
     this.progressService.updateProgress(this.login.progress).subscribe();
     localStorage.setItem('currentUser', JSON.stringify(this.login));
+  }
 
+  feedback(){
+    this.showFeedbackModal = true;
+  }
+
+  closeModal(){
+    this.showFeedbackModal = false;
+  }
+
+  giveFeedback(feedbackForm: NgForm){
+    this.suggestionService.addSuggestion(feedbackForm.value).subscribe((response:Suggestion) => {
+      feedbackForm.reset();
+    });
   }
 
   loadState(){

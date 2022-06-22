@@ -1,0 +1,34 @@
+.draggable{
+  padding: 0.5rem;
+  background-color: #198754;
+  color: white;
+  cursor: move;
+  margin-right: 20px;
+}
+
+.solContainer{
+  padding: 1rem;
+  border: 1px solid black;
+}
+
+.exContainer1{
+}
+
+.exContainer2{
+}
+
+.exContainer1.noSolution{
+  padding: 0.3rem;
+  background-color: white;
+  border: 1px solid black;
+}
+
+.exContainer2.noSolution{
+  padding: 0.3rem;
+  background-color: white;
+  border: 1px solid black;
+}
+
+.draggable.dragging {
+  opacity: .5;
+}

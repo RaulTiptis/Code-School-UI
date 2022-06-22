@@ -31,7 +31,18 @@
             <i class="fa fa-solid fa-bars"></i>
           </button>
           <a href="http://localhost:4200/logout" class="btn-red btn btn-success btn-toggle-menu pull-right" type="button">Logout</a>
-          <a class="btn-logout btn btn-success btn-toggle-menu pull-right" type="button">Feedback</a>
+          <a class="btn-logout btn btn-success btn-toggle-menu pull-right" type="button" (click)="feedback()">Feedback</a>
+          <div *ngIf="showFeedbackModal" class="modal-body">
+            <form #feedbackForm="ngForm" (ngSubmit)="giveFeedback(feedbackForm)">
+              <div class="form-group">
+                <input type="text" ngModel name="Feedback" class="form-control" placeholder="Write feedback..." required>
+              </div>
+              <div class="modal-footer">
+                <button type="button" id="closeUserForm" class="btn btn-secondary" data-dismiss="modal" (click)="closeModal()">Close</button>
+                <button type="submit" class="btn btn-primary" >Submit</button>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     </nav>

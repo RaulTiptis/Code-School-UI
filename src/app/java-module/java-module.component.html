@@ -1,9 +1,13 @@
+<html lang="en">
+<head>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css" integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7" crossorigin="anonymous">
 <style>
   table, th, td {
     border:1px solid black;
   }
 </style>
+  <script src="../../assets/scripts/scripts.js"></script>
+</head>
 <div *ngIf="changePageArray[0]" class="row">
   <div class="col-lg-12">
     <h1>Java Module</h1>
@@ -165,35 +169,26 @@
     <h1>Chapter I</h1>
     <h5>Loop Control</h5>
     <p style="font-size: 20px">The desired answer is x = 5</p>
-    <p style="font-size: 20px">x = 0<br>for(i = {{exTwoArray[0]}} ;i <= {{exTwoArray[1]}} ; i++) &#123;<br>&nbsp;&nbsp;&nbsp;&nbsp;x = x + i<br>&#125;</p>
+    <p style="font-size: 20px">x = 0<br>for(i = <span class="exContainer1">&nbsp;&nbsp;&nbsp;</span> ;i <= <span class="exContainer2">&nbsp;&nbsp;&nbsp;</span> ; i++) &#123;<br>&nbsp;&nbsp;&nbsp;&nbsp;x = x + i<br>&#125;</p>
     <div class="navbar-header col-lg-12">
-      <button style="margin-right: 10px;" class="btn-menu btn btn-success btn-toggle-menu" type="button" (click)="addSolutionExTwo(0)" [disabled]="disableSolution">
-        0
-      </button>
-      <button style="margin-right: 10px;" class="btn-menu btn btn-success btn-toggle-menu" type="button" (click)="addSolutionExTwo(-1)" [disabled]="disableSolution">
-        -1
-      </button>
-      <button style="margin-right: 10px;" class="btn-menu btn btn-success btn-toggle-menu" type="button" (click)="addSolutionExTwo(3)" [disabled]="disableSolution">
-        3
-      </button>
-      <button style="margin-right: 10px;" class="btn-menu btn btn-success btn-toggle-menu" type="button" (click)="addSolutionExTwo(5)" [disabled]="disableSolution">
-        5
-      </button>
-      <button style="margin-right: 10px;" class="btn-menu btn btn-success btn-toggle-menu" type="button" (click)="undoTwoEx()">
-        Undo&nbsp;<i class="fa fa-solid fa-rotate-left"></i>
-      </button>
-      <button style="margin-right: 10px;" class="btn-menu btn btn-success btn-toggle-menu" type="button" (click)="exTwo()">
+      <p style="margin-right: 10px;"><span class="solContainer">
+        <span class="draggable" id="sol1" draggable="true">0</span>
+        <span class="draggable" id="sol2" draggable="true">-1</span>
+        <span class="draggable" id="sol3" draggable="true">3</span>
+        <span class="draggable" id="sol4" draggable="true">5</span></span>
+      <button style="margin-right: 10px; margin-left: 30px" class="btn-menu btn btn-success btn-toggle-menu" id="tryButton" type="button" (click)="trySolution()">
         Try Solution
       </button>
-      <button style="margin-right: 10px; background-color: #006DFE; border-color: #006DFE" class="btn-menu btn btn-success btn-toggle-menu" type="button" (click)="exTwo()">
+      <button style="margin-right: 10px; background-color: #006DFE; border-color: #006DFE" class="btn-menu btn btn-success btn-toggle-menu" type="button" (click)="ex(-1,3,null,null)">
         Help&nbsp;<i class="fa fa-solid fa-lightbulb-o"></i>
       </button>
-      <i *ngIf="exTwoCorrect" style="color: chartreuse" class="fa fa-solid fa-check"></i>
+      <i *ngIf="exCorrect" style="color: chartreuse" class="fa fa-solid fa-check"></i>
       <button class="btn-logout btn btn-success btn-toggle-menu pull-right" type="button" (click)="goForward()" [disabled]="nextOne">Next
         <i class="fa fas-solid fa-arrow-right"></i></button>
       <button class="btn-logout btn btn-success btn-toggle-menu pull-right" style="margin-right: 10px" type="button" (click)="goBack()">
         <i style="margin-right: 5px" class="fa fas-solid fa-arrow-left"></i>Go Back
       </button>
+      </p>
     </div>
   </div>
 </div>
@@ -206,4 +201,5 @@
     <p>This is a text for testing purposes</p>
   </div>
 </div>
+</html>
 
