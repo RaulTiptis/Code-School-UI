@@ -16,6 +16,7 @@ import { AchievementComponent } from './achievement/achievement.component';
 import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LoopTwoComponent } from './loop-two/loop-two.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     CModuleComponent,
     AchievementComponent,
     LoginComponent,
-    LogoutComponent
+    LogoutComponent,
+    LoopTwoComponent
   ],
   imports: [
     BrowserModule,

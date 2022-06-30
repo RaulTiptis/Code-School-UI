@@ -1,0 +1,29 @@
+<div class="col-lg-12">
+  <h1>Chapter I</h1>
+  <h5>Loop Control</h5>
+  <h5>Please drag n' drop the solutions into the white rectangles</h5>
+  <p style="font-size: 20px">The desired answer is x = 5 <span> <button style="margin-right: 10px; margin-left: 30px" class="btn-menu btn btn-success btn-toggle-menu" type="button" (click)="ex(0,-1,null,null)">
+      Start
+    </button> </span> </p>
+  <p style="font-size: 20px">int x = <span class="exContainer1">&nbsp;&nbsp;&nbsp;</span>;<br>int i = <span class="exContainer2">&nbsp;&nbsp;&nbsp;</span>;<br><span style="font-weight: bold;color: #198754"> while</span>(i <= 3)&#123;<br>&nbsp;&nbsp;&nbsp;&nbsp;x = x + i;<br>&nbsp;&nbsp;&nbsp;&nbsp;i++;<br>&#125;</p>
+  <div class="navbar-header col-lg-12">
+    <p style="margin-right: 10px;"><span class="solContainer">
+        <span class="draggable" id="sol1" draggable="true">0</span>
+        <span class="draggable" id="sol2" draggable="true">-1</span>
+        <span class="draggable" id="sol3" draggable="true">3</span>
+        <span class="draggable" id="sol4" draggable="true">5</span></span>
+      <button style="margin-right: 10px; margin-left: 30px" class="btn-menu btn btn-success btn-toggle-menu try-button" type="button" [disabled]="trySolutionButton" (click)="trySolution()">
+        Try Solution
+      </button>
+      <button style="margin-right: 10px; background-color: #006DFE; border-color: #006DFE" class="btn-menu btn btn-success btn-toggle-menu" type="button">
+        Hint&nbsp;<i class="fa fa-solid fa-lightbulb-o"></i>
+      </button>
+      <i *ngIf="login?.progress.javaLevelTwo" style="color: chartreuse; transform: scale(3); padding-left: 20px" class="fa fa-solid fa-check"></i>
+      <button class="btn-logout btn btn-success btn-toggle-menu pull-right" type="button" (click)="goForward()" [disabled]="!login?.progress.javaLevelTwo">Next
+        <i class="fa fas-solid fa-arrow-right"></i></button>
+      <button class="btn-logout btn btn-success btn-toggle-menu pull-right" style="margin-right: 10px" type="button" (click)="goBack()">
+        <i style="margin-right: 5px" class="fa fas-solid fa-arrow-left"></i>Go Back
+      </button>
+    </p>
+  </div>
+</div>

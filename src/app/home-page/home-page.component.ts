@@ -18,6 +18,7 @@ export class HomePageComponent implements OnInit {
   public progress: Progress;
   public success: boolean = false;
   public accountExists = false;
+  public passwordMismatch = false;
 
   constructor(private registrationService: RegistrationService,private progressService: ProgressService, private router: Router) { }
 
@@ -27,8 +28,12 @@ export class HomePageComponent implements OnInit {
   }
 
   public addAccount(userForm: NgForm): void{
-    console.log("id",this.progress.id)
-    console.log(userForm.value)
+    this.accountExists = false;
+    this.passwordMismatch = false;
+    if(userForm.value.password != userForm.value.confirm){
+      this.passwordMismatch = true;
+      return;
+    }
     this.registrationService.register(userForm.value, this.progress).subscribe(
       response => {
         console.log("response",response);

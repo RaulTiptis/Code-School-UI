@@ -5,3 +5,11 @@
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
 }
+
+.account-error{
+  padding: 0.5rem;
+  background-color: brown;
+  color: white;
+  cursor: move;
+  margin-right: 20px;
+}

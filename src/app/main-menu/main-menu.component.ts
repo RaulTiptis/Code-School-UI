@@ -1,12 +1,38 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import {RegistrationService} from '../email.service';
-import {Progress} from '../progress';
 import {Registration} from '../email';
 import {ProgressService} from '../progress.service';
 import {NgForm} from '@angular/forms';
 import {SuggestionService} from '../suggestion.service';
 import {Suggestion} from '../suggestion';
+
+function feedback() {
+  const button = document.querySelector('#modalOpener') as HTMLElement;
+  const closeButton = document.querySelector('#modalCloser');
+  const overlay = document.getElementById('feedbackOverlay');
+
+    button.addEventListener('click', () =>{
+      const modal = document.querySelector(button.dataset.modalTarget);
+      openModal(modal)
+    });
+    closeButton.addEventListener('click', () =>{
+      const modal = closeButton.closest('.modalPop')
+      closeModal(modal)
+    });
+
+  function openModal(modal) {
+    if (modal == null) return;
+    modal.classList.add('active')
+    overlay.classList.add('active')
+  }
+
+  function closeModal(modal) {
+    if (modal == null) return;
+    modal.classList.remove('active')
+    overlay.classList.remove('active')
+  }
+}
 
 @Component({
   selector: 'app-main-menu',
@@ -21,11 +47,11 @@ export class MainMenuComponent implements OnInit {
   pythonModuleSelected = false;
   cModuleSelected = false;
   achievementModuleSelected = false;
-  showFeedbackModal = false;
   constructor(private suggestionService: SuggestionService, private progressService: ProgressService, private registrationService: RegistrationService, private router: Router) { }
 
   ngOnInit(): void {
     document.getElementById('main').className = "active";
+    feedback();
     this.loadState();
   }
 
@@ -102,14 +128,6 @@ export class MainMenuComponent implements OnInit {
     this.achievementModuleSelected = false;
     this.progressService.updateProgress(this.login.progress).subscribe();
     localStorage.setItem('currentUser', JSON.stringify(this.login));
-  }
-
-  feedback(){
-    this.showFeedbackModal = true;
-  }
-
-  closeModal(){
-    this.showFeedbackModal = false;
   }
 
   giveFeedback(feedbackForm: NgForm){

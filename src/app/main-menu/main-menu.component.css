@@ -28,10 +28,6 @@ body{
   transition: all 0.5s ease;
 }
 
-#sidebar-wrapper {
-  box-shadow: inset -1px 0px 0px 0px #DDDDDD;
-}
-
 #wrapper.toggled #sidebar-wrapper {
   width: 250px;
 }
@@ -51,6 +47,7 @@ body{
 
 .sidebar-nav {
   position: absolute;
+  left: 0;
   top: 0;
   width: 250px;
   margin: 0;
@@ -181,4 +178,69 @@ p {
   margin: 14px 0 5px 20px;
   font-size: 14px;
   float: right;
+}
+
+ul li:hover a{
+  padding-left: 10px;
+}
+
+.modalPop {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: 200ms ease-in-out;
+  border: 1px solid black;
+  border-radius: 10px;
+  z-index: 10;
+  background-color: #ffffff;
+  width: 500px;
+  max-width: 80%;
+}
+
+.modalPop.active {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.modalPop-header {
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid black;
+}
+
+.modalPop-header .title {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.modalPop-header .close-button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.modalPop-body {
+  padding: 10px 15px;
+}
+
+#feedbackOverlay {
+  position: fixed;
+  transition: 200ms ease-in-out;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,.5);
+  pointer-events: none;
+}
+
+#feedbackOverlay.active {
+  opacity: 0;
+  pointer-events: all;
 }

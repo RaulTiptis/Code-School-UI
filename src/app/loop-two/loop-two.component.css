@@ -17,10 +17,6 @@
 .exContainer2{
 }
 
-.exContainer3{}
-
-.exContainer4{}
-
 .exContainer1.noSolution{
   padding: 0.2rem;
   background-color: white;
@@ -28,18 +24,6 @@
 }
 
 .exContainer2.noSolution{
-  padding: 0.2rem;
-  background-color: white;
-  border: 1px solid black;
-}
-
-.exContainer3.noSolution{
-  padding: 0.2rem;
-  background-color: white;
-  border: 1px solid black;
-}
-
-.exContainer4.noSolution{
   padding: 0.2rem;
   background-color: white;
   border: 1px solid black;
