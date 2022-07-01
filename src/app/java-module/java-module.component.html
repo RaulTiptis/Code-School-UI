@@ -15,10 +15,10 @@
     <h5><br>Welcome to the Java module!</h5>
     <h5><br>You may start your Java learning journey by clicking the 'NEXT' button, or click any of the chapters below and go from there.</h5>
     <div class="navbar-header col-lg-12">
-      <button style="margin-top: 30px" class="btn-menu btn btn-success btn-toggle-menu" type="button" data-toggle="collapsible" data-target="#sidebar-wrapper" (click)="goChapterTwo()">
+      <button style="margin-top: 30px" class="btn-menu btn btn-success btn-toggle-menu" type="button" data-toggle="collapsible" data-target="#sidebar-wrapper" (click)="goToChapter(10)">
         Chapter II
       </button>
-      <button style="margin-top: 30px;margin-left: 30px" class="btn-menu btn btn-success btn-toggle-menu" type="button" data-toggle="collapsible" data-target="#sidebar-wrapper">
+      <button style="margin-top: 30px;margin-left: 30px" class="btn-menu btn btn-success btn-toggle-menu" type="button" data-toggle="collapsible" data-target="#sidebar-wrapper" (click)="goToChapter(18)">
         Chapter III
       </button>
       <a style="margin-top: 30px" class="btn-logout btn btn-success btn-toggle-menu pull-right" type="button" (click)="goForward()">Next
@@ -33,7 +33,7 @@
   <div class="col-lg-12">
     <h1>Chapter I</h1>
     <p style="font-size: 20px">Before we begin there are a few things you must know:<br><br>A Java program is collection of objects that communicate via invoking each other's methods. As a starter let's look at what do class, object, methods, and instance variables mean.</p>
-    <p style="font-size: 20px"><span style="font-weight: bold"> Object</span> − Objects have states and behaviors. As an example a car has both states (color, number of tires) and behaviors (accelerate, break). An object is an instance of a class.</p>
+    <p style="font-size: 20px"><span style="font-weight: bold">Object</span> − Objects have states and behaviors. As an example a car has both states (color, number of tires) and behaviors (accelerate, break). An object is an instance of a class.</p>
     <p style="font-size: 20px"><span style="font-weight: bold">Class</span> - A class can be defined as a template that describes the behavior/state that the object of its type supports.</p>
     <p style="font-size: 20px"><span style="font-weight: bold">Methods</span> - A method refers to a behaviour. A class can contain many methods.</p>
     <p style="font-size: 20px"><span style="font-weight: bold">Instance Variables</span> - Each object has its unique set of instance variables. An object's state is created by the values assigned to these instance variables.<br></p>
@@ -165,20 +165,120 @@
   </div>
 </div>
 
+<div *ngIf="changePageArray[4]" class="row">
+  <div class="col-lg-12">
+    <h1>Chapter I</h1>
+    <h5>Basic Operators</h5>
+    <p style="font-size: 30px; font-weight: bold">Arithmetic Operators</p>
+    <p style="font-size: 20px; font-weight: bold">For this we will take int X = 2 and int Y = 3</p>
+    <table style="width: 80%">
+      <tr>
+        <th style="text-align: center">Operator</th>
+        <th style="text-align: center">Example</th>
+      </tr>
+      <tr>
+        <th style="text-align: center">+ (Addition)</th>
+        <th style="text-align: center">X+Y = 5</th>
+      </tr>
+      <tr>
+        <th style="text-align: center">- (Subtraction)</th>
+        <th style="text-align: center">X-Y = -1</th>
+      </tr>
+      <tr>
+        <th style="text-align: center">* (Multiplication)</th>
+        <th style="text-align: center">X*Y = 6</th>
+      </tr>
+      <tr>
+        <th style="text-align: center">/ (Division)</th>
+        <th style="text-align: center">Y/X = 1</th>
+      </tr>
+      <tr>
+        <th style="text-align: center">% (Modulus)</th>
+        <th style="text-align: center">Y%X = 1</th>
+      </tr>
+      <tr>
+        <th style="text-align: center">++ (Increment)</th>
+        <th style="text-align: center">X++ = 3</th>
+      </tr>
+      <tr>
+        <th style="text-align: center">-- (Decrement)</th>
+        <th style="text-align: center">X-- = 1</th>
+      </tr>
+    </table>
+    <p style="font-size: 30px; font-weight: bold">Relational Operators</p>
+    <p style="font-size: 20px; font-weight: bold">For this we will take int X = 2 and int Y = 3</p>
+    <table style="width: 80%">
+      <tr>
+        <th style="text-align: center">Operator</th>
+        <th style="text-align: center">Example</th>
+      </tr>
+      <tr>
+        <th style="text-align: center">== (equal to)</th>
+        <th style="text-align: center">X == Y is false</th>
+      </tr>
+      <tr>
+        <th style="text-align: center">!= (not equal to)</th>
+        <th style="text-align: center">X != Y is true</th>
+      </tr>
+      <tr>
+        <th style="text-align: center">> (greater than)</th>
+        <th style="text-align: center">X > Y is false</th>
+      </tr>
+      <tr>
+        <th style="text-align: center">< (less than)</th>
+        <th style="text-align: center">X < Y is true</th>
+      </tr>
+      <tr>
+        <th style="text-align: center">>= (greater than or equal to)	</th>
+        <th style="text-align: center">X >= Y is false</th>
+      </tr>
+      <tr>
+        <th style="text-align: center"><= (less than or equal to)</th>
+        <th style="text-align: center">X <= Y is true</th>
+      </tr>
+    </table>
+    <p style="font-size: 30px; font-weight: bold">Logical Operators</p>
+    <p style="font-size: 20px; font-weight: bold">For this we will take boolean X = true and boolean Y = false</p>
+    <table style="width: 80%">
+      <tr>
+        <th style="text-align: center">Operator</th>
+        <th style="text-align: center">Example</th>
+      </tr>
+      <tr>
+        <th style="text-align: center">&& (logical and)</th>
+        <th style="text-align: center">(X && Y) is false</th>
+      </tr>
+      <tr>
+        <th style="text-align: center">|| (logical or)</th>
+        <th style="text-align: center">(X || Y) is true</th>
+      </tr>
+      <tr>
+        <th style="text-align: center">! (logical not)</th>
+        <th style="text-align: center">!X is false</th>
+      </tr>
+    </table>
+    <button class="btn-logout btn btn-success btn-toggle-menu pull-right" type="button" (click)="goForward()">Next
+      <i class="fa fas-solid fa-arrow-right"></i></button>
+    <button class="btn-logout btn btn-success btn-toggle-menu pull-right" style="margin-right: 10px" type="button" (click)="goBack()">
+      <i style="margin-right: 5px" class="fa fas-solid fa-arrow-left"></i>Go Back
+    </button>
+  </div>
+</div>
+
 <!-- Chapter I Documentation Loops -->
 
-<div *ngIf="changePageArray[4]" class="row">
+<div *ngIf="changePageArray[5]" class="row">
   <div class="col-lg-12">
     <h1>Chapter I</h1>
     <h5>Loop Control</h5>
     <p style="font-size: 20px">There may be a situation when you need to execute a block of code several number of times. In general, statements are executed sequentially: The first statement in a function is executed first, followed by the second, and so on.</p>
     <p style="font-size: 20px">A <span style="font-weight: bold;color: #198754">loop</span> statement allows us to execute a statement or group of statements multiple times. There are three kind of loops in Java.</p>
     <p style="font-size: 20px"><span style="font-weight: bold;color: #198754">for loop</span> - Execute a sequence of statements multiple times and abbreviates the code that manages the loop variable.</p>
-    <p>Example: <span style="font-weight: bold;color: #198754">for</span>(starting value; condition; code for each iteration)&#123;<br>\\code to be executed&#125;</p>
+    <p style="font-size: 20px">Example:<br> <span style="font-weight: bold;color: #198754">for</span>(starting value; condition; code for each iteration)&#123;<br>&nbsp;&nbsp;&nbsp;&nbsp;\\code to be executed&#125;</p>
     <p style="font-size: 20px"><span style="font-weight: bold;color: #198754">while loop</span> - Repeats a statement or group of statements while a given condition is true. It tests the condition before executing the loop body.</p>
-    <p>Example: <span style="font-weight: bold;color: #198754">while</span>(condition)&#123;<br>\\code to be executed&#125;</p>
+    <p style="font-size: 20px">Example:<br> <span style="font-weight: bold;color: #198754">while</span>(condition)&#123;<br>&nbsp;&nbsp;&nbsp;&nbsp;\\code to be executed&#125;</p>
     <p style="font-size: 20px"><span style="font-weight: bold;color: #198754">do while</span> - Like a while statement, except that it tests the condition at the end of the loop body.</p>
-    <p>Example: <span style="font-weight: bold;color: #198754">do</span>&#123;<br>\\code to be executed<br>&#125;<span style="font-weight: bold;color: #198754">while</span>(condition)</p>
+    <p style="font-size: 20px">Example:<br> <span style="font-weight: bold;color: #198754">do</span>&#123;<br>&nbsp;&nbsp;&nbsp;&nbsp;\\code to be executed<br>&#125;<span style="font-weight: bold;color: #198754">while</span>(condition)</p>
     <br>
     <button class="btn-logout btn btn-success btn-toggle-menu pull-right" type="button" (click)="goForward()">Next
       <i class="fa fas-solid fa-arrow-right"></i></button>
@@ -190,7 +290,7 @@
 
 <!-- Chapter I ex 2 -->
 
-<div *ngIf="changePageArray[5]" class="row">
+<div *ngIf="changePageArray[6]" class="row">
   <div class="col-lg-12">
     <h1>Chapter I</h1>
     <h5>Loop Control</h5>
@@ -224,7 +324,7 @@
 
 <!-- Chapter I last ex -->
 
-<div *ngIf="changePageArray[6]" class="container-fluid">
+<div *ngIf="changePageArray[7]" class="container-fluid">
   <div class="col-lg-12">
     <h1>Chapter I</h1>
     <h5>Loop Control</h5>
@@ -258,7 +358,7 @@
 
 <!-- Chapter I Ifs -->
 
-<div *ngIf="changePageArray[7]" class="row">
+<div *ngIf="changePageArray[8]" class="row">
   <div class="col-lg-12">
     <h1>Chapter I</h1>
     <h5>Decision Making</h5>
@@ -290,7 +390,7 @@
 
 <!-- Chapter I Ifs ex -->
 
-<div *ngIf="changePageArray[8]" class="row">
+<div *ngIf="changePageArray[9]" class="row">
   <div class="col-lg-12">
     <h1>Chapter I</h1>
     <h5>Decision Making</h5>
@@ -312,7 +412,7 @@
           Hint&nbsp;<i class="fa fa-solid fa-lightbulb-o"></i>
         </button>
         <i *ngIf="login?.progress.levels[3]" style="color: chartreuse; transform: scale(3); padding-left: 20px" class="fa fa-solid fa-check"></i>
-        <button class="btn-logout btn btn-success btn-toggle-menu pull-right" type="button" (click)="goChapterTwo()" [disabled]="!login?.progress.levels[3]">Chapter II
+        <button class="btn-logout btn btn-success btn-toggle-menu pull-right" type="button" (click)="goToChapter(10)" [disabled]="!login?.progress.levels[3]">Chapter II
           <i class="fa fas-solid fa-arrow-right"></i></button>
         <button class="btn-logout btn btn-success btn-toggle-menu pull-right" style="margin-right: 10px" type="button" (click)="goBack()">
           <i style="margin-right: 5px" class="fa fas-solid fa-arrow-left"></i>Go Back
@@ -324,7 +424,7 @@
 
 <!-- Chapter II Intro -->
 
-<div *ngIf="changePageArray[9]" class="row">
+<div *ngIf="changePageArray[10]" class="row">
   <div class="col-lg-12">
     <h1>Chapter II</h1>
     <p style="font-size: 20px">This is the begging of chapter II. In this chapter you will learn about <span style="font-weight: bold; color: #198754">Strings, Arrays </span>and <span style="font-weight: bold; color: #198754">Methods</span>. All the while using the knowledge gained from chapter I.</p>
@@ -337,7 +437,7 @@
   </div>
 </div>
 
-<div *ngIf="changePageArray[10]" class="row">
+<div *ngIf="changePageArray[11]" class="row">
   <div class="col-lg-12">
     <h1>Chapter II</h1>
     <h5>Strings</h5>
@@ -361,7 +461,7 @@
 
 <!-- Chapter II ex 1 -->
 
-<div *ngIf="changePageArray[11]" class="row">
+<div *ngIf="changePageArray[12]" class="row">
   <div class="col-lg-12">
     <h1>Chapter II</h1>
     <h5>Strings</h5>
@@ -395,7 +495,7 @@
   </div>
 </div>
 
-<div *ngIf="changePageArray[12]" class="row">
+<div *ngIf="changePageArray[13]" class="row">
   <div class="col-lg-12">
     <h1>Chapter II</h1>
     <h5>Arrays</h5>
@@ -415,7 +515,7 @@
   </div>
 </div>
 
-<div *ngIf="changePageArray[13]" class="row">
+<div *ngIf="changePageArray[14]" class="row">
   <div class="col-lg-12">
     <h1>Chapter II</h1>
     <h5>Arrays</h5>
@@ -434,7 +534,7 @@
 
 <!-- Chapter II ex 2 -->
 
-<div *ngIf="changePageArray[11]" class="row">
+<div *ngIf="changePageArray[15]" class="row">
   <div class="col-lg-12">
     <h1>Chapter II</h1>
     <h5>Arrays</h5>
@@ -465,6 +565,38 @@
         </button>
       </p>
     </div>
+  </div>
+</div>
+
+<div *ngIf="changePageArray[16]" class="row">
+  <div class="col-lg-12">
+    <h1>Chapter II</h1>
+    <h5>Methods</h5>
+    <p style="font-size: 20px">A Java method is a collection of statements that are grouped together to perform an operation.</p>
+    <p style="font-size: 20px">Now you will learn how to create your own methods with or without return values and invoke a method with or without parameters.</p>
+    <h5>Creating a method</h5>
+    <p style="font-size: 20px">public static int methodName(int a, int b)&#123;<br>&nbsp;&nbsp;&nbsp;&nbsp;// body<br>return a;<br>}</p>
+    <ul style="font-size: 20px">
+      <li><span style="font-weight: bold">public static</span> - modifier - defines the access type of the method and it is optional to use</li>
+      <li><span style="font-weight: bold">int</span> - return type - method may return a value</li>
+      <li><span style="font-weight: bold">methodName</span> - method name</li>
+      <li><span style="font-weight: bold">int a, int b</span> - list of parameters - it is the type, order, and number of parameters of a method. These are optional, method may contain zero parameters</li>
+      <li><span style="font-weight: bold">body</span> - method body defines what code is executed</li>
+      <li><span style="font-weight: bold">return a</span> - return statement - end of function and parameter that is returned</li>
+    </ul>
+    <h5>Method Calling</h5>
+    <p style="font-size: 20px">For using a method, it should be called. There are two ways in which a method is called i.e., method returns a value or returning nothing (no return value). The process of method calling is simple. When a program invokes a method, the program control gets transferred to the called method. This called method then returns control to the caller in two conditions, when either:<br>
+     - the return statement is executed<br>
+    - it reaches the method ending closing brace</p>
+    <h5>Example of a method and a call</h5>
+    <p style="font-size: 20px">int sum(int a, int b)&#123;<br>&nbsp;&nbsp;&nbsp;&nbsp;int x = a + b;<br>&nbsp;&nbsp;&nbsp;&nbsp;return x;<br>}<br>
+    <br>int a = 5;<br>int b = 10;<br>int y = sum(a, b);<br>int bigSum = sum(y, y)<br>System.out.print(bigSum);<br><br>Result: 30</p>
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    <button class="btn-logout btn btn-success btn-toggle-menu pull-right" type="button" (click)="goForward()">Next
+      <i class="fa fas-solid fa-arrow-right"></i></button>
+    <button class="btn-logout btn btn-success btn-toggle-menu pull-right" style="margin-right: 10px" type="button" (click)="goBack()">
+      <i style="margin-right: 5px" class="fa fas-solid fa-arrow-left"></i>Go Back
+    </button>
   </div>
 </div>
 

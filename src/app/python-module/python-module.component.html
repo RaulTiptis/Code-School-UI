@@ -1,1 +1,241 @@
-<p>python-module works!</p>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css" integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7" crossorigin="anonymous">
+  <style>
+    table, th, td {
+      border:1px solid black;
+    }
+  </style>
+  <script src="../../assets/scripts/scripts.js"></script>
+</head>
+<div *ngIf="changePageArray[0]" class="row">
+  <div class="col-lg-12">
+    <h1>Python Module</h1>
+    <h5><br>Welcome to the Python module!</h5>
+    <h5><br>You may start your Python learning journey by clicking the 'NEXT' button, or click any of the chapters below and go from there.</h5>
+    <div class="navbar-header col-lg-12">
+      <button style="margin-top: 30px" class="btn-menu btn btn-success btn-toggle-menu" type="button" data-toggle="collapsible" data-target="#sidebar-wrapper" (click)="goToChapter(10)">
+        Chapter II
+      </button>
+      <button style="margin-top: 30px;margin-left: 30px" class="btn-menu btn btn-success btn-toggle-menu" type="button" data-toggle="collapsible" data-target="#sidebar-wrapper" (click)="goToChapter(18)">
+        Chapter III
+      </button>
+      <a style="margin-top: 30px" class="btn-logout btn btn-success btn-toggle-menu pull-right" type="button" (click)="goForward()">Next
+        <i class="fa fa-solid fa-arrow-right"></i></a>
+    </div>
+  </div>
+</div>
+
+
+
+<div *ngIf="changePageArray[1]" class="row">
+  <div class="col-lg-12">
+    <h1>Chapter I</h1>
+    <p style="font-size: 20px">This is the begging of your python journey.</p>
+    <p style="font-size: 20px">In this chapter you will learn about the basic syntax of python, the different variable types, decision making and loops.</p>
+    <p style="font-size: 20px">You may click on 'NEXT' to proceed to the basic syntax overview.</p>
+    <button class="btn-logout btn btn-success btn-toggle-menu pull-right" type="button" (click)="goForward()">Next
+      <i class="fa fas-solid fa-arrow-right"></i></button>
+    <button class="btn-logout btn btn-success btn-toggle-menu pull-right" style="margin-right: 10px" type="button" (click)="goBack()">
+      <i style="margin-right: 5px" class="fa fas-solid fa-arrow-left"></i>Go Back
+    </button>
+  </div>
+</div>
+
+
+
+<div *ngIf="changePageArray[2]" class="row">
+  <div class="col-lg-12">
+    <h1>Chapter I</h1>
+    <h5>Basic Syntax</h5>
+    <p style="font-size: 25px">Python Identifiers</p>
+    <p style="font-size: 20px">A Python identifier is a name used to identify a variable, function, class, module or other object. An identifier starts with a letter A to Z or a to z or an underscore (_) followed by zero or more letters, underscores and digits (0 to 9), for example:<br>
+    <br>var1 = 5</p>
+    <p style="font-size: 25px">Lines and Indentation</p>
+    <p style="font-size: 20px">Python provides no braces to indicate blocks of code for class and function definitions or flow control. Blocks of code are denoted by line indentation, which is rigidly enforced, for example:</p>
+    <p style="font-size: 20px">if True:<br>&nbsp;&nbsp;&nbsp;&nbsp;print(x)<br>&nbsp;&nbsp;&nbsp;&nbsp;print(y)<br><br>will be CORRECT, but:<br><br>if True:<br>print(x)<br>print(y)<br><br>will give an ERROR.</p>
+    <button class="btn-logout btn btn-success btn-toggle-menu pull-right" type="button" (click)="goForward()">Next
+      <i class="fa fas-solid fa-arrow-right"></i></button>
+    <button class="btn-logout btn btn-success btn-toggle-menu pull-right" style="margin-right: 10px" type="button" (click)="goBack()">
+      <i style="margin-right: 5px" class="fa fas-solid fa-arrow-left"></i>Go Back
+    </button>
+  </div>
+</div>
+
+<div *ngIf="changePageArray[3]" class="row">
+  <div class="col-lg-12">
+    <h1>Chapter I</h1>
+    <h5>Variable Types</h5>
+    <p style="font-size: 20px">Variables can be assigned different data types, for example, you may store integers, decimals or characters in these variables.</p>
+    <p style="font-size: 25px">Assigning values to variables</p>
+    <p style="font-size: 20px">Python variables do not need explicit declaration to reserve memory space. The declaration happens automatically when you assign a value to a variable. The equal sign (=) is used to assign values to variables.</p>
+    <p style="font-size: 20px">The operand to the left of the = operator is the name of the variable and the operand to the right of the = operator is the value stored in the variable. For example −</p>
+    <p style="font-size: 20px">var1 = 100 - integer<br>var2 = 50.5 - floating point number<br>var3 = "Timisoara" - string</p>
+    <p style="font-size: 25px">Standard Data Types</p>
+    <p style="font-size: 20px">Python has five standard data types:</p>
+    <ul style="font-size: 20px">
+      <li>Numbers</li>
+      <li>String</li>
+      <li>List</li>
+      <li>Tuple</li>
+      <li>Dictionary</li>
+    </ul>
+    <p style="font-size: 20px">Numbers are pretty self explanatory, so we will not dwell on them too much, as working with integer is enough for now. Dictionaries will also not be showcased, as there is enough information as is right now, but they do need to be mentioned. And as for the Strings, Lists and Tuples, they will be covered in Chapter II.</p>
+    <button class="btn-logout btn btn-success btn-toggle-menu pull-right" type="button" (click)="goForward()">Next
+      <i class="fa fas-solid fa-arrow-right"></i></button>
+    <button class="btn-logout btn btn-success btn-toggle-menu pull-right" style="margin-right: 10px" type="button" (click)="goBack()">
+      <i style="margin-right: 5px" class="fa fas-solid fa-arrow-left"></i>Go Back
+    </button>
+  </div>
+</div>
+
+<div *ngIf="changePageArray[4]" class="row">
+  <div class="col-lg-12">
+    <h1>Chapter I</h1>
+    <h5>Loop Control</h5>
+    <p style="font-size: 20px">There may be a situation when you need to execute a block of code several number of times. In general, statements are executed sequentially: The first statement in a function is executed first, followed by the second, and so on.</p>
+    <p style="font-size: 20px">A <span style="font-weight: bold;color: #198754">loop</span> statement allows us to execute a statement or group of statements multiple times. There are three kind of loops in Java.</p>
+    <p style="font-size: 20px"><span style="font-weight: bold;color: #198754">for loop</span> - Execute a sequence of statements multiple times and abbreviates the code that manages the loop variable.</p>
+    <p style="font-size: 20px">Example:<br> <span style="font-weight: bold;color: #198754">for</span>(starting value; condition; code for each iteration):<br>&nbsp;&nbsp;&nbsp;&nbsp;\\code to be executed</p>
+    <p style="font-size: 20px"><span style="font-weight: bold;color: #198754">while loop</span> - Repeats a statement or group of statements while a given condition is true. It tests the condition before executing the loop body.</p>
+    <p style="font-size: 20px">Example:<br> <span style="font-weight: bold;color: #198754">while</span>(condition):<br>&nbsp;&nbsp;&nbsp;&nbsp;\\code to be executed</p>
+    <br>
+    <button class="btn-logout btn btn-success btn-toggle-menu pull-right" type="button" (click)="goForward()">Next
+      <i class="fa fas-solid fa-arrow-right"></i></button>
+    <button class="btn-logout btn btn-success btn-toggle-menu pull-right" style="margin-right: 10px" type="button" (click)="goBack()">
+      <i style="margin-right: 5px" class="fa fas-solid fa-arrow-left"></i>Go Back
+    </button>
+  </div>
+</div>
+
+<div *ngIf="changePageArray[5]" class="row">
+  <div class="col-lg-12">
+    <h1>Chapter I</h1>
+    <h5>Decision Making</h5>
+    <p style="font-size: 20px">Decision making structures have one or more conditions to be evaluated or tested by the program, along with a statement or statements that are to be executed if the condition is determined to be true, and optionally, other statements to be executed if the condition is determined to be false.</p>
+    <table style="width: 100%">
+      <tr>
+        <th style="text-align: center"><span style="color: #198754">If</span> Statement</th>
+        <th style="text-align: center">An if statement consists of a boolean expression followed by one or more statements.</th>
+        <th style="text-align: left"><span style="color: #198754">if</span>(statement):<br>&nbsp;&nbsp;&nbsp;&nbsp;\\code to be execute if true</th>
+      </tr>
+      <tr>
+        <th style="text-align: center"><span style="color: #198754">If...else</span> Statement </th>
+        <th style="text-align: center">An if statement can be followed by an optional else statement, which executes when the boolean expression is false.</th>
+        <th style="text-align: left"><span style="color: #198754">if</span>(statement):<br>&nbsp;&nbsp;&nbsp;&nbsp;\\code to be execute if true<br> <span style="color: #198754">else</span>:<br>&nbsp;&nbsp;&nbsp;&nbsp; \\different code to be executed if false</th>
+      </tr>
+    </table>
+    <button class="btn-logout btn btn-success btn-toggle-menu pull-right" type="button" (click)="goForward()">Next
+      <i class="fa fas-solid fa-arrow-right"></i></button>
+    <button class="btn-logout btn btn-success btn-toggle-menu pull-right" style="margin-right: 10px" type="button" (click)="goBack()">
+      <i style="margin-right: 5px" class="fa fas-solid fa-arrow-left"></i>Go Back
+    </button>
+  </div>
+</div>
+
+<!-- Chapter II -->
+
+<div *ngIf="changePageArray[6]" class="row">
+  <div class="col-lg-12">
+    <h1>Chapter II</h1>
+    <p style="font-size: 20px">This is the begging of chapter II. In this chapter you will learn about <span style="font-weight: bold; color: #198754">Strings, Lists, Tuples </span>and <span style="font-weight: bold; color: #198754">Functions</span>. All the while using the knowledge gained from chapter I.</p>
+    <p style="font-size: 20px">Well without further ado, let's learn <span style="font-weight: bold">Strings</span></p>
+    <button class="btn-logout btn btn-success btn-toggle-menu pull-right" type="button" (click)="goForward()">Next
+      <i class="fa fas-solid fa-arrow-right"></i></button>
+    <button class="btn-logout btn btn-success btn-toggle-menu pull-right" style="margin-right: 10px" type="button" (click)="goBack()">
+      <i style="margin-right: 5px" class="fa fas-solid fa-arrow-left"></i>Go Back
+    </button>
+  </div>
+</div>
+
+<div *ngIf="changePageArray[7]" class="row">
+  <div class="col-lg-12">
+    <h1>Chapter I</h1>
+    <h5>Strings</h5>
+    <p style="font-size: 20px">Strings in Python are identified as a continuous set of characters represented in the quotation marks. Python allows for either pairs of single or double quotes. Subsets of strings can be taken using the slice operator ([ ] and [:] ) with indexes starting at 0 in the beginning of the string and working their way from -1 at the end.</p>
+    <p style="font-size: 20px">The plus (+) sign is the string concatenation operator and the asterisk (*) is the repetition operator. For example:</p>
+    <p style="font-size: 20px">Let's say we have this variable: str = 'Hello World!'</p>
+    <p style="font-size: 20px">print str - prints complete string - Hello World!</p>
+    <p style="font-size: 20px">print str[0] - prints first character of the string - H</p>
+    <p style="font-size: 20px">print str[2:5] - prints characters starting from 3rd to 5th - llo</p>
+    <p style="font-size: 20px">print str[2:] - prints string starting from 3rd character - llo World!</p>
+    <p style="font-size: 20px">print str * 2 - prints string two times - Hello World!Hello World!</p>
+    <p style="font-size: 20px">print print str + "TEST" - prints concatenated string - Hello World!TEST</p>
+    <button class="btn-logout btn btn-success btn-toggle-menu pull-right" type="button" (click)="goForward()">Next
+      <i class="fa fas-solid fa-arrow-right"></i></button>
+    <button class="btn-logout btn btn-success btn-toggle-menu pull-right" style="margin-right: 10px" type="button" (click)="goBack()">
+      <i style="margin-right: 5px" class="fa fas-solid fa-arrow-left"></i>Go Back
+    </button>
+  </div>
+</div>
+
+<div *ngIf="changePageArray[8]" class="row">
+  <div class="col-lg-12">
+    <h1>Chapter I</h1>
+    <h5>Lists</h5>
+    <p style="font-size: 20px">Lists are the most versatile of Python's compound data types. A list contains items separated by commas and enclosed within square brackets ([]). To some extent, lists are similar to arrays in C. One difference between them is that all the items belonging to a list can be of different data type.</p>
+    <p style="font-size: 20px">The values stored in a list can be accessed using the slice operator ([ ] and [:]) with indexes starting at 0 in the beginning of the list and working their way to end -1. The plus (+) sign is the list concatenation operator, and the asterisk (*) is the repetition operator. For example:</p>
+    <p style="font-size: 20px">Let's say we have this list: list = [ 'abcd', 786 , 2.23, 'john', 70.2 ]</p>
+    <p style="font-size: 20px">print list - prints complete list - ['abcd', 786, 2.23, 'john', 70.2]</p>
+    <p style="font-size: 20px">print list[0] - prints first element of the list - abcd</p>
+    <p style="font-size: 20px">print list[1:3] - prints elements starting from 2nd till 3rd - [786, 2.23]</p>
+    <p style="font-size: 20px">print list[2:] - prints elements starting from 3rd element - [2.23, 'john', 70.2]</p>
+    <p style="font-size: 20px">print list * 2 - prints list two times - [ 'abcd', 786 , 2.23, 'john', 70.2 , 'abcd', 786 , 2.23, 'john', 70.2 ]</p>
+    <p style="font-size: 20px">print list + ['test'] - prints concatenated lists - [ 'abcd', 786 , 2.23, 'john', 70.2 , 'test']</p>
+    <button class="btn-logout btn btn-success btn-toggle-menu pull-right" type="button" (click)="goForward()">Next
+      <i class="fa fas-solid fa-arrow-right"></i></button>
+    <button class="btn-logout btn btn-success btn-toggle-menu pull-right" style="margin-right: 10px" type="button" (click)="goBack()">
+      <i style="margin-right: 5px" class="fa fas-solid fa-arrow-left"></i>Go Back
+    </button>
+  </div>
+</div>
+
+<div *ngIf="changePageArray[9]" class="row">
+  <div class="col-lg-12">
+    <h1>Chapter I</h1>
+    <h5>Tuples</h5>
+    <p style="font-size: 20px">A tuple is another sequence data type that is similar to the list. A tuple consists of a number of values separated by commas. Unlike lists, however, tuples are enclosed within parentheses.</p>
+    <p style="font-size: 20px">The main differences between lists and tuples are: Lists are enclosed in brackets ( [ ] ) and their elements and size can be changed, while tuples are enclosed in parentheses ( ( ) ) and cannot be updated. Tuples can be thought of as read-only lists. For example:</p>
+    <p style="font-size: 20px">Let's say we have this tuple: tuple = ( 'abcd', 786 , 2.23, 'john', 70.2 )</p>
+    <p style="font-size: 20px">print tuple - prints complete tuple - ('abcd', 786, 2.23, 'john', 70.2)</p>
+    <p style="font-size: 20px">print tuple[0] - prints first element of the tuple - abcd</p>
+    <p style="font-size: 20px">print tuple[1:3] - prints elements starting from 2nd till 3rd - (786, 2.23)</p>
+    <p style="font-size: 20px">print tuple[2:] - prints elements starting from 3rd element - (2.23, 'john', 70.2)</p>
+    <p style="font-size: 20px">print tuple * 2 - prints tuple two times - ( 'abcd', 786 , 2.23, 'john', 70.2 , 'abcd', 786 , 2.23, 'john', 70.2 )</p>
+    <p style="font-size: 20px">print tuple + ('test') - prints concatenated tuples - ( 'abcd', 786 , 2.23, 'john', 70.2 , 'test')</p>
+    <p style="font-size: 20px">The following code is invalid with tuple, because we attempted to update a tuple, which is not allowed. Similar case is possible with lists:<br>tuple[2] = 'test' - invalid<br>list[2] = 'test' - valid</p>
+    <button class="btn-logout btn btn-success btn-toggle-menu pull-right" type="button" (click)="goForward()">Next
+      <i class="fa fas-solid fa-arrow-right"></i></button>
+    <button class="btn-logout btn btn-success btn-toggle-menu pull-right" style="margin-right: 10px" type="button" (click)="goBack()">
+      <i style="margin-right: 5px" class="fa fas-solid fa-arrow-left"></i>Go Back
+    </button>
+  </div>
+</div>
+
+<div *ngIf="changePageArray[10]" class="row">
+  <div class="col-lg-12">
+    <h1>Chapter I</h1>
+    <h5>Functions</h5>
+    <p style="font-size: 20px">A function is a block of organized, reusable code that is used to perform a single, related action. Functions provide better modularity for your application and a high degree of code reusing.</p>
+    <p style="font-size: 20px">As you already know, Python gives you many built-in functions like print(), etc. but you can also create your own functions. These functions are called user-defined functions.</p>
+    <p style="font-size: 25px">Defining a Function</p>
+    <p style="font-size: 20px">Below we have an example function:</p>
+    <p style="font-size: 20px">def function_name(a, b):<br>&nbsp;&nbsp;&nbsp;&nbsp;\\body<br>&nbsp;&nbsp;&nbsp;&nbsp;return a</p>
+    <ul style="font-size: 20px">
+      <li><span style="font-weight: bold">def</span> - keyword that begins function definition</li>
+      <li><span style="font-weight: bold">function_name</span> - name of the function</li>
+      <li><span style="font-weight: bold">a, b</span> - parameters, optional, function may contain zero parameters</li>
+      <li><span style="font-weight: bold">body</span> - function body defines what code is executed</li>
+      <li><span style="font-weight: bold">return a</span> - return statement that signals end of function, is optional</li>
+    </ul>
+    <button class="btn-logout btn btn-success btn-toggle-menu pull-right" type="button" (click)="goForward()">Next
+      <i class="fa fas-solid fa-arrow-right"></i></button>
+    <button class="btn-logout btn btn-success btn-toggle-menu pull-right" style="margin-right: 10px" type="button" (click)="goBack()">
+      <i style="margin-right: 5px" class="fa fas-solid fa-arrow-left"></i>Go Back
+    </button>
+  </div>
+</div>
+
+
+</html>

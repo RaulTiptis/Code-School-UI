@@ -1,1 +1,330 @@
-<p>c-module works!</p>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css" integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7" crossorigin="anonymous">
+  <style>
+    table, th, td {
+      border:1px solid black;
+    }
+  </style>
+  <script src="../../assets/scripts/scripts.js"></script>
+</head>
+<div *ngIf="changePageArray[0]" class="row">
+  <div class="col-lg-12">
+    <h1>C/C++ Module</h1>
+    <h5><br>Welcome to the C/C++ module!</h5>
+    <h5><br>You may start your C/C++ learning journey by clicking the 'NEXT' button, or click any of the chapters below and go from there.</h5>
+    <div class="navbar-header col-lg-12">
+      <button style="margin-top: 30px" class="btn-menu btn btn-success btn-toggle-menu" type="button" data-toggle="collapsible" data-target="#sidebar-wrapper" (click)="goToChapter(10)">
+        Chapter II
+      </button>
+      <button style="margin-top: 30px;margin-left: 30px" class="btn-menu btn btn-success btn-toggle-menu" type="button" data-toggle="collapsible" data-target="#sidebar-wrapper" (click)="goToChapter(18)">
+        Chapter III
+      </button>
+      <a style="margin-top: 30px" class="btn-logout btn btn-success btn-toggle-menu pull-right" type="button" (click)="goForward()">Next
+        <i class="fa fa-solid fa-arrow-right"></i></a>
+    </div>
+  </div>
+</div>
+
+<!-- Chapter I intro -->
+
+<div *ngIf="changePageArray[1]" class="row">
+  <div class="col-lg-12">
+    <h1>Chapter I</h1>
+    <p style="font-size: 20px">Before we begin there are a few things you must know:<br><br>A C/C++ program is collection of objects that communicate via invoking each other's methods. As a starter let's look at what do class, object, methods, and instance variables mean.</p>
+    <p style="font-size: 20px"><span style="font-weight: bold">Object</span> − Objects have states and behaviors. As an example a car has both states (color, number of tires) and behaviors (accelerate, break). An object is an instance of a class.</p>
+    <p style="font-size: 20px"><span style="font-weight: bold">Class</span> - A class can be defined as a template that describes the behavior/state that the object of its type supports.</p>
+    <p style="font-size: 20px"><span style="font-weight: bold">Methods</span> - A method refers to a behaviour. A class can contain many methods.</p>
+    <p style="font-size: 20px"><span style="font-weight: bold">Instance Variables</span> - Each object has its unique set of instance variables. An object's state is created by the values assigned to these instance variables.<br></p>
+    <p style="font-size: 20px">For now this is all that you need to know. All this information might seem like a lot at first, but as you go through the module, all of this information will become easier to digest.</p>
+    <p style="font-size: 20px">Now that you are equipped with the basics of C/C++, we may start with <span style="font-weight: bold">Primitive Data Types</span></p>
+    <button class="btn-logout btn btn-success btn-toggle-menu pull-right" type="button" (click)="goForward()">Next
+      <i class="fa fas-solid fa-arrow-right"></i></button>
+    <button class="btn-logout btn btn-success btn-toggle-menu pull-right" style="margin-right: 10px" type="button" (click)="goBack()">
+      <i style="margin-right: 5px" class="fa fas-solid fa-arrow-left"></i>Go Back
+    </button>
+  </div>
+</div>
+
+<div *ngIf="changePageArray[2]" class="row">
+  <div class="col-lg-12">
+    <h1>Chapter I</h1>
+    <h5>Primitive Built-in Types</h5>
+    <br>
+    <table style="width: 100%">
+      <tr>
+        <th style="text-align: center">Data Type</th>
+        <th style="text-align: center">Description</th>
+        <th style="text-align: center">Default value</th>
+        <th style="text-align: center">Possible values</th>
+        <th style="text-align: center">Example</th>
+      </tr>
+      <tr>
+        <th style="text-align: center"><span style="color: #198754">byte</span></th>
+        <th style="text-align: center">Byte data type is used to save space since<br> a byte is four times smaller than an integer.</th>
+        <th style="text-align: center">0</th>
+        <th style="text-align: center">-128 to 127</th>
+        <th style="text-align: center"><span style="color: #198754">byte</span> a = 50;<br> <span style="color: #198754">byte</span> b = -100</th>
+      </tr>
+      <tr>
+        <th style="text-align: center"><span style="color: #198754">short</span></th>
+        <th style="text-align: center">Short data type can also be used to save memory<br> as byte data type. A short is 2 times smaller than an integer</th>
+        <th style="text-align: center">0</th>
+        <th style="text-align: center">-32,768 to 32,767</th>
+        <th style="text-align: center"><span style="color: #198754">short</span> s = 20000;<br> <span style="color: #198754">short</span> r = -20000</th>
+      </tr>
+      <tr>
+        <th style="text-align: center"><span style="color: #198754">int</span></th>
+        <th style="text-align: center">Integer is generally used as the default <br>data type for integral values</th>
+        <th style="text-align: center">0</th>
+        <th style="text-align: center">-2,147,483,648 to 2,147,483,647</th>
+        <th style="text-align: center"><span style="color: #198754">int</span> a = 200000;<br> <span style="color: #198754">int</span> b = -200000</th>
+      </tr>
+      <tr>
+        <th style="text-align: center"><span style="color: #198754">long</span></th>
+        <th style="text-align: center">This type is used when a wider <br>range than int is needed</th>
+        <th style="text-align: center">0L</th>
+        <th style="text-align: center">-9,223,372,036,854,775,808<br> to<br> 9,223,372,036,854,775,807</th>
+        <th style="text-align: center"><span style="color: #198754">long</span> a = 200000L;<br> <span style="color: #198754">long</span> b = -200000L</th>
+      </tr>
+      <tr>
+        <th style="text-align: center"><span style="color: #198754">float</span></th>
+        <th style="text-align: center">Float is mainly used to save <br>memory in large arrays of floating point numbers</th>
+        <th style="text-align: center">0.0f</th>
+        <th style="text-align: center">3.40282347 x 10^38<br> to<br> 1.40239846 x 10^(-45)</th>
+        <th style="text-align: center"><span style="color: #198754">float</span> f1 = 234.5f</th>
+      </tr>
+      <tr>
+        <th style="text-align: center"><span style="color: #198754">double</span></th>
+        <th style="text-align: center">This data type is generally used as the <br>default data type for decimal values</th>
+        <th style="text-align: center">0.0d</th>
+        <th style="text-align: center">1.7976931348623157 x 10^308<br> to<br> 4.9406564584124654 x 10^(-324)</th>
+        <th style="text-align: center"><span style="color: #198754">double</span> d1 = 123.4</th>
+      </tr>
+      <tr>
+        <th style="text-align: center"><span style="color: #198754">boolean</span></th>
+        <th style="text-align: center">This data type is used for simple flags <br>that track true/false conditions</th>
+        <th style="text-align: center">false</th>
+        <th style="text-align: center">true or false</th>
+        <th style="text-align: center"><span style="color: #198754">boolean</span> b = true</th>
+      </tr>
+      <tr>
+        <th style="text-align: center"><span style="color: #198754">char</span></th>
+        <th style="text-align: center">Char data type is used to store any character</th>
+        <th style="text-align: center">0</th>
+        <th style="text-align: center">\u0000 (null) to \uffff (invalid) </th>
+        <th style="text-align: center"><span style="color: #198754">char</span> letterC = 'C'</th>
+      </tr>
+    </table>
+    <br>
+    <h5>Declaring and initializing variables</h5>
+    <p style="font-size: 20px">A variable can only be declared but not be initialized (not giving it a value);<br>int a = 20;<br>Where: int - type<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a - name of variable<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 20 - initial value</p>
+    <button class="btn-logout btn btn-success btn-toggle-menu pull-right" type="button" (click)="goForward()">Next
+      <i class="fa fas-solid fa-arrow-right"></i></button>
+    <button class="btn-logout btn btn-success btn-toggle-menu pull-right" style="margin-right: 10px" type="button" (click)="goBack()">
+      <i style="margin-right: 5px" class="fa fas-solid fa-arrow-left"></i>Go Back
+    </button>
+  </div>
+</div>
+
+<!-- Chapter I operators -->
+
+<div *ngIf="changePageArray[4]" class="row">
+  <div class="col-lg-12">
+    <h1>Chapter I</h1>
+    <h5>Basic Operators</h5>
+    <p style="font-size: 30px; font-weight: bold">Arithmetic Operators</p>
+    <p style="font-size: 20px; font-weight: bold">For this we will take int X = 2 and int Y = 3</p>
+    <table style="width: 80%">
+      <tr>
+        <th style="text-align: center">Operator</th>
+        <th style="text-align: center">Example</th>
+      </tr>
+      <tr>
+        <th style="text-align: center">+ (Addition)</th>
+        <th style="text-align: center">X+Y = 5</th>
+      </tr>
+      <tr>
+        <th style="text-align: center">- (Subtraction)</th>
+        <th style="text-align: center">X-Y = -1</th>
+      </tr>
+      <tr>
+        <th style="text-align: center">* (Multiplication)</th>
+        <th style="text-align: center">X*Y = 6</th>
+      </tr>
+      <tr>
+        <th style="text-align: center">/ (Division)</th>
+        <th style="text-align: center">Y/X = 1</th>
+      </tr>
+      <tr>
+        <th style="text-align: center">% (Modulus)</th>
+        <th style="text-align: center">Y%X = 1</th>
+      </tr>
+      <tr>
+        <th style="text-align: center">++ (Increment)</th>
+        <th style="text-align: center">X++ = 3</th>
+      </tr>
+      <tr>
+        <th style="text-align: center">-- (Decrement)</th>
+        <th style="text-align: center">X-- = 1</th>
+      </tr>
+    </table>
+    <p style="font-size: 30px; font-weight: bold">Relational Operators</p>
+    <p style="font-size: 20px; font-weight: bold">For this we will take int X = 2 and int Y = 3</p>
+    <table style="width: 80%">
+      <tr>
+        <th style="text-align: center">Operator</th>
+        <th style="text-align: center">Example</th>
+      </tr>
+      <tr>
+        <th style="text-align: center">== (equal to)</th>
+        <th style="text-align: center">X == Y is false</th>
+      </tr>
+      <tr>
+        <th style="text-align: center">!= (not equal to)</th>
+        <th style="text-align: center">X != Y is true</th>
+      </tr>
+      <tr>
+        <th style="text-align: center">> (greater than)</th>
+        <th style="text-align: center">X > Y is false</th>
+      </tr>
+      <tr>
+        <th style="text-align: center">< (less than)</th>
+        <th style="text-align: center">X < Y is true</th>
+      </tr>
+      <tr>
+        <th style="text-align: center">>= (greater than or equal to)	</th>
+        <th style="text-align: center">X >= Y is false</th>
+      </tr>
+      <tr>
+        <th style="text-align: center"><= (less than or equal to)</th>
+        <th style="text-align: center">X <= Y is true</th>
+      </tr>
+    </table>
+    <p style="font-size: 30px; font-weight: bold">Logical Operators</p>
+    <p style="font-size: 20px; font-weight: bold">For this we will take boolean X = true and boolean Y = false</p>
+    <table style="width: 80%">
+      <tr>
+        <th style="text-align: center">Operator</th>
+        <th style="text-align: center">Example</th>
+      </tr>
+      <tr>
+        <th style="text-align: center">&& (logical and)</th>
+        <th style="text-align: center">(X && Y) is false</th>
+      </tr>
+      <tr>
+        <th style="text-align: center">|| (logical or)</th>
+        <th style="text-align: center">(X || Y) is true</th>
+      </tr>
+      <tr>
+        <th style="text-align: center">! (logical not)</th>
+        <th style="text-align: center">!X is false</th>
+      </tr>
+    </table>
+    <button class="btn-logout btn btn-success btn-toggle-menu pull-right" type="button" (click)="goForward()">Next
+      <i class="fa fas-solid fa-arrow-right"></i></button>
+    <button class="btn-logout btn btn-success btn-toggle-menu pull-right" style="margin-right: 10px" type="button" (click)="goBack()">
+      <i style="margin-right: 5px" class="fa fas-solid fa-arrow-left"></i>Go Back
+    </button>
+  </div>
+</div>
+
+<!-- Chapter I Loops -->
+
+<div *ngIf="changePageArray[5]" class="row">
+  <div class="col-lg-12">
+    <h1>Chapter I</h1>
+    <h5>Loop Control</h5>
+    <p style="font-size: 20px">There may be a situation when you need to execute a block of code several number of times. In general, statements are executed sequentially: The first statement in a function is executed first, followed by the second, and so on.</p>
+    <p style="font-size: 20px">A <span style="font-weight: bold;color: #198754">loop</span> statement allows us to execute a statement or group of statements multiple times. There are three kind of loops in Java.</p>
+    <p style="font-size: 20px"><span style="font-weight: bold;color: #198754">for loop</span> - Execute a sequence of statements multiple times and abbreviates the code that manages the loop variable.</p>
+    <p style="font-size: 20px">Example:<br> <span style="font-weight: bold;color: #198754">for</span>(starting value; condition; code for each iteration)&#123;<br>&nbsp;&nbsp;&nbsp;&nbsp;\\code to be executed&#125;</p>
+    <p style="font-size: 20px"><span style="font-weight: bold;color: #198754">while loop</span> - Repeats a statement or group of statements while a given condition is true. It tests the condition before executing the loop body.</p>
+    <p style="font-size: 20px">Example:<br> <span style="font-weight: bold;color: #198754">while</span>(condition)&#123;<br>&nbsp;&nbsp;&nbsp;&nbsp;\\code to be executed&#125;</p>
+    <p style="font-size: 20px"><span style="font-weight: bold;color: #198754">do while</span> - Like a while statement, except that it tests the condition at the end of the loop body.</p>
+    <p style="font-size: 20px">Example:<br> <span style="font-weight: bold;color: #198754">do</span>&#123;<br>&nbsp;&nbsp;&nbsp;&nbsp;\\code to be executed<br>&#125;<span style="font-weight: bold;color: #198754">while</span>(condition)</p>
+    <br>
+    <button class="btn-logout btn btn-success btn-toggle-menu pull-right" type="button" (click)="goForward()">Next
+      <i class="fa fas-solid fa-arrow-right"></i></button>
+    <button class="btn-logout btn btn-success btn-toggle-menu pull-right" style="margin-right: 10px" type="button" (click)="goBack()">
+      <i style="margin-right: 5px" class="fa fas-solid fa-arrow-left"></i>Go Back
+    </button>
+  </div>
+</div>
+
+<!-- Chapter I decisions making -->
+
+<div *ngIf="changePageArray[8]" class="row">
+  <div class="col-lg-12">
+    <h1>Chapter I</h1>
+    <h5>Decision Making</h5>
+    <p style="font-size: 20px">Decision making structures have one or more conditions to be evaluated or tested by the program, along with a statement or statements that are to be executed if the condition is determined to be true, and optionally, other statements to be executed if the condition is determined to be false.</p>
+    <table style="width: 100%">
+      <tr>
+        <th style="text-align: center"><span style="color: #198754">If</span> Statement</th>
+        <th style="text-align: center">An if statement consists of a boolean expression followed by one or more statements.</th>
+        <th style="text-align: left"><span style="color: #198754">if</span>(statement)&#123;<br>&nbsp;&nbsp;&nbsp;&nbsp;\\code to be execute if true&#125;</th>
+      </tr>
+      <tr>
+        <th style="text-align: center"><span style="color: #198754">If...else</span> Statement </th>
+        <th style="text-align: center">An if statement can be followed by an optional else statement, which executes when the boolean expression is false.</th>
+        <th style="text-align: left"><span style="color: #198754">if</span>(statement)&#123;<br>&nbsp;&nbsp;&nbsp;&nbsp;\\code to be execute if true<br>&#125; <span style="color: #198754">else</span> &#123;<br>&nbsp;&nbsp;&nbsp;&nbsp; \\different code to be executed if false &#125;</th>
+      </tr>
+      <tr>
+        <th style="text-align: center"><span style="color: #198754">Switch</span> Statement</th>
+        <th style="text-align: center">A switch statement allows a variable to be tested for equality against a list of values.</th>
+        <th style="text-align: left"><span style="color: #198754">switch</span> (variable) &#123;<br>&nbsp;&nbsp;&nbsp;&nbsp;case 1: x = 1; &nbsp;&nbsp;&nbsp;break;<br>&nbsp;&nbsp;&nbsp;&nbsp;case 2: x = 2; &nbsp;&nbsp;&nbsp;break;<br>&nbsp;&nbsp;&nbsp;&nbsp;case 3: x = 3; &nbsp;&nbsp;&nbsp;break;<br>&nbsp;&nbsp;&nbsp;&nbsp;default: x = 0;&#125;</th>
+      </tr>
+    </table>
+    <button class="btn-logout btn btn-success btn-toggle-menu pull-right" type="button" (click)="goForward()">Next
+      <i class="fa fas-solid fa-arrow-right"></i></button>
+    <button class="btn-logout btn btn-success btn-toggle-menu pull-right" style="margin-right: 10px" type="button" (click)="goBack()">
+      <i style="margin-right: 5px" class="fa fas-solid fa-arrow-left"></i>Go Back
+    </button>
+  </div>
+</div>
+
+<!-- Chapter II intro -->
+
+<div *ngIf="changePageArray[10]" class="row">
+  <div class="col-lg-12">
+    <h1>Chapter II</h1>
+    <p style="font-size: 20px">This is the begging of chapter II. In this chapter you will learn about <span style="font-weight: bold; color: #198754">Strings, Arrays </span>and <span style="font-weight: bold; color: #198754">Methods</span>. All the while using the knowledge gained from chapter I.</p>
+    <p style="font-size: 20px">Well without further ado, let's learn <span style="font-weight: bold">Strings</span></p>
+    <button class="btn-logout btn btn-success btn-toggle-menu pull-right" type="button" (click)="goForward()">Next
+      <i class="fa fas-solid fa-arrow-right"></i></button>
+    <button class="btn-logout btn btn-success btn-toggle-menu pull-right" style="margin-right: 10px" type="button" (click)="goBack()">
+      <i style="margin-right: 5px" class="fa fas-solid fa-arrow-left"></i>Go Back
+    </button>
+  </div>
+</div>
+
+<!-- Chapter II Strings -->
+
+<div *ngIf="changePageArray[11]" class="row">
+  <div class="col-lg-12">
+    <h1>Chapter II</h1>
+    <h5>Strings</h5>
+    <p style="font-size: 20px"><span style="font-weight: bold; color: #198754">Strings</span> are widely used in Java programming. They are a sequence of characters. In Java programming language, strings are treated as objects.</p>
+    <p style="font-size: 20px">The Java platform provides the String class to create and manipulate strings.</p>
+    <p style="font-size: 20px">Example: <span style="font-weight: bold; color: #198754">String</span> text = "This is a text example";</p>
+    <p style="font-size: 20px">There are a lot of ways you can work with strings, for example (using the <span style="font-weight: bold">text</span> variable):</p>
+    <p style="font-size: 20px">.length() is used to get how many characters a string is comprised of: <span style="font-weight: bold; color: #198754">text.length()</span>; Result: 22</p>
+    <p style="font-size: 20px">.concat() is used to concatenate another string to the original one: <span style="font-weight: bold; color: #198754">text.concat("cat")</span>; Result: This is a text examplecat</p>
+    <p style="font-size: 20px">The same can be achieved with the + operator: <span style="font-weight: bold; color: #198754">text + "cat"</span>; Result: This is a text examplecat</p>
+    <p style="font-size: 20px">.equals can be used to see if 2 strings are the same: <span style="font-weight: bold; color: #198754">text.equals("cat")</span>; Result: false</p>
+    <p style="font-size: 20px">.toLowerCase or .toUpperCase can be used to transform the string into all lowercase or uppercase respectively: <span style="font-weight: bold; color: #198754">"cat".toUpperCase()</span>; Result: CAT</p>
+    <p style="font-size: 20px">And there are many more ways to interact with strings, but for our purposes for now, this will suffice.</p>
+    <button class="btn-logout btn btn-success btn-toggle-menu pull-right" type="button" (click)="goForward()">Next
+      <i class="fa fas-solid fa-arrow-right"></i></button>
+    <button class="btn-logout btn btn-success btn-toggle-menu pull-right" style="margin-right: 10px" type="button" (click)="goBack()">
+      <i style="margin-right: 5px" class="fa fas-solid fa-arrow-left"></i>Go Back
+    </button>
+  </div>
+</div>
+
+
+
+
+</html>

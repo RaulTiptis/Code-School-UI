@@ -126,7 +126,9 @@ export class JavaModuleComponent implements OnInit {
   currentPosition = 0;
   solutionArray = [null, null, null, null];
   exerciseArray = [null, null, null, null];
-  changePageArray = [true, false, false, false, false, false, false, false, false, false, false, false,false,false,false,false,false,false]
+  changePageArray = [true, false, false, false, false, false, false, false, false, false, false
+    ,false,false,false,false,false,false,false,false
+  ,false,false,false,false,false,false]
 
     constructor(private progressService: ProgressService) {
   }
@@ -146,9 +148,9 @@ export class JavaModuleComponent implements OnInit {
     this.solutionArray = [null, null, null, null];
   }
 
-  goChapterTwo(){
+  goToChapter(chapterNumber){
     this.changePageArray[this.currentPosition] = false;
-    this.currentPosition = 9;
+    this.currentPosition = chapterNumber;
     this.changePageArray[this.currentPosition] = true;
     this.progressService.updateProgress(this.login.progress).subscribe();
     localStorage.setItem('currentUser', JSON.stringify(this.login));

@@ -72,10 +72,10 @@
       <app-java-module [login]="login"></app-java-module>
     </div>
     <div *ngIf="pythonModuleSelected" class="container-fluid">
-      <app-python-module></app-python-module>
+      <app-python-module [login]="login"></app-python-module>
     </div>
     <div *ngIf="cModuleSelected" class="container-fluid">
-      <app-c-module></app-c-module>
+      <app-c-module [login]="login"></app-c-module>
     </div>
     <div *ngIf="achievementModuleSelected" class="container-fluid">
       <app-achievement [login]="login"></app-achievement>
