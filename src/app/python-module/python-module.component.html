@@ -4,7 +4,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css" integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7" crossorigin="anonymous">
   <style>
     table, th, td {
-      border:1px solid black;
+      border: 1px solid black;
     }
   </style>
   <script src="../../assets/scripts/scripts.js"></script>
@@ -15,7 +15,7 @@
     <h5><br>Welcome to the Python module!</h5>
     <h5><br>You may start your Python learning journey by clicking the 'NEXT' button, or click any of the chapters below and go from there.</h5>
     <div class="navbar-header col-lg-12">
-      <button style="margin-top: 30px" class="btn-menu btn btn-success btn-toggle-menu" type="button" data-toggle="collapsible" data-target="#sidebar-wrapper" (click)="goToChapter(10)">
+      <button style="margin-top: 30px" class="btn-menu btn btn-success btn-toggle-menu" type="button" data-toggle="collapsible" data-target="#sidebar-wrapper" (click)="goToChapter(9)">
         Chapter II
       </button>
       <button style="margin-top: 30px;margin-left: 30px" class="btn-menu btn btn-success btn-toggle-menu" type="button" data-toggle="collapsible" data-target="#sidebar-wrapper" (click)="goToChapter(18)">
@@ -32,7 +32,7 @@
 <div *ngIf="changePageArray[1]" class="row">
   <div class="col-lg-12">
     <h1>Chapter I</h1>
-    <p style="font-size: 20px">This is the begging of your python journey.</p>
+    <p style="font-size: 20px">This is the beginning of your python journey.</p>
     <p style="font-size: 20px">In this chapter you will learn about the basic syntax of python, the different variable types, decision making and loops.</p>
     <p style="font-size: 20px">You may click on 'NEXT' to proceed to the basic syntax overview.</p>
     <button class="btn-logout btn btn-success btn-toggle-menu pull-right" type="button" (click)="goForward()">Next
@@ -52,6 +52,7 @@
     <p style="font-size: 25px">Python Identifiers</p>
     <p style="font-size: 20px">A Python identifier is a name used to identify a variable, function, class, module or other object. An identifier starts with a letter A to Z or a to z or an underscore (_) followed by zero or more letters, underscores and digits (0 to 9), for example:<br>
     <br>var1 = 5</p>
+    <p style="font-size: 20px">You may print something to the console by using the print(\\thing to be printed) command;</p>
     <p style="font-size: 25px">Lines and Indentation</p>
     <p style="font-size: 20px">Python provides no braces to indicate blocks of code for class and function definitions or flow control. Blocks of code are denoted by line indentation, which is rigidly enforced, for example:</p>
     <p style="font-size: 20px">if True:<br>&nbsp;&nbsp;&nbsp;&nbsp;print(x)<br>&nbsp;&nbsp;&nbsp;&nbsp;print(y)<br><br>will be CORRECT, but:<br><br>if True:<br>print(x)<br>print(y)<br><br>will give an ERROR.</p>
@@ -95,7 +96,7 @@
     <h1>Chapter I</h1>
     <h5>Loop Control</h5>
     <p style="font-size: 20px">There may be a situation when you need to execute a block of code several number of times. In general, statements are executed sequentially: The first statement in a function is executed first, followed by the second, and so on.</p>
-    <p style="font-size: 20px">A <span style="font-weight: bold;color: #198754">loop</span> statement allows us to execute a statement or group of statements multiple times. There are three kind of loops in Java.</p>
+    <p style="font-size: 20px">A <span style="font-weight: bold;color: #198754">loop</span> statement allows us to execute a statement or group of statements multiple times. There are three kind of loops in python.</p>
     <p style="font-size: 20px"><span style="font-weight: bold;color: #198754">for loop</span> - Execute a sequence of statements multiple times and abbreviates the code that manages the loop variable.</p>
     <p style="font-size: 20px">Example:<br> <span style="font-weight: bold;color: #198754">for</span>(starting value; condition; code for each iteration):<br>&nbsp;&nbsp;&nbsp;&nbsp;\\code to be executed</p>
     <p style="font-size: 20px"><span style="font-weight: bold;color: #198754">while loop</span> - Repeats a statement or group of statements while a given condition is true. It tests the condition before executing the loop body.</p>
@@ -110,6 +111,94 @@
 </div>
 
 <div *ngIf="changePageArray[5]" class="row">
+  <div class="col-lg-12">
+    <h1>Chapter I</h1>
+    <h5>Loop Control</h5>
+    <h5>Please drag n' drop the solutions into the white rectangles</h5>
+    <p style="font-size: 20px">The desired answer is x = 5 <span> <button style="margin-right: 10px; margin-left: 30px" class="btn-menu btn btn-success btn-toggle-menu" type="button" (click)="ex(-1,3,null,null)">
+      Start
+    </button> </span> </p>
+    <p style="font-size: 20px">x = 0<br><span style="font-weight: bold;color: #198754"> for</span>(i = <span class="exContainer1">&nbsp;&nbsp;&nbsp;</span> ;i <= <span class="exContainer2">&nbsp;&nbsp;&nbsp;</span> ; i++) :<br>&nbsp;&nbsp;&nbsp;&nbsp;x = x + i<br>&#125;</p>
+    <div class="navbar-header col-lg-12">
+      <p style="margin-right: 10px;"><span class="solContainer">
+        <span class="draggable" id="sol1" draggable="true">0</span>
+        <span class="draggable" id="sol2" draggable="true">-1</span>
+        <span class="draggable" id="sol3" draggable="true">3</span>
+        <span class="draggable" id="sol4" draggable="true">5</span></span>
+        <button style="margin-right: 10px; margin-left: 30px" class="btn-menu btn btn-success btn-toggle-menu try-button" type="button" [disabled]="trySolutionButton" (click)="trySolution(49)">
+          Try Solution
+        </button>
+        <button style="margin-right: 10px; background-color: #006DFE; border-color: #006DFE" data-modal-target="#modalHint1" class="btn-menu btn btn-success btn-toggle-menu modalOpener" type="button" (click)="hint()">
+          Hint&nbsp;<i class="fa fa-solid fa-lightbulb-o"></i>
+        </button>
+        <i *ngIf="login?.progress.levels[49]" style="color: chartreuse; transform: scale(3); padding-left: 20px" class="fa fa-solid fa-check"></i>
+        <button class="btn-logout btn btn-success btn-toggle-menu pull-right" type="button" (click)="goForward()" [disabled]="!login?.progress.levels[49]">Next
+          <i class="fa fas-solid fa-arrow-right"></i></button>
+        <button class="btn-logout btn btn-success btn-toggle-menu pull-right" style="margin-right: 10px" type="button" (click)="goBack()">
+          <i style="margin-right: 5px" class="fa fas-solid fa-arrow-left"></i>Go Back
+        </button>
+      </p>
+      <div class="modalPop" id="modalHint1">
+        <div class="modalPop-header">
+          <div class="title">Solution</div>
+          <button class="close-button modalCloser">&times;</button>
+        </div>
+        <div class="modalPop-body">
+          <div class="modal-body">
+            <img style="width: 100%; height: 100%" src="assets/images/pythonlevel1.gif" alt=""/>
+          </div>
+        </div>
+      </div>
+      <div class="feedbackOverlay"></div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="changePageArray[6]" class="container-fluid">
+  <div class="col-lg-12">
+    <h1>Chapter I</h1>
+    <h5>Loop Control</h5>
+    <h5>Please drag n' drop the solutions into the white rectangles</h5>
+    <p style="font-size: 20px">The desired answer is x = 5 <span> <button style="margin-right: 10px; margin-left: 30px" class="btn-menu btn btn-success btn-toggle-menu" type="button" (click)="ex(0,-1,null,null)">
+      Start
+    </button> </span> </p>
+    <p style="font-size: 20px">x = <span class="exContainer1">&nbsp;&nbsp;&nbsp;</span>;<br>i = <span class="exContainer2">&nbsp;&nbsp;&nbsp;</span>;<br><span style="font-weight: bold;color: #198754"> while</span>(i <= 3):<br>&nbsp;&nbsp;&nbsp;&nbsp;x = x + i;<br>&nbsp;&nbsp;&nbsp;&nbsp;i++;<br>&#125;</p>
+    <div class="navbar-header col-lg-12">
+      <p style="margin-right: 10px;"><span class="solContainer">
+        <span class="draggable" id="sol5" draggable="true">0</span>
+        <span class="draggable" id="sol6" draggable="true">-1</span>
+        <span class="draggable" id="sol7" draggable="true">3</span>
+        <span class="draggable" id="sol8" draggable="true">5</span></span>
+        <button style="margin-right: 10px; margin-left: 30px" class="btn-menu btn btn-success btn-toggle-menu try-button" type="button" [disabled]="trySolutionButton" (click)="trySolution(50)">
+          Try Solution
+        </button>
+        <button style="margin-right: 10px; background-color: #006DFE; border-color: #006DFE" data-modal-target="#modalHint2" class="btn-menu btn btn-success btn-toggle-menu modalOpener" type="button" (click)="hint()">
+          Hint&nbsp;<i class="fa fa-solid fa-lightbulb-o"></i>
+        </button>
+        <i *ngIf="login?.progress.levels[50]" style="color: chartreuse; transform: scale(3); padding-left: 20px" class="fa fa-solid fa-check"></i>
+        <button class="btn-logout btn btn-success btn-toggle-menu pull-right" type="button" (click)="goForward()" [disabled]="!login?.progress.levels[50]">Next
+          <i class="fa fas-solid fa-arrow-right"></i></button>
+        <button class="btn-logout btn btn-success btn-toggle-menu pull-right" style="margin-right: 10px" type="button" (click)="goBack()">
+          <i style="margin-right: 5px" class="fa fas-solid fa-arrow-left"></i>Go Back
+        </button>
+      </p>
+      <div class="modalPop" id="modalHint2">
+        <div class="modalPop-header">
+          <div class="title">Solution</div>
+          <button class="close-button modalCloser">&times;</button>
+        </div>
+        <div class="modalPop-body">
+          <div class="modal-body">
+            <img style="width: 100%; height: 100%" src="assets/images/pythonlevel2.gif" alt=""/>
+          </div>
+        </div>
+      </div>
+      <div class="feedbackOverlay"></div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="changePageArray[7]" class="row">
   <div class="col-lg-12">
     <h1>Chapter I</h1>
     <h5>Decision Making</h5>
@@ -134,24 +223,68 @@
   </div>
 </div>
 
+<div *ngIf="changePageArray[8]" class="row">
+  <div class="col-lg-12">
+    <h1>Chapter I</h1>
+    <h5>Decision Making</h5>
+    <h5>Please drag n' drop the solutions into the white rectangles</h5>
+    <p style="font-size: 20px">The desired answer is x = 100 <span> <button style="margin-right: 10px; margin-left: 30px" class="btn-menu btn btn-success btn-toggle-menu" type="button" (click)="ex(2,'else',null,null)">
+      Start
+    </button> </span> </p>
+    <p style="font-size: 20px">x = 1<br><span style="color: #198754">if</span>(x > <span class="exContainer1">&nbsp;&nbsp;&nbsp;</span>):<br>&nbsp;&nbsp;&nbsp;&nbsp;x = 50;<br>&#125; <span class="exContainer2">&nbsp;&nbsp;&nbsp;</span> :<br>&nbsp;&nbsp;&nbsp;&nbsp;x = 100;<br>&#125;</p>
+    <div class="navbar-header col-lg-12">
+      <p style="margin-right: 10px;"><span class="solContainer">
+        <span class="draggable" id="sol13" draggable="true">0</span>
+        <span class="draggable" id="sol14" draggable="true">else</span>
+        <span class="draggable" id="sol15" draggable="true">while</span>
+        <span class="draggable" id="sol16" draggable="true">2</span></span>
+        <button style="margin-right: 10px; margin-left: 30px" class="btn-menu btn btn-success btn-toggle-menu try-button" type="button" [disabled]="trySolutionButton" (click)="trySolution(51)">
+          Try Solution
+        </button>
+        <button style="margin-right: 10px; background-color: #006DFE; border-color: #006DFE" data-modal-target="#modalHint3" class="btn-menu btn btn-success btn-toggle-menu modalOpener" type="button" (click)="hint()">
+          Hint&nbsp;<i class="fa fa-solid fa-lightbulb-o"></i>
+        </button>
+        <i *ngIf="login?.progress.levels[51]" style="color: chartreuse; transform: scale(3); padding-left: 20px" class="fa fa-solid fa-check"></i>
+        <button class="btn-logout btn btn-success btn-toggle-menu pull-right" type="button" (click)="goToChapter(10)" [disabled]="!login?.progress.levels[51]">Chapter II
+          <i class="fa fas-solid fa-arrow-right"></i></button>
+        <button class="btn-logout btn btn-success btn-toggle-menu pull-right" style="margin-right: 10px" type="button" (click)="goBack()">
+          <i style="margin-right: 5px" class="fa fas-solid fa-arrow-left"></i>Go Back
+        </button>
+      </p>
+      <div class="modalPop" id="modalHint3">
+        <div class="modalPop-header">
+          <div class="title">Solution</div>
+          <button class="close-button modalCloser">&times;</button>
+        </div>
+        <div class="modalPop-body">
+          <div class="modal-body">
+            <img style="width: 100%; height: 100%" src="assets/images/pythonlevel3.gif" alt=""/>
+          </div>
+        </div>
+      </div>
+      <div class="feedbackOverlay"></div>
+    </div>
+  </div>
+</div>
+
 <!-- Chapter II -->
 
-<div *ngIf="changePageArray[6]" class="row">
+<div *ngIf="changePageArray[9]" class="row">
   <div class="col-lg-12">
     <h1>Chapter II</h1>
     <p style="font-size: 20px">This is the begging of chapter II. In this chapter you will learn about <span style="font-weight: bold; color: #198754">Strings, Lists, Tuples </span>and <span style="font-weight: bold; color: #198754">Functions</span>. All the while using the knowledge gained from chapter I.</p>
     <p style="font-size: 20px">Well without further ado, let's learn <span style="font-weight: bold">Strings</span></p>
     <button class="btn-logout btn btn-success btn-toggle-menu pull-right" type="button" (click)="goForward()">Next
       <i class="fa fas-solid fa-arrow-right"></i></button>
-    <button class="btn-logout btn btn-success btn-toggle-menu pull-right" style="margin-right: 10px" type="button" (click)="goBack()">
-      <i style="margin-right: 5px" class="fa fas-solid fa-arrow-left"></i>Go Back
+    <button class="btn-logout btn btn-success btn-toggle-menu pull-right" style="margin-right: 10px" type="button" (click)="goToChapter(0)">
+      <i style="margin-right: 5px" class="fa fas-solid fa-arrow-left"></i>Go Back to Menu
     </button>
   </div>
 </div>
 
-<div *ngIf="changePageArray[7]" class="row">
+<div *ngIf="changePageArray[10]" class="row">
   <div class="col-lg-12">
-    <h1>Chapter I</h1>
+    <h1>Chapter II</h1>
     <h5>Strings</h5>
     <p style="font-size: 20px">Strings in Python are identified as a continuous set of characters represented in the quotation marks. Python allows for either pairs of single or double quotes. Subsets of strings can be taken using the slice operator ([ ] and [:] ) with indexes starting at 0 in the beginning of the string and working their way from -1 at the end.</p>
     <p style="font-size: 20px">The plus (+) sign is the string concatenation operator and the asterisk (*) is the repetition operator. For example:</p>
@@ -162,6 +295,7 @@
     <p style="font-size: 20px">print str[2:] - prints string starting from 3rd character - llo World!</p>
     <p style="font-size: 20px">print str * 2 - prints string two times - Hello World!Hello World!</p>
     <p style="font-size: 20px">print print str + "TEST" - prints concatenated string - Hello World!TEST</p>
+    <p style="font-size: 20px">You may also loop through the characters of the string with something like: <span style="font-weight: bold">for char in str</span>:</p>
     <button class="btn-logout btn btn-success btn-toggle-menu pull-right" type="button" (click)="goForward()">Next
       <i class="fa fas-solid fa-arrow-right"></i></button>
     <button class="btn-logout btn btn-success btn-toggle-menu pull-right" style="margin-right: 10px" type="button" (click)="goBack()">
@@ -170,9 +304,53 @@
   </div>
 </div>
 
-<div *ngIf="changePageArray[8]" class="row">
+<div *ngIf="changePageArray[11]" class="row">
   <div class="col-lg-12">
-    <h1>Chapter I</h1>
+    <h1>Chapter II</h1>
+    <h5>Strings</h5>
+    <h5>Please drag n' drop the solutions into the white rectangles</h5>
+    <p style="font-size: 20px">The desired answer rsouce <span> <button style="margin-right: 10px; margin-left: 30px" class="btn-menu btn btn-success btn-toggle-menu" type="button" (click)="ex('str[0]','str[2:5]','str[6:8]',null)">
+      Start
+    </button> </span> </p>
+    <p style="font-size: 20px">str = resource;<br><span class="exContainer1">&nbsp;&nbsp;&nbsp;</span> + <span class="exContainer2">&nbsp;&nbsp;&nbsp;</span> + <span class="exContainer3">&nbsp;&nbsp;&nbsp;</span>;</p>
+    <div class="navbar-header col-lg-12">
+      <p style="margin-right: 10px;"><span class="solContainer">
+        <span class="draggable" id="sol17" draggable="true">str[0]</span>
+        <span class="draggable" id="sol18" draggable="true">str[2:5]</span>
+        <span class="draggable" id="sol19" draggable="true">str[6:8]</span>
+        <span class="draggable" id="sol20" draggable="true">str[3:5]</span></span>
+        <button style="margin-right: 10px; margin-left: 30px" class="btn-menu btn btn-success btn-toggle-menu try-button" type="button" [disabled]="trySolutionButton" (click)="trySolution(52)">
+          Try Solution
+        </button>
+        <button style="margin-right: 10px; background-color: #006DFE; border-color: #006DFE" data-modal-target="#modalHint4" class="btn-menu btn btn-success btn-toggle-menu modalOpener" type="button" (click)="hint()">
+          Hint&nbsp;<i class="fa fa-solid fa-lightbulb-o"></i>
+        </button>
+        <i *ngIf="login?.progress.levels[52]" style="color: chartreuse; transform: scale(3); padding-left: 20px" class="fa fa-solid fa-check"></i>
+        <button class="btn-logout btn btn-success btn-toggle-menu pull-right" type="button" (click)="goForward()" [disabled]="!login?.progress.levels[52]">Next
+          <i class="fa fas-solid fa-arrow-right"></i></button>
+        <button class="btn-logout btn btn-success btn-toggle-menu pull-right" style="margin-right: 10px" type="button" (click)="goBack()">
+          <i style="margin-right: 5px" class="fa fas-solid fa-arrow-left"></i>Go Back
+        </button>
+      </p>
+      <div class="modalPop" id="modalHint4">
+        <div class="modalPop-header">
+          <div class="title">Solution</div>
+          <button class="close-button modalCloser">&times;</button>
+        </div>
+        <div class="modalPop-body">
+          <div class="modal-body">
+            <img style="width: 100%; height: 100%" src="assets/images/pythonlevel4.gif" alt=""/>
+          </div>
+        </div>
+      </div>
+      <div class="feedbackOverlay"></div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="changePageArray[12]" class="row">
+  <div class="col-lg-12">
+    <h1>Chapter II</h1>
     <h5>Lists</h5>
     <p style="font-size: 20px">Lists are the most versatile of Python's compound data types. A list contains items separated by commas and enclosed within square brackets ([]). To some extent, lists are similar to arrays in C. One difference between them is that all the items belonging to a list can be of different data type.</p>
     <p style="font-size: 20px">The values stored in a list can be accessed using the slice operator ([ ] and [:]) with indexes starting at 0 in the beginning of the list and working their way to end -1. The plus (+) sign is the list concatenation operator, and the asterisk (*) is the repetition operator. For example:</p>
@@ -183,6 +361,7 @@
     <p style="font-size: 20px">print list[2:] - prints elements starting from 3rd element - [2.23, 'john', 70.2]</p>
     <p style="font-size: 20px">print list * 2 - prints list two times - [ 'abcd', 786 , 2.23, 'john', 70.2 , 'abcd', 786 , 2.23, 'john', 70.2 ]</p>
     <p style="font-size: 20px">print list + ['test'] - prints concatenated lists - [ 'abcd', 786 , 2.23, 'john', 70.2 , 'test']</p>
+    <p style="font-size: 20px">You may also loop through the list with something like: <span style="font-weight: bold">for word in list</span>:</p>
     <button class="btn-logout btn btn-success btn-toggle-menu pull-right" type="button" (click)="goForward()">Next
       <i class="fa fas-solid fa-arrow-right"></i></button>
     <button class="btn-logout btn btn-success btn-toggle-menu pull-right" style="margin-right: 10px" type="button" (click)="goBack()">
@@ -191,9 +370,56 @@
   </div>
 </div>
 
-<div *ngIf="changePageArray[9]" class="row">
+
+
+<div *ngIf="changePageArray[13]" class="row">
   <div class="col-lg-12">
-    <h1>Chapter I</h1>
+    <h1>Chapter II</h1>
+    <h5>Lists</h5>
+    <h5>Please drag n' drop the solutions into the white rectangles</h5>
+    <p style="font-size: 20px">The desired answer: match words with 2 or more letters<br>with the same starting and ending letters(result: 2)<span> <button style="margin-right: 10px; margin-left: 30px" class="btn-menu btn btn-success btn-toggle-menu" type="button" (click)="ex('list','word','=',null)">
+      Start
+    </button> </span> </p>
+    <p style="font-size: 20px">list = ['abc', 'xyz', 'aba', '1221']<br>ctr = 0<br>for word in <span class="exContainer1">&nbsp;&nbsp;&nbsp;</span>:<br>&nbsp;&nbsp;&nbsp;&nbsp;if len(<span class="exContainer2">&nbsp;&nbsp;&nbsp;</span>) > 1 && word[0] <span class="exContainer3">&nbsp;&nbsp;&nbsp;</span> word[-1]:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ctr = ctr + 1<br>
+      print(ctr)</p>
+    <div class="navbar-header col-lg-12">
+      <p style="margin-right: 10px;"><span class="solContainer">
+        <span class="draggable" id="sol21" draggable="true">word</span>
+        <span class="draggable" id="sol22" draggable="true">list</span>
+        <span class="draggable" id="sol23" draggable="true">=</span>
+        <span class="draggable" id="sol24" draggable="true">!=</span></span>
+        <button style="margin-right: 10px; margin-left: 30px" class="btn-menu btn btn-success btn-toggle-menu try-button" type="button" [disabled]="trySolutionButton" (click)="trySolution(53)">
+          Try Solution
+        </button>
+        <button style="margin-right: 10px; background-color: #006DFE; border-color: #006DFE" data-modal-target="#modalHint5" class="btn-menu btn btn-success btn-toggle-menu modalOpener" type="button" (click)="hint()">
+          Hint&nbsp;<i class="fa fa-solid fa-lightbulb-o"></i>
+        </button>
+        <i *ngIf="login?.progress.levels[53]" style="color: chartreuse; transform: scale(3); padding-left: 20px" class="fa fa-solid fa-check"></i>
+        <button class="btn-logout btn btn-success btn-toggle-menu pull-right" type="button" (click)="goForward()" [disabled]="!login?.progress.levels[53]">Next
+          <i class="fa fas-solid fa-arrow-right"></i></button>
+        <button class="btn-logout btn btn-success btn-toggle-menu pull-right" style="margin-right: 10px" type="button" (click)="goBack()">
+          <i style="margin-right: 5px" class="fa fas-solid fa-arrow-left"></i>Go Back
+        </button>
+      </p>
+      <div class="modalPop" id="modalHint5">
+        <div class="modalPop-header">
+          <div class="title">Solution</div>
+          <button class="close-button modalCloser">&times;</button>
+        </div>
+        <div class="modalPop-body">
+          <div class="modal-body">
+            <img style="width: 100%; height: 100%" src="assets/images/pythonlevel5.gif" alt=""/>
+          </div>
+        </div>
+      </div>
+      <div class="feedbackOverlay"></div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="changePageArray[14]" class="row">
+  <div class="col-lg-12">
+    <h1>Chapter II</h1>
     <h5>Tuples</h5>
     <p style="font-size: 20px">A tuple is another sequence data type that is similar to the list. A tuple consists of a number of values separated by commas. Unlike lists, however, tuples are enclosed within parentheses.</p>
     <p style="font-size: 20px">The main differences between lists and tuples are: Lists are enclosed in brackets ( [ ] ) and their elements and size can be changed, while tuples are enclosed in parentheses ( ( ) ) and cannot be updated. Tuples can be thought of as read-only lists. For example:</p>
@@ -204,6 +430,7 @@
     <p style="font-size: 20px">print tuple[2:] - prints elements starting from 3rd element - (2.23, 'john', 70.2)</p>
     <p style="font-size: 20px">print tuple * 2 - prints tuple two times - ( 'abcd', 786 , 2.23, 'john', 70.2 , 'abcd', 786 , 2.23, 'john', 70.2 )</p>
     <p style="font-size: 20px">print tuple + ('test') - prints concatenated tuples - ( 'abcd', 786 , 2.23, 'john', 70.2 , 'test')</p>
+    <p style="font-size: 20px">You may also loop through the list with something like: <span style="font-weight: bold">for word in tuple</span>:</p>
     <p style="font-size: 20px">The following code is invalid with tuple, because we attempted to update a tuple, which is not allowed. Similar case is possible with lists:<br>tuple[2] = 'test' - invalid<br>list[2] = 'test' - valid</p>
     <button class="btn-logout btn btn-success btn-toggle-menu pull-right" type="button" (click)="goForward()">Next
       <i class="fa fas-solid fa-arrow-right"></i></button>
@@ -213,9 +440,54 @@
   </div>
 </div>
 
-<div *ngIf="changePageArray[10]" class="row">
+<div *ngIf="changePageArray[15]" class="row">
   <div class="col-lg-12">
-    <h1>Chapter I</h1>
+    <h1>Chapter II</h1>
+    <h5>Tuples</h5>
+    <h5>Please drag n' drop the solutions into the white rectangles</h5>
+    <p style="font-size: 20px">The desired answer: match words with 2 or more letters<br>that don't start and end in the same letters(result: 2)<span> <button style="margin-right: 10px; margin-left: 30px" class="btn-menu btn btn-success btn-toggle-menu" type="button" (click)="ex('tuple','word','!=',null)">
+      Start
+    </button> </span> </p>
+    <p style="font-size: 20px">tuple = ('abc', 'xyz', 'aba', '1221')<br>ctr = 0<br>for word in <span class="exContainer1">&nbsp;&nbsp;&nbsp;</span>:<br>&nbsp;&nbsp;&nbsp;&nbsp;if len(<span class="exContainer2">&nbsp;&nbsp;&nbsp;</span>) > 1 && word[0] <span class="exContainer3">&nbsp;&nbsp;&nbsp;</span> word[-1]:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ctr = ctr + 1<br>
+      print(ctr)</p>
+    <div class="navbar-header col-lg-12">
+      <p style="margin-right: 10px;"><span class="solContainer">
+        <span class="draggable" id="sol25" draggable="true">word</span>
+        <span class="draggable" id="sol26" draggable="true">tuple</span>
+        <span class="draggable" id="sol27" draggable="true">=</span>
+        <span class="draggable" id="sol28" draggable="true">!=</span></span>
+        <button style="margin-right: 10px; margin-left: 30px" class="btn-menu btn btn-success btn-toggle-menu try-button" type="button" [disabled]="trySolutionButton" (click)="trySolution(54)">
+          Try Solution
+        </button>
+        <button style="margin-right: 10px; background-color: #006DFE; border-color: #006DFE" data-modal-target="#modalHint6" class="btn-menu btn btn-success btn-toggle-menu modalOpener" type="button" (click)="hint()">
+          Hint&nbsp;<i class="fa fa-solid fa-lightbulb-o"></i>
+        </button>
+        <i *ngIf="login?.progress.levels[54]" style="color: chartreuse; transform: scale(3); padding-left: 20px" class="fa fa-solid fa-check"></i>
+        <button class="btn-logout btn btn-success btn-toggle-menu pull-right" type="button" (click)="goForward()" [disabled]="!login?.progress.levels[54]">Next
+          <i class="fa fas-solid fa-arrow-right"></i></button>
+        <button class="btn-logout btn btn-success btn-toggle-menu pull-right" style="margin-right: 10px" type="button" (click)="goBack()">
+          <i style="margin-right: 5px" class="fa fas-solid fa-arrow-left"></i>Go Back
+        </button>
+      </p>
+      <div class="modalPop" id="modalHint6">
+        <div class="modalPop-header">
+          <div class="title">Solution</div>
+          <button class="close-button modalCloser">&times;</button>
+        </div>
+        <div class="modalPop-body">
+          <div class="modal-body">
+            <img style="width: 100%; height: 100%" src="assets/images/pythonlevel6.gif" alt=""/>
+          </div>
+        </div>
+      </div>
+      <div class="feedbackOverlay"></div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="changePageArray[16]" class="row">
+  <div class="col-lg-12">
+    <h1>Chapter II</h1>
     <h5>Functions</h5>
     <p style="font-size: 20px">A function is a block of organized, reusable code that is used to perform a single, related action. Functions provide better modularity for your application and a high degree of code reusing.</p>
     <p style="font-size: 20px">As you already know, Python gives you many built-in functions like print(), etc. but you can also create your own functions. These functions are called user-defined functions.</p>
@@ -237,5 +509,207 @@
   </div>
 </div>
 
+<div *ngIf="changePageArray[17]" class="row">
+  <div class="col-lg-12">
+    <h1>Chapter II</h1>
+    <h5>Functions</h5>
+    <h5>Please drag n' drop the solutions into the white rectangles</h5>
+    <p style="font-size: 20px">The desired result: 35 <span> <button style="margin-right: 10px; margin-left: 30px" class="btn-menu btn btn-success btn-toggle-menu" type="button" (click)="ex('b','x',null,null)">
+      Start
+    </button> </span> </p>
+    <p style="font-size: 20px">def sum(a, b):<br>&nbsp;&nbsp;&nbsp;&nbsp;res = a + b;<br>&nbsp;&nbsp;&nbsp;&nbsp;return res;<br>a = 5;<br>b = 10;<br>c = 20;<br>x = sum(<span class="exContainer1">&nbsp;&nbsp;&nbsp;</span>, a);
+      <br>y = sum(c, <span class="exContainer2">&nbsp;&nbsp;&nbsp;</span>);<br>System.out.print(y);</p>
+    <div class="navbar-header col-lg-12">
+      <p style="margin-right: 10px;"><span class="solContainer">
+        <span class="draggable" id="sol29" draggable="true">b</span>
+        <span class="draggable" id="sol30" draggable="true">a</span>
+        <span class="draggable" id="sol31" draggable="true">x</span>
+        <span class="draggable" id="sol32" draggable="true">c</span></span>
+        <button style="margin-right: 10px; margin-left: 30px" class="btn-menu btn btn-success btn-toggle-menu try-button" type="button" [disabled]="trySolutionButton" (click)="trySolution(55)">
+          Try Solution
+        </button>
+        <button style="margin-right: 10px; background-color: #006DFE; border-color: #006DFE" data-modal-target="#modalHint7" class="btn-menu btn btn-success btn-toggle-menu modalOpener" type="button" (click)="hint()">
+          Hint&nbsp;<i class="fa fa-solid fa-lightbulb-o"></i>
+        </button>
+        <i *ngIf="login?.progress.levels[55]" style="color: chartreuse; transform: scale(3); padding-left: 20px" class="fa fa-solid fa-check"></i>
+        <button class="btn-logout btn btn-success btn-toggle-menu pull-right" type="button" (click)="goToChapter(18)" [disabled]="!login?.progress.levels[55]">Chapter III
+          <i class="fa fas-solid fa-arrow-right"></i></button>
+        <button class="btn-logout btn btn-success btn-toggle-menu pull-right" style="margin-right: 10px" type="button" (click)="goBack()">
+          <i style="margin-right: 5px" class="fa fas-solid fa-arrow-left"></i>Go Back
+        </button>
+      </p>
+      <div class="modalPop" id="modalHint7">
+        <div class="modalPop-header">
+          <div class="title">Solution</div>
+          <button class="close-button modalCloser">&times;</button>
+        </div>
+        <div class="modalPop-body">
+          <div class="modal-body">
+            <img style="width: 100%; height: 100%" src="assets/images/pythonlevel7.gif" alt=""/>
+          </div>
+        </div>
+      </div>
+      <div class="feedbackOverlay"></div>
+    </div>
+  </div>
+</div>
+
+
+<div *ngIf="changePageArray[18]" class="row">
+  <div class="col-lg-12">
+    <h1>Chapter III</h1>
+    <h5 style="font-size: 20px">This chapter is about practising all that you have learned in the previous 2 chapters.</h5>
+    <h5>If you have not completed them yet, we suggest you do, so that you may be equipped with the knowledge necessary to complete the following exercises.</h5>
+    <button class="btn-logout btn btn-success btn-toggle-menu pull-right" type="button" (click)="goForward()">Next
+      <i class="fa fas-solid fa-arrow-right"></i></button>
+    <button class="btn-logout btn btn-success btn-toggle-menu pull-right" style="margin-right: 10px" type="button" (click)="goToChapter(0)">
+      <i style="margin-right: 5px" class="fa fas-solid fa-arrow-left"></i>Go Back To Menu
+    </button>
+  </div>
+</div>
+
+
+<div *ngIf="changePageArray[19]" class="row">
+  <div class="col-lg-12">
+    <h1>Chapter III</h1>
+    <h5>Exercises</h5>
+    <h5>Please drag n' drop the solutions into the white rectangles</h5>
+    <p style="font-size: 20px">The desired result: Palindrome <span> <button style="margin-right: 10px; margin-left: 30px" class="btn-menu btn btn-success btn-toggle-menu" type="button" (click)="ex('len(word)','maxLength',null,null)">
+      Start
+    </button> </span> </p>
+    <p style="font-size: 20px">def longestString(words):<br>&nbsp;&nbsp;&nbsp;&nbsp;maxLength = 0;<br>&nbsp;&nbsp;&nbsp;&nbsp;longest = "";<br>&nbsp;&nbsp;&nbsp;&nbsp;for word in words:<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(<span class="exContainer1">&nbsp;&nbsp;&nbsp;</span> > <span class="exContainer2">&nbsp;&nbsp;&nbsp;</span>):<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;maxLength = len(word);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;longest = word<br>&nbsp;&nbsp;&nbsp;&nbsp;return longest;<br>list = ['Car', 'Meow', 'Palindrome', 'Musician'];<br>print(longestString(list))</p>
+    <div class="navbar-header col-lg-12">
+      <p style="margin-right: 10px;"><span class="solContainer">
+        <span class="draggable" id="sol33" draggable="true">len(word)</span>
+        <span class="draggable" id="sol34" draggable="true">word</span>
+        <span class="draggable" id="sol35" draggable="true">maxLength</span>
+        <span class="draggable" id="sol36" draggable="true">longest = 'Palindrome'</span></span>
+        <button style="margin-right: 10px; margin-left: 30px" class="btn-menu btn btn-success btn-toggle-menu try-button" type="button" [disabled]="trySolutionButton" (click)="trySolution(56)">
+          Try Solution
+        </button>
+        <button style="margin-right: 10px; background-color: #006DFE; border-color: #006DFE" data-modal-target="#modalHint8" class="btn-menu btn btn-success btn-toggle-menu modalOpener" type="button" (click)="hint()">
+          Hint&nbsp;<i class="fa fa-solid fa-lightbulb-o"></i>
+        </button>
+        <i *ngIf="login?.progress.levels[56]" style="color: chartreuse; transform: scale(3); padding-left: 20px" class="fa fa-solid fa-check"></i>
+        <button class="btn-logout btn btn-success btn-toggle-menu pull-right" type="button" (click)="goForward()" [disabled]="!login?.progress.levels[56]">Next
+          <i class="fa fas-solid fa-arrow-right"></i></button>
+        <button class="btn-logout btn btn-success btn-toggle-menu pull-right" style="margin-right: 10px" type="button" (click)="goBack()">
+          <i style="margin-right: 5px" class="fa fas-solid fa-arrow-left"></i>Go Back
+        </button>
+      </p>
+      <div class="modalPop" id="modalHint8">
+        <div class="modalPop-header">
+          <div class="title">Solution</div>
+          <button class="close-button modalCloser">&times;</button>
+        </div>
+        <div class="modalPop-body">
+          <div class="modal-body">
+            <img style="width: 100%; height: 100%" src="assets/images/pythonlevel8.gif" alt=""/>
+          </div>
+        </div>
+      </div>
+      <div class="feedbackOverlay"></div>
+    </div>
+  </div>
+</div>
+
+
+<div *ngIf="changePageArray[20]" class="row">
+  <div class="col-lg-12">
+    <h1>Chapter III</h1>
+    <h5>Exercises</h5>
+    <h5>Please drag n' drop the solutions into the white rectangles</h5>
+    <p style="font-size: 20px">The desired result: Reverse the array <span> <button style="margin-right: 10px; margin-left: 30px" class="btn-menu btn btn-success btn-toggle-menu" type="button" (click)="ex('reverse[i]','len(list)','-i',null)">
+      Start
+    </button> </span> </p>
+    <p style="font-size: 20px">list = ['one', 'two','three','four', 'five']<br>reverse = ["", "", "", "", ""]
+      <br>for(i = 0;i < len(list);i++):<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="exContainer1">&nbsp;&nbsp;&nbsp;</span> = list[<span class="exContainer2">&nbsp;&nbsp;&nbsp;</span> <span class="exContainer3">&nbsp;&nbsp;&nbsp;</span>-(1)];<br>&nbsp;&nbsp;&nbsp;&nbsp;print(reverse[i])</p>
+    <div class="navbar-header col-lg-12">
+      <p style="margin-right: 10px;"><span class="solContainer">
+        <span class="draggable" id="sol37" draggable="true">len(list)</span>
+        <span class="draggable" id="sol38" draggable="true">-i</span>
+        <span class="draggable" id="sol39" draggable="true">reverse[i]</span>
+        <span class="draggable" id="sol40" draggable="true">+i</span></span>
+        <button style="margin-right: 10px; margin-left: 30px" class="btn-menu btn btn-success btn-toggle-menu try-button" type="button" [disabled]="trySolutionButton" (click)="trySolution(57)">
+          Try Solution
+        </button>
+        <button style="margin-right: 10px; background-color: #006DFE; border-color: #006DFE" data-modal-target="#modalHint9" class="btn-menu btn btn-success btn-toggle-menu modalOpener" type="button" (click)="hint()">
+          Hint&nbsp;<i class="fa fa-solid fa-lightbulb-o"></i>
+        </button>
+        <i *ngIf="login?.progress.levels[57]" style="color: chartreuse; transform: scale(3); padding-left: 20px" class="fa fa-solid fa-check"></i>
+        <button class="btn-logout btn btn-success btn-toggle-menu pull-right" type="button" (click)="goForward()" [disabled]="!login?.progress.levels[57]">Next
+          <i class="fa fas-solid fa-arrow-right"></i></button>
+        <button class="btn-logout btn btn-success btn-toggle-menu pull-right" style="margin-right: 10px" type="button" (click)="goBack()">
+          <i style="margin-right: 5px" class="fa fas-solid fa-arrow-left"></i>Go Back
+        </button>
+      </p>
+      <div class="modalPop" id="modalHint9">
+        <div class="modalPop-header">
+          <div class="title">Solution</div>
+          <button class="close-button modalCloser">&times;</button>
+        </div>
+        <div class="modalPop-body">
+          <div class="modal-body">
+            <img style="width: 100%; height: 100%" src="assets/images/pythonlevel9.gif" alt=""/>
+          </div>
+        </div>
+      </div>
+      <div class="feedbackOverlay"></div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="changePageArray[21]" class="row">
+  <div class="col-lg-12">
+    <h1>Chapter III</h1>
+    <h5>Exercises</h5>
+    <h5>Please drag n' drop the solutions into the white rectangles</h5>
+    <p style="font-size: 20px">The desired result: 3 <span> <button style="margin-right: 10px; margin-left: 30px" class="btn-menu btn btn-success btn-toggle-menu" type="button" (click)="ex('i < len(list)','!list[i]',null,null)">
+      Start
+    </button> </span> </p>
+    <p style="font-size: 20px">def checkTruths(list):<br>&nbsp;&nbsp;&nbsp;&nbsp;not = 0<br>&nbsp;&nbsp;&nbsp;&nbsp;while(<span class="exContainer1">&nbsp;&nbsp;&nbsp;</span>):<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(<span class="exContainer2">&nbsp;&nbsp;&nbsp;</span>):<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;not++<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i++<br>&nbsp;&nbsp;&nbsp;&nbsp;return not;<br><br>list = [false,false,true,false]<br>x = checkTruths(list)<br>print(x)</p>
+    <div class="navbar-header col-lg-12">
+      <p style="margin-right: 10px;"><span class="solContainer">
+        <span class="draggable" id="sol9" draggable="true">i < len(list)</span>
+        <span class="draggable" id="sol10" draggable="true">i > len(list)</span>
+        <span class="draggable" id="sol11" draggable="true">list[i]</span>
+        <span class="draggable" id="sol12" draggable="true">!list[i]</span></span>
+        <button style="margin-right: 10px; margin-left: 30px" class="btn-menu btn btn-success btn-toggle-menu try-button" type="button" [disabled]="trySolutionButton" (click)="trySolution(58)">
+          Try Solution
+        </button>
+        <button style="margin-right: 10px; background-color: #006DFE; border-color: #006DFE" data-modal-target="#modalHint10" class="btn-menu btn btn-success btn-toggle-menu modalOpener" type="button" (click)="hint()">
+          Hint&nbsp;<i class="fa fa-solid fa-lightbulb-o"></i>
+        </button>
+        <i *ngIf="login?.progress.levels[58]" style="color: chartreuse; transform: scale(3); padding-left: 20px" class="fa fa-solid fa-check"></i>
+        <button class="btn-logout btn btn-success btn-toggle-menu pull-right" type="button" (click)="goForward()" [disabled]="!login?.progress.levels[58]">Next
+          <i class="fa fas-solid fa-arrow-right"></i></button>
+        <button class="btn-logout btn btn-success btn-toggle-menu pull-right" style="margin-right: 10px" type="button" (click)="goBack()">
+          <i style="margin-right: 5px" class="fa fas-solid fa-arrow-left"></i>Go Back
+        </button>
+      </p>
+      <div class="modalPop" id="modalHint10">
+        <div class="modalPop-header">
+          <div class="title">Solution</div>
+          <button class="close-button modalCloser">&times;</button>
+        </div>
+        <div class="modalPop-body">
+          <div class="modal-body">
+            <img style="width: 100%; height: 100%" src="assets/images/pythonlevel10.gif" alt=""/>
+          </div>
+        </div>
+      </div>
+      <div class="feedbackOverlay"></div>
+    </div>
+  </div>
+</div>
+
+
+<div *ngIf="changePageArray[22]" class="row">
+  <div class="col-lg-12">
+    <h1 style="text-align: center">CONGRATULATIONS, YOU HAVE COMPLETED THIS MODULE.</h1>
+  </div>
+</div>
 
 </html>

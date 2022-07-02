@@ -228,7 +228,7 @@ ul li:hover a{
   padding: 10px 15px;
 }
 
-#feedbackOverlay {
+.feedbackOverlay {
   position: fixed;
   transition: 200ms ease-in-out;
   opacity: 0;
@@ -240,7 +240,7 @@ ul li:hover a{
   pointer-events: none;
 }
 
-#feedbackOverlay.active {
+.feedbackOverlay.active {
   opacity: 0;
   pointer-events: all;
 }

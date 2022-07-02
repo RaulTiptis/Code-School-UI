@@ -15,10 +15,10 @@
     <h5><br>Welcome to the C/C++ module!</h5>
     <h5><br>You may start your C/C++ learning journey by clicking the 'NEXT' button, or click any of the chapters below and go from there.</h5>
     <div class="navbar-header col-lg-12">
-      <button style="margin-top: 30px" class="btn-menu btn btn-success btn-toggle-menu" type="button" data-toggle="collapsible" data-target="#sidebar-wrapper" (click)="goToChapter(9)">
+      <button style="margin-top: 30px" class="btn-menu btn btn-success btn-toggle-menu" type="button" data-toggle="collapsible" data-target="#sidebar-wrapper" (click)="goToChapter(10)">
         Chapter II
       </button>
-      <button style="margin-top: 30px;margin-left: 30px" class="btn-menu btn btn-success btn-toggle-menu" type="button" data-toggle="collapsible" data-target="#sidebar-wrapper" (click)="goToChapter(18)">
+      <button style="margin-top: 30px;margin-left: 30px" class="btn-menu btn btn-success btn-toggle-menu" type="button" data-toggle="collapsible" data-target="#sidebar-wrapper" (click)="goToChapter(17)">
         Chapter III
       </button>
       <a style="margin-top: 30px" class="btn-logout btn btn-success btn-toggle-menu pull-right" type="button" (click)="goForward()">Next
@@ -32,10 +32,10 @@
 <div *ngIf="changePageArray[1]" class="row">
   <div class="col-lg-12">
     <h1>Chapter I</h1>
-    <p style="font-size: 20px">Before we begin there are a few things you must know:<br><br>A C/C++ program is collection of objects that communicate via invoking each other's methods. As a starter let's look at what do class, object, methods, and instance variables mean.</p>
+    <p style="font-size: 20px">Before we begin there are a few things you must know:<br><br>A C/C++ program is collection of objects that communicate via invoking each other's functions. As a starter let's look at what do class, object, functions, and instance variables mean.</p>
     <p style="font-size: 20px"><span style="font-weight: bold">Object</span> − Objects have states and behaviors. As an example a car has both states (color, number of tires) and behaviors (accelerate, break). An object is an instance of a class.</p>
     <p style="font-size: 20px"><span style="font-weight: bold">Class</span> - A class can be defined as a template that describes the behavior/state that the object of its type supports.</p>
-    <p style="font-size: 20px"><span style="font-weight: bold">Methods</span> - A method refers to a behaviour. A class can contain many methods.</p>
+    <p style="font-size: 20px"><span style="font-weight: bold">functions</span> - A function refers to a behaviour. A class can contain many functions.</p>
     <p style="font-size: 20px"><span style="font-weight: bold">Instance Variables</span> - Each object has its unique set of instance variables. An object's state is created by the values assigned to these instance variables.<br></p>
     <p style="font-size: 20px"><span style="font-weight: bold">Printing out to the console syntax</span> - <span style="font-weight: bold">cout << </span>  \\thing to be printed</p>
     <p style="font-size: 20px">For now this is all that you need to know. All this information might seem like a lot at first, but as you go through the module, all of this information will become easier to digest.</p>
@@ -138,7 +138,8 @@
     <p style="font-size: 20px"><span> <button style="margin-right: 10px; margin-left: 30px" class="btn-menu btn btn-success btn-toggle-menu" type="button" (click)="ex('boolean','float','char','int')">
       Start
     </button> </span> </p>
-    <p style="font-size: 20px"><span class="exContainer1">&nbsp;&nbsp;&nbsp;</span> x = true<br>
+    <p style="font-size: 20px">
+      <span class="exContainer1">&nbsp;&nbsp;&nbsp;</span> x = true<br>
       <span class="exContainer2">&nbsp;&nbsp;&nbsp;</span> y = 34.5f<br>
       <span class="exContainer3">&nbsp;&nbsp;&nbsp;</span> z = 'N'<br>
       <span class="exContainer4">&nbsp;&nbsp;&nbsp;</span> w = 42156</p>
@@ -148,19 +149,31 @@
         <span class="draggable" id="sol10" draggable="true">float</span>
         <span class="draggable" id="sol11" draggable="true">char</span>
         <span class="draggable" id="sol12" draggable="true">boolean</span></span>
-        <button style="margin-right: 10px; margin-left: 30px" class="btn-menu btn btn-success btn-toggle-menu try-button" type="button" [disabled]="trySolutionButton" (click)="trySolution(49)">
+        <button style="margin-right: 10px; margin-left: 30px" class="btn-menu btn btn-success btn-toggle-menu try-button" type="button" [disabled]="trySolutionButton" (click)="trySolution(100)">
           Try Solution
         </button>
-        <button style="margin-right: 10px; background-color: #006DFE; border-color: #006DFE" class="btn-menu btn btn-success btn-toggle-menu" type="button">
+        <button style="margin-right: 10px; background-color: #006DFE; border-color: #006DFE" data-modal-target="#modalHint1" class="btn-menu btn btn-success btn-toggle-menu modalOpener" type="button" (click)="hint()">
           Hint&nbsp;<i class="fa fa-solid fa-lightbulb-o"></i>
         </button>
-        <i *ngIf="login?.progress.levels[49]" style="color: chartreuse; transform: scale(3); padding-left: 20px" class="fa fa-solid fa-check"></i>
-        <button class="btn-logout btn btn-success btn-toggle-menu pull-right" type="button" (click)="goForward()" [disabled]="!login?.progress.levels[49]">Next
+        <i *ngIf="login?.progress.levels[100]" style="color: chartreuse; transform: scale(3); padding-left: 20px" class="fa fa-solid fa-check"></i>
+        <button class="btn-logout btn btn-success btn-toggle-menu pull-right" type="button" (click)="goForward()" [disabled]="!login?.progress.levels[100]">Next
           <i class="fa fas-solid fa-arrow-right"></i></button>
         <button class="btn-logout btn btn-success btn-toggle-menu pull-right" style="margin-right: 10px" type="button" (click)="goBack()">
           <i style="margin-right: 5px" class="fa fas-solid fa-arrow-left"></i>Go Back
         </button>
       </p>
+      <div class="modalPop" id="modalHint1">
+        <div class="modalPop-header">
+          <div class="title">Solution</div>
+          <button class="close-button modalCloser">&times;</button>
+        </div>
+        <div class="modalPop-body">
+          <div class="modal-body">
+            <img style="width: 100%; height: 100%" src="assets/images/clevel1.gif" alt=""/>
+          </div>
+        </div>
+      </div>
+      <div class="feedbackOverlay"></div>
     </div>
   </div>
 </div>
@@ -306,26 +319,83 @@
         <span class="draggable" id="sol2" draggable="true">-1</span>
         <span class="draggable" id="sol3" draggable="true">3</span>
         <span class="draggable" id="sol4" draggable="true">5</span></span>
-        <button style="margin-right: 10px; margin-left: 30px" class="btn-menu btn btn-success btn-toggle-menu try-button" type="button" [disabled]="trySolutionButton" (click)="trySolution(50)">
+        <button style="margin-right: 10px; margin-left: 30px" class="btn-menu btn btn-success btn-toggle-menu try-button" type="button" [disabled]="trySolutionButton" (click)="trySolution(101)">
           Try Solution
         </button>
-        <button style="margin-right: 10px; background-color: #006DFE; border-color: #006DFE" class="btn-menu btn btn-success btn-toggle-menu" type="button">
+        <button style="margin-right: 10px; background-color: #006DFE; border-color: #006DFE" data-modal-target="#modalHint2" class="btn-menu btn btn-success btn-toggle-menu modalOpener" type="button" (click)="hint()">
           Hint&nbsp;<i class="fa fa-solid fa-lightbulb-o"></i>
         </button>
-        <i *ngIf="login?.progress.levels[50]" style="color: chartreuse; transform: scale(3); padding-left: 20px" class="fa fa-solid fa-check"></i>
-        <button class="btn-logout btn btn-success btn-toggle-menu pull-right" type="button" (click)="goForward()" [disabled]="!login?.progress.levels[50]">Next
+        <i *ngIf="login?.progress.levels[101]" style="color: chartreuse; transform: scale(3); padding-left: 20px" class="fa fa-solid fa-check"></i>
+        <button class="btn-logout btn btn-success btn-toggle-menu pull-right" type="button" (click)="goForward()" [disabled]="!login?.progress.levels[101]">Next
           <i class="fa fas-solid fa-arrow-right"></i></button>
         <button class="btn-logout btn btn-success btn-toggle-menu pull-right" style="margin-right: 10px" type="button" (click)="goBack()">
           <i style="margin-right: 5px" class="fa fas-solid fa-arrow-left"></i>Go Back
         </button>
       </p>
+      <div class="modalPop" id="modalHint2">
+        <div class="modalPop-header">
+          <div class="title">Solution</div>
+          <button class="close-button modalCloser">&times;</button>
+        </div>
+        <div class="modalPop-body">
+          <div class="modal-body">
+            <img style="width: 100%; height: 100%" src="assets/images/clevel2.gif" alt=""/>
+          </div>
+        </div>
+      </div>
+      <div class="feedbackOverlay"></div>
+    </div>
+  </div>
+</div>
+
+
+<div *ngIf="changePageArray[7]" class="container-fluid">
+  <div class="col-lg-12">
+    <h1>Chapter I</h1>
+    <h5>Loop Control</h5>
+    <h5>Please drag n' drop the solutions into the white rectangles</h5>
+    <p style="font-size: 20px">The desired answer is x = 5 <span> <button style="margin-right: 10px; margin-left: 30px" class="btn-menu btn btn-success btn-toggle-menu" type="button" (click)="ex(0,-1,null,null)">
+      Start
+    </button> </span> </p>
+    <p style="font-size: 20px">int x = <span class="exContainer1">&nbsp;&nbsp;&nbsp;</span>;<br>int i = <span class="exContainer2">&nbsp;&nbsp;&nbsp;</span>;<br><span style="font-weight: bold;color: #198754"> while</span>(i <= 3)&#123;<br>&nbsp;&nbsp;&nbsp;&nbsp;x = x + i;<br>&nbsp;&nbsp;&nbsp;&nbsp;i++;<br>&#125;</p>
+    <div class="navbar-header col-lg-12">
+      <p style="margin-right: 10px;"><span class="solContainer">
+        <span class="draggable" id="sol5" draggable="true">0</span>
+        <span class="draggable" id="sol6" draggable="true">-1</span>
+        <span class="draggable" id="sol7" draggable="true">3</span>
+        <span class="draggable" id="sol8" draggable="true">5</span></span>
+        <button style="margin-right: 10px; margin-left: 30px" class="btn-menu btn btn-success btn-toggle-menu try-button" type="button" [disabled]="trySolutionButton" (click)="trySolution(102)">
+          Try Solution
+        </button>
+        <button style="margin-right: 10px; background-color: #006DFE; border-color: #006DFE" data-modal-target="#modalHint3" class="btn-menu btn btn-success btn-toggle-menu modalOpener" type="button" (click)="hint()">
+          Hint&nbsp;<i class="fa fa-solid fa-lightbulb-o"></i>
+        </button>
+        <i *ngIf="login?.progress.levels[102]" style="color: chartreuse; transform: scale(3); padding-left: 20px" class="fa fa-solid fa-check"></i>
+        <button class="btn-logout btn btn-success btn-toggle-menu pull-right" type="button" (click)="goForward()" [disabled]="!login?.progress.levels[102]">Next
+          <i class="fa fas-solid fa-arrow-right"></i></button>
+        <button class="btn-logout btn btn-success btn-toggle-menu pull-right" style="margin-right: 10px" type="button" (click)="goBack()">
+          <i style="margin-right: 5px" class="fa fas-solid fa-arrow-left"></i>Go Back
+        </button>
+      </p>
+      <div class="modalPop" id="modalHint3">
+        <div class="modalPop-header">
+          <div class="title">Solution</div>
+          <button class="close-button modalCloser">&times;</button>
+        </div>
+        <div class="modalPop-body">
+          <div class="modal-body">
+            <img style="width: 100%; height: 100%" src="assets/images/clevel3.gif" alt=""/>
+          </div>
+        </div>
+      </div>
+      <div class="feedbackOverlay"></div>
     </div>
   </div>
 </div>
 
 <!-- Chapter I decisions making -->
 
-<div *ngIf="changePageArray[7]" class="row">
+<div *ngIf="changePageArray[8]" class="row">
   <div class="col-lg-12">
     <h1>Chapter I</h1>
     <h5>Decision Making</h5>
@@ -356,7 +426,7 @@
 </div>
 
 
-<div *ngIf="changePageArray[8]" class="row">
+<div *ngIf="changePageArray[9]" class="row">
   <div class="col-lg-12">
     <h1>Chapter I</h1>
     <h5>Decision Making</h5>
@@ -371,29 +441,41 @@
         <span class="draggable" id="sol14" draggable="true">else</span>
         <span class="draggable" id="sol15" draggable="true">while</span>
         <span class="draggable" id="sol16" draggable="true">2</span></span>
-        <button style="margin-right: 10px; margin-left: 30px" class="btn-menu btn btn-success btn-toggle-menu try-button" type="button" [disabled]="trySolutionButton" (click)="trySolution(51)">
+        <button style="margin-right: 10px; margin-left: 30px" class="btn-menu btn btn-success btn-toggle-menu try-button" type="button" [disabled]="trySolutionButton" (click)="trySolution(103)">
           Try Solution
         </button>
-        <button style="margin-right: 10px; background-color: #006DFE; border-color: #006DFE" class="btn-menu btn btn-success btn-toggle-menu" type="button">
+        <button style="margin-right: 10px; background-color: #006DFE; border-color: #006DFE" data-modal-target="#modalHint4" class="btn-menu btn btn-success btn-toggle-menu modalOpener" type="button" (click)="hint()">
           Hint&nbsp;<i class="fa fa-solid fa-lightbulb-o"></i>
         </button>
-        <i *ngIf="login?.progress.levels[51]" style="color: chartreuse; transform: scale(3); padding-left: 20px" class="fa fa-solid fa-check"></i>
-        <button class="btn-logout btn btn-success btn-toggle-menu pull-right" type="button" (click)="goToChapter(9)" [disabled]="!login?.progress.levels[51]">Chapter II
+        <i *ngIf="login?.progress.levels[103]" style="color: chartreuse; transform: scale(3); padding-left: 20px" class="fa fa-solid fa-check"></i>
+        <button class="btn-logout btn btn-success btn-toggle-menu pull-right" type="button" (click)="goToChapter(10)" [disabled]="!login?.progress.levels[103]">Chapter II
           <i class="fa fas-solid fa-arrow-right"></i></button>
         <button class="btn-logout btn btn-success btn-toggle-menu pull-right" style="margin-right: 10px" type="button" (click)="goBack()">
           <i style="margin-right: 5px" class="fa fas-solid fa-arrow-left"></i>Go Back
         </button>
       </p>
+      <div class="modalPop" id="modalHint4">
+        <div class="modalPop-header">
+          <div class="title">Solution</div>
+          <button class="close-button modalCloser">&times;</button>
+        </div>
+        <div class="modalPop-body">
+          <div class="modal-body">
+            <img style="width: 100%; height: 100%" src="assets/images/clevel4.gif" alt=""/>
+          </div>
+        </div>
+      </div>
+      <div class="feedbackOverlay"></div>
     </div>
   </div>
 </div>
 
 <!-- Chapter II intro -->
 
-<div *ngIf="changePageArray[9]" class="row">
+<div *ngIf="changePageArray[10]" class="row">
   <div class="col-lg-12">
     <h1>Chapter II</h1>
-    <p style="font-size: 20px">This is the begging of chapter II. In this chapter you will learn about <span style="font-weight: bold; color: #198754">Strings, Arrays </span>and <span style="font-weight: bold; color: #198754">Methods</span>. All the while using the knowledge gained from chapter I.</p>
+    <p style="font-size: 20px">This is the begging of chapter II. In this chapter you will learn about <span style="font-weight: bold; color: #198754">Strings, Arrays </span>and <span style="font-weight: bold; color: #198754">functions</span>. All the while using the knowledge gained from chapter I.</p>
     <p style="font-size: 20px">Well without further ado, let's learn <span style="font-weight: bold">Strings</span></p>
     <button class="btn-logout btn btn-success btn-toggle-menu pull-right" type="button" (click)="goForward()">Next
       <i class="fa fas-solid fa-arrow-right"></i></button>
@@ -405,7 +487,7 @@
 
 <!-- Chapter II Strings -->
 
-<div *ngIf="changePageArray[10]" class="row">
+<div *ngIf="changePageArray[11]" class="row">
   <div class="col-lg-12">
     <h1>Chapter II</h1>
     <h5>Strings</h5>
@@ -425,35 +507,346 @@
 </div>
 
 
-<div *ngIf="changePageArray[11]" class="row">
+<div *ngIf="changePageArray[12]" class="row">
   <div class="col-lg-12">
     <h1>Chapter II</h1>
     <h5>Strings</h5>
     <h5>Please drag n' drop the solutions into the white rectangles</h5>
-    <p style="font-size: 20px">The desired answer is x = 100 <span> <button style="margin-right: 10px; margin-left: 30px" class="btn-menu btn btn-success btn-toggle-menu" type="button" (click)="ex(2,'else',null,null)">
+    <p style="font-size: 20px">The desired answer is x = 8 <span> <button style="margin-right: 10px; margin-left: 30px" class="btn-menu btn btn-success btn-toggle-menu" type="button" (click)="ex('&quot;help&quot;','text.size()',null,null)">
       Start
     </button> </span> </p>
-
+    <p style="font-size: 20px">string text = "text";<br>text = text + <span class="exContainer1">&nbsp;&nbsp;&nbsp;</span>;<br>int x = <span class="exContainer2">&nbsp;&nbsp;&nbsp;</span>;</p>
     <div class="navbar-header col-lg-12">
       <p style="margin-right: 10px;"><span class="solContainer">
-        <span class="draggable" id="sol17" draggable="true">0</span>
-        <span class="draggable" id="sol18" draggable="true">else</span>
-        <span class="draggable" id="sol19" draggable="true">while</span>
-        <span class="draggable" id="sol20" draggable="true">2</span></span>
-        <button style="margin-right: 10px; margin-left: 30px" class="btn-menu btn btn-success btn-toggle-menu try-button" type="button" [disabled]="trySolutionButton" (click)="trySolution(52)">
+        <span class="draggable" id="sol17" draggable="true">"help"</span>
+        <span class="draggable" id="sol18" draggable="true">strcpy(text, "help")</span>
+        <span class="draggable" id="sol19" draggable="true">"text help"</span>
+        <span class="draggable" id="sol20" draggable="true">text.size()</span></span>
+        <button style="margin-right: 10px; margin-left: 30px" class="btn-menu btn btn-success btn-toggle-menu try-button" type="button" [disabled]="trySolutionButton" (click)="trySolution(104)">
           Try Solution
         </button>
-        <button style="margin-right: 10px; background-color: #006DFE; border-color: #006DFE" class="btn-menu btn btn-success btn-toggle-menu" type="button">
+        <button style="margin-right: 10px; background-color: #006DFE; border-color: #006DFE" data-modal-target="#modalHint5" class="btn-menu btn btn-success btn-toggle-menu modalOpener" type="button" (click)="hint()">
           Hint&nbsp;<i class="fa fa-solid fa-lightbulb-o"></i>
         </button>
-        <i *ngIf="login?.progress.levels[52]" style="color: chartreuse; transform: scale(3); padding-left: 20px" class="fa fa-solid fa-check"></i>
-        <button class="btn-logout btn btn-success btn-toggle-menu pull-right" type="button" (click)="goForward()" [disabled]="!login?.progress.levels[52]">Chapter II
+        <i *ngIf="login?.progress.levels[104]" style="color: chartreuse; transform: scale(3); padding-left: 20px" class="fa fa-solid fa-check"></i>
+        <button class="btn-logout btn btn-success btn-toggle-menu pull-right" type="button" (click)="goForward()" [disabled]="!login?.progress.levels[104]">Next
           <i class="fa fas-solid fa-arrow-right"></i></button>
         <button class="btn-logout btn btn-success btn-toggle-menu pull-right" style="margin-right: 10px" type="button" (click)="goBack()">
           <i style="margin-right: 5px" class="fa fas-solid fa-arrow-left"></i>Go Back
         </button>
       </p>
+      <div class="modalPop" id="modalHint5">
+        <div class="modalPop-header">
+          <div class="title">Solution</div>
+          <button class="close-button modalCloser">&times;</button>
+        </div>
+        <div class="modalPop-body">
+          <div class="modal-body">
+            <img style="width: 100%; height: 100%" src="assets/images/clevel5.gif" alt=""/>
+          </div>
+        </div>
+      </div>
+      <div class="feedbackOverlay"></div>
     </div>
+  </div>
+</div>
+
+
+<div *ngIf="changePageArray[13]" class="row">
+<div class="col-lg-12">
+  <h1>Chapter II</h1>
+  <h5>Arrays</h5>
+  <p style="font-size: 20px">C++ provides a data structure, <span style="font-weight: bold; color: #198754">the array</span>, which stores a fixed-size sequential collection of elements of the same type. An array is used to store a collection of data, but it is often more useful to think of an array as a collection of variables of the same type.</p>
+  <p style="font-size: 20px">Instead of declaring individual variables, such as number0, number1, ..., and number99, you declare one array variable such as numbers and use numbers[0], numbers[1], and ..., numbers[99] to represent individual variables. A specific element in an array is accessed by an index.</p>
+  <h5>Declaring Arrays</h5>
+  <p style="font-size: 20px">type arrayName[arraySize];</p>
+  <h5>Initializing Arrays</h5>
+  <p style="font-size: 20px">double balance[5] = &#123;1000.0, 2.0, 3.4, 17.0, 50.0};</p>
+  <p style="font-size: 20px">We may get the length of the array using: (sizeof(balance)/sizeof(*balance)) => 5</p>
+  <button class="btn-logout btn btn-success btn-toggle-menu pull-right" type="button" (click)="goForward()">Next
+    <i class="fa fas-solid fa-arrow-right"></i></button>
+  <button class="btn-logout btn btn-success btn-toggle-menu pull-right" style="margin-right: 10px" type="button" (click)="goBack()">
+    <i style="margin-right: 5px" class="fa fas-solid fa-arrow-left"></i>Go Back
+  </button>
+</div>
+</div>
+
+
+<div *ngIf="changePageArray[14]" class="row">
+  <div class="col-lg-12">
+    <h1>Chapter II</h1>
+    <h5>Arrays</h5>
+    <h5>Please drag n' drop the solutions into the white rectangles</h5>
+    <p style="font-size: 20px">The desired answer is 4 <span> <button style="margin-right: 10px; margin-left: 30px" class="btn-menu btn btn-success btn-toggle-menu" type="button" (click)="ex('sizeof(balance)','sizeof(*balance)','minIndex',null)">
+      Start
+    </button> </span> </p>
+    <p style="font-size: 20px">int values[] = &#123;13, 7, 4, 51, 10};<br>int minIndex = 0;<br>for(int i = 0; i < (<span class="exContainer1">&nbsp;&nbsp;&nbsp;</span>/<span class="exContainer2">&nbsp;&nbsp;&nbsp;</span>);i++)&#123;<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="exContainer3">&nbsp;&nbsp;&nbsp;</span> = i;<br>}<br>cout << values[minIndex];</p>
+    <div class="navbar-header col-lg-12">
+      <p style="margin-right: 10px;"><span class="solContainer">
+        <span class="draggable" id="sol21" draggable="true">minIndex</span>
+        <span class="draggable" id="sol22" draggable="true">sizeof(balance)</span>
+        <span class="draggable" id="sol23" draggable="true">values</span>
+        <span class="draggable" id="sol24" draggable="true">sizeof(*balance)</span></span>
+        <button style="margin-right: 10px; margin-left: 30px" class="btn-menu btn btn-success btn-toggle-menu try-button" type="button" [disabled]="trySolutionButton" (click)="trySolution(105)">
+          Try Solution
+        </button>
+        <button style="margin-right: 10px; background-color: #006DFE; border-color: #006DFE" data-modal-target="#modalHint6" class="btn-menu btn btn-success btn-toggle-menu modalOpener" type="button" (click)="hint()">
+          Hint&nbsp;<i class="fa fa-solid fa-lightbulb-o"></i>
+        </button>
+        <i *ngIf="login?.progress.levels[105]" style="color: chartreuse; transform: scale(3); padding-left: 20px" class="fa fa-solid fa-check"></i>
+        <button class="btn-logout btn btn-success btn-toggle-menu pull-right" type="button" (click)="goForward()" [disabled]="!login?.progress.levels[105]">Next
+          <i class="fa fas-solid fa-arrow-right"></i></button>
+        <button class="btn-logout btn btn-success btn-toggle-menu pull-right" style="margin-right: 10px" type="button" (click)="goBack()">
+          <i style="margin-right: 5px" class="fa fas-solid fa-arrow-left"></i>Go Back
+        </button>
+      </p>
+      <div class="modalPop" id="modalHint6">
+        <div class="modalPop-header">
+          <div class="title">Solution</div>
+          <button class="close-button modalCloser">&times;</button>
+        </div>
+        <div class="modalPop-body">
+          <div class="modal-body">
+            <img style="width: 100%; height: 100%" src="assets/images/clevel6.gif" alt=""/>
+          </div>
+        </div>
+      </div>
+      <div class="feedbackOverlay"></div>
+    </div>
+  </div>
+</div>
+
+
+<div *ngIf="changePageArray[15]" class="row">
+  <div class="col-lg-12">
+    <h1>Chapter II</h1>
+    <h5>Functions</h5>
+    <p style="font-size: 20px">A function is a group of statements that together perform a task.</p>
+    <p style="font-size: 20px">A function <span style="font-weight: bold">declaration</span> tells the compiler about a function's name, return type, and parameters. A function <span style="font-weight: bold">definition</span> provides the actual body of the function.</p>
+    <h5>Defining a Function</h5>
+    <p style="font-size: 20px">public static int functionName(int a, int b)&#123;<br>&nbsp;&nbsp;&nbsp;&nbsp;// body<br>return a;<br>}</p>
+    <ul style="font-size: 20px">
+      <li><span style="font-weight: bold">public static</span> - modifier - defines the access type of the function and it is optional to use</li>
+      <li><span style="font-weight: bold">int</span> - return type - function may return a value</li>
+      <li><span style="font-weight: bold">functionName</span> - function name</li>
+      <li><span style="font-weight: bold">int a, int b</span> - list of parameters - it is the type, order, and number of parameters of a function. These are optional, function may contain zero parameters</li>
+      <li><span style="font-weight: bold">body</span> - function body defines what code is executed</li>
+      <li><span style="font-weight: bold">return a</span> - return statement - end of function and parameter that is returned</li>
+    </ul>
+    <h5>Function Calling</h5>
+    <p style="font-size: 20px">For using a function, it should be called. There are two ways in which a function is called i.e., function returns a value or returning nothing (no return value). The process of function calling is simple. When a program invokes a function, the program control gets transferred to the called function. This called function then returns control to the caller in two conditions, when either:<br>
+      - the return statement is executed<br>
+      - it reaches the function ending closing brace</p>
+    <h5>Example of a function and a call</h5>
+    <p style="font-size: 20px">int sum(int a, int b)&#123;<br>&nbsp;&nbsp;&nbsp;&nbsp;int x = a + b;<br>&nbsp;&nbsp;&nbsp;&nbsp;return x;<br>}<br>
+      <br>int a = 5;<br>int b = 10;<br>int y = sum(a, b);<br>int bigSum = sum(y, y)<br>System.out.print(bigSum);<br><br>Result: 30</p>
+    <button class="btn-logout btn btn-success btn-toggle-menu pull-right" type="button" (click)="goForward()">Next
+      <i class="fa fas-solid fa-arrow-right"></i></button>
+    <button class="btn-logout btn btn-success btn-toggle-menu pull-right" style="margin-right: 10px" type="button" (click)="goBack()">
+      <i style="margin-right: 5px" class="fa fas-solid fa-arrow-left"></i>Go Back
+    </button>
+  </div>
+</div>
+
+
+<div *ngIf="changePageArray[16]" class="row">
+  <div class="col-lg-12">
+    <h1>Chapter II</h1>
+    <h5>Functions</h5>
+    <h5>Please drag n' drop the solutions into the white rectangles</h5>
+    <p style="font-size: 20px">The desired result: 35 <span> <button style="margin-right: 10px; margin-left: 30px" class="btn-menu btn btn-success btn-toggle-menu" type="button" (click)="ex('b','x',null,null)">
+      Start
+    </button> </span> </p>
+    <p style="font-size: 20px">int sum(int a, int b)&#123;<br>&nbsp;&nbsp;&nbsp;&nbsp;int res = a + b;<br>&nbsp;&nbsp;&nbsp;&nbsp;return res;<br>}<br>int a = 5;<br>int b = 10;<br>int c = 20;<br>x = sum(<span class="exContainer1">&nbsp;&nbsp;&nbsp;</span>, a);
+      <br>y = sum(c, <span class="exContainer2">&nbsp;&nbsp;&nbsp;</span>);<br>System.out.print(y);</p>
+    <div class="navbar-header col-lg-12">
+      <p style="margin-right: 10px;"><span class="solContainer">
+        <span class="draggable" id="sol25" draggable="true">c</span>
+        <span class="draggable" id="sol26" draggable="true">x</span>
+        <span class="draggable" id="sol27" draggable="true">b</span>
+        <span class="draggable" id="sol28" draggable="true">a</span></span>
+        <button style="margin-right: 10px; margin-left: 30px" class="btn-menu btn btn-success btn-toggle-menu try-button" type="button" [disabled]="trySolutionButton" (click)="trySolution(106)">
+          Try Solution
+        </button>
+        <button style="margin-right: 10px; background-color: #006DFE; border-color: #006DFE" data-modal-target="#modalHint7" class="btn-menu btn btn-success btn-toggle-menu modalOpener" type="button" (click)="hint()">
+          Hint&nbsp;<i class="fa fa-solid fa-lightbulb-o"></i>
+        </button>
+        <i *ngIf="login?.progress.levels[106]" style="color: chartreuse; transform: scale(3); padding-left: 20px" class="fa fa-solid fa-check"></i>
+        <button class="btn-logout btn btn-success btn-toggle-menu pull-right" type="button" (click)="goToChapter(17)" [disabled]="!login?.progress.levels[106]">Next
+          <i class="fa fas-solid fa-arrow-right"></i></button>
+        <button class="btn-logout btn btn-success btn-toggle-menu pull-right" style="margin-right: 10px" type="button" (click)="goBack()">
+          <i style="margin-right: 5px" class="fa fas-solid fa-arrow-left"></i>Go Back
+        </button>
+      </p>
+      <div class="modalPop" id="modalHint7">
+        <div class="modalPop-header">
+          <div class="title">Solution</div>
+          <button class="close-button modalCloser">&times;</button>
+        </div>
+        <div class="modalPop-body">
+          <div class="modal-body">
+            <img style="width: 100%; height: 100%" src="assets/images/clevel7.gif" alt=""/>
+          </div>
+        </div>
+      </div>
+      <div class="feedbackOverlay"></div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="changePageArray[17]" class="row">
+  <div class="col-lg-12">
+    <h1>Chapter III</h1>
+    <h5 style="font-size: 20px">This chapter is about practising all that you have learned in the previous 2 chapters.</h5>
+    <h5>If you have not completed them yet, we suggest you do, so that you may be equipped with the knowledge necessary to complete the following exercises.</h5>
+    <button class="btn-logout btn btn-success btn-toggle-menu pull-right" type="button" (click)="goForward()">Next
+      <i class="fa fas-solid fa-arrow-right"></i></button>
+    <button class="btn-logout btn btn-success btn-toggle-menu pull-right" style="margin-right: 10px" type="button" (click)="goToChapter(0)">
+      <i style="margin-right: 5px" class="fa fas-solid fa-arrow-left"></i>Go Back To Menu
+    </button>
+  </div>
+</div>
+
+<div *ngIf="changePageArray[18]" class="row">
+  <div class="col-lg-12">
+    <h1>Chapter III</h1>
+    <h5>Exercises</h5>
+    <h5>Please drag n' drop the solutions into the white rectangles</h5>
+    <p style="font-size: 20px">The desired result: 3 <span> <button style="margin-right: 10px; margin-left: 30px" class="btn-menu btn btn-success btn-toggle-menu" type="button" (click)="ex('(sizeof(balance)/sizeof(*balance))','!array[i]',null,null)">
+      Start
+    </button> </span> </p>
+    <p style="font-size: 20px">int checkTruths(boolean[] array)&#123;<br>&nbsp;&nbsp;&nbsp;&nbsp;int not = 0;<br>&nbsp;&nbsp;&nbsp;&nbsp;while(i < <span class="exContainer1">&nbsp;&nbsp;&nbsp;</span>)&#123;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(<span class="exContainer2">&nbsp;&nbsp;&nbsp;</span>)&#123;<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;not++;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i++<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;return not;<br>}<br><br>boolean[] array = &#123;false,false,true,false};<br>int x = checkTruths(array);<br>System.out.print(x);</p>
+    <div class="navbar-header col-lg-12">
+      <p style="margin-right: 10px;"><span class="solContainer">
+        <span class="draggable" id="sol29" draggable="true">array[i]</span>
+        <span class="draggable" id="sol30" draggable="true">!array[i]</span>
+        <span class="draggable" id="sol31" draggable="true">(sizeof(balance)/sizeof(*balance))</span>
+        <span class="draggable" id="sol32" draggable="true">(sizeof(*balance)/sizeof(balance))</span></span>
+        <button style="margin-right: 10px; margin-left: 30px" class="btn-menu btn btn-success btn-toggle-menu try-button" type="button" [disabled]="trySolutionButton" (click)="trySolution(107)">
+          Try Solution
+        </button>
+        <button style="margin-right: 10px; background-color: #006DFE; border-color: #006DFE" data-modal-target="#modalHint8" class="btn-menu btn btn-success btn-toggle-menu modalOpener" type="button" (click)="hint()">
+          Hint&nbsp;<i class="fa fa-solid fa-lightbulb-o"></i>
+        </button>
+        <i *ngIf="login?.progress.levels[107]" style="color: chartreuse; transform: scale(3); padding-left: 20px" class="fa fa-solid fa-check"></i>
+        <button class="btn-logout btn btn-success btn-toggle-menu pull-right" type="button" (click)="goForward()" [disabled]="!login?.progress.levels[107]">Next
+          <i class="fa fas-solid fa-arrow-right"></i></button>
+        <button class="btn-logout btn btn-success btn-toggle-menu pull-right" style="margin-right: 10px" type="button" (click)="goBack()">
+          <i style="margin-right: 5px" class="fa fas-solid fa-arrow-left"></i>Go Back
+        </button>
+      </p>
+      <div class="modalPop" id="modalHint8">
+        <div class="modalPop-header">
+          <div class="title">Solution</div>
+          <button class="close-button modalCloser">&times;</button>
+        </div>
+        <div class="modalPop-body">
+          <div class="modal-body">
+            <img style="width: 100%; height: 100%" src="assets/images/clevel8.gif" alt=""/>
+          </div>
+        </div>
+      </div>
+      <div class="feedbackOverlay"></div>
+    </div>
+  </div>
+</div>
+
+
+<div *ngIf="changePageArray[19]" class="row">
+  <div class="col-lg-12">
+    <h1>Chapter III</h1>
+    <h5>Exercises</h5>
+    <h5>Please drag n' drop the solutions into the white rectangles</h5>
+    <p style="font-size: 20px">The desired result: Palindrome <span> <button style="margin-right: 10px; margin-left: 30px" class="btn-menu btn btn-success btn-toggle-menu" type="button" (click)="ex('arr[i].length()','maxLength',null,null)">
+      Start
+    </button> </span> </p>
+    <p style="font-size: 20px">String longestString(String[] arr)&#123;<br>&nbsp;&nbsp;&nbsp;&nbsp;int maxLength = 0;<br>&nbsp;&nbsp;&nbsp;&nbsp;String longest = "";<br>&nbsp;&nbsp;&nbsp;&nbsp;for(int i = 0;i < arr.(sizeof(arr)/sizeof(*arr));i++)&#123;<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(<span class="exContainer1">&nbsp;&nbsp;&nbsp;</span> > <span class="exContainer2">&nbsp;&nbsp;&nbsp;</span>)&#123;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;maxLength = arr[i].length;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;longest = arr[i];}<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;return longest;<br>}<br>String[] arr = &#123;"Car", "Meow", "Palindrome", "Musician"};<br>System.out.print(longestString(arr));</p>
+    <div class="navbar-header col-lg-12">
+      <p style="margin-right: 10px;"><span class="solContainer">
+        <span class="draggable" id="sol33" draggable="true">array[i].length()</span>
+        <span class="draggable" id="sol34" draggable="true">arr[i].length()</span>
+        <span class="draggable" id="sol35" draggable="true">maxLength</span>
+        <span class="draggable" id="sol36" draggable="true">longest = "Palindrome"</span></span>
+        <button style="margin-right: 10px; margin-left: 30px" class="btn-menu btn btn-success btn-toggle-menu try-button" type="button" [disabled]="trySolutionButton" (click)="trySolution(108)">
+          Try Solution
+        </button>
+        <button style="margin-right: 10px; background-color: #006DFE; border-color: #006DFE" data-modal-target="#modalHint9" class="btn-menu btn btn-success btn-toggle-menu modalOpener" type="button" (click)="hint()">
+          Hint&nbsp;<i class="fa fa-solid fa-lightbulb-o"></i>
+        </button>
+        <i *ngIf="login?.progress.levels[108]" style="color: chartreuse; transform: scale(3); padding-left: 20px" class="fa fa-solid fa-check"></i>
+        <button class="btn-logout btn btn-success btn-toggle-menu pull-right" type="button" (click)="goForward()" [disabled]="!login?.progress.levels[108]">Next
+          <i class="fa fas-solid fa-arrow-right"></i></button>
+        <button class="btn-logout btn btn-success btn-toggle-menu pull-right" style="margin-right: 10px" type="button" (click)="goBack()">
+          <i style="margin-right: 5px" class="fa fas-solid fa-arrow-left"></i>Go Back
+        </button>
+      </p>
+      <div class="modalPop" id="modalHint9">
+        <div class="modalPop-header">
+          <div class="title">Solution</div>
+          <button class="close-button modalCloser">&times;</button>
+        </div>
+        <div class="modalPop-body">
+          <div class="modal-body">
+            <img style="width: 100%; height: 100%" src="assets/images/clevel9.gif" alt=""/>
+          </div>
+        </div>
+      </div>
+      <div class="feedbackOverlay"></div>
+    </div>
+  </div>
+</div>
+
+
+<div *ngIf="changePageArray[20]" class="row">
+  <div class="col-lg-12">
+    <h1>Chapter III</h1>
+    <h5>Exercises</h5>
+    <h5>Please drag n' drop the solutions into the white rectangles</h5>
+    <p style="font-size: 20px">The desired result: Reverse the array <span> <button style="margin-right: 10px; margin-left: 30px" class="btn-menu btn btn-success btn-toggle-menu" type="button" (click)="ex('reverse[i]','(sizeof(arr)/sizeof(*arr))','-i',null)">
+      Start
+    </button> </span> </p>
+    <p style="font-size: 20px">string arr[] = &#123;"one", "two","three","four", "five"};<br>string reverse[] = &#123;"", "", "", "", ""};<br>for(int i = 0;i < (sizeof(arr)/sizeof(*arr));i++)&#123;<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="exContainer1">&nbsp;&nbsp;&nbsp;</span> = arr[<span class="exContainer2">&nbsp;&nbsp;&nbsp;</span> <span class="exContainer3">&nbsp;&nbsp;&nbsp;</span>-(1)];<br>&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(reverse[i]);<br>}</p>
+    <div class="navbar-header col-lg-12">
+      <p style="margin-right: 10px;"><span class="solContainer">
+        <span class="draggable" id="sol37" draggable="true">+i</span>
+        <span class="draggable" id="sol38" draggable="true">(sizeof(arr)/sizeof(*arr))</span>
+        <span class="draggable" id="sol39" draggable="true">-i</span>
+        <span class="draggable" id="sol40" draggable="true">reverse[i]</span></span>
+        <button style="margin-right: 10px; margin-left: 30px" class="btn-menu btn btn-success btn-toggle-menu try-button" type="button" [disabled]="trySolutionButton" (click)="trySolution(109)">
+          Try Solution
+        </button>
+        <button style="margin-right: 10px; background-color: #006DFE; border-color: #006DFE" data-modal-target="#modalHint10" class="btn-menu btn btn-success btn-toggle-menu modalOpener" type="button" (click)="hint()">
+          Hint&nbsp;<i class="fa fa-solid fa-lightbulb-o"></i>
+        </button>
+        <i *ngIf="login?.progress.levels[109]" style="color: chartreuse; transform: scale(3); padding-left: 20px" class="fa fa-solid fa-check"></i>
+        <button class="btn-logout btn btn-success btn-toggle-menu pull-right" type="button" (click)="goForward()" [disabled]="!login?.progress.levels[109]">Next
+          <i class="fa fas-solid fa-arrow-right"></i></button>
+        <button class="btn-logout btn btn-success btn-toggle-menu pull-right" style="margin-right: 10px" type="button" (click)="goBack()">
+          <i style="margin-right: 5px" class="fa fas-solid fa-arrow-left"></i>Go Back
+        </button>
+      </p>
+      <div class="modalPop" id="modalHint10">
+        <div class="modalPop-header">
+          <div class="title">Solution</div>
+          <button class="close-button modalCloser">&times;</button>
+        </div>
+        <div class="modalPop-body">
+          <div class="modal-body">
+            <img style="width: 100%; height: 100%" src="assets/images/clevel10.gif" alt=""/>
+          </div>
+        </div>
+      </div>
+      <div class="feedbackOverlay"></div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="changePageArray[21]" class="row">
+  <div class="col-lg-12">
+    <h1 style="text-align: center">CONGRATULATIONS, YOU HAVE COMPLETED THIS MODULE.</h1>
   </div>
 </div>
 

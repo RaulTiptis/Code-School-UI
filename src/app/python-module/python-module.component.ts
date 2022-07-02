@@ -114,6 +114,33 @@ function ex(solutionArray) {
   })
 }
 
+function hint() {
+  const button = document.querySelector('.modalOpener') as HTMLElement;
+  const closeButton = document.querySelector('.modalCloser');
+  const overlay = document.getElementById('feedbackOverlay');
+
+  button.addEventListener('click', () =>{
+    const modal = document.querySelector(button.dataset.modalTarget);
+    openModal(modal)
+  });
+  closeButton.addEventListener('click', () =>{
+    const modal = closeButton.closest('.modalPop')
+    closeModal(modal)
+  });
+
+  function openModal(modal) {
+    if (modal == null) return;
+    modal.classList.add('active')
+    overlay.classList.add('active')
+  }
+
+  function closeModal(modal) {
+    if (modal == null) return;
+    modal.classList.remove('active')
+    overlay.classList.remove('active')
+  }
+}
+
 @Component({
   selector: 'app-python-module',
   templateUrl: './python-module.component.html',
@@ -164,6 +191,10 @@ export class PythonModuleComponent implements OnInit {
     localStorage.setItem('currentUser', JSON.stringify(this.login));
     this.trySolutionButton = true;
     this.solutionArray = [null, null, null, null];
+  }
+
+  hint(){
+    hint();
   }
 
   ex(s0,s1,s2,s3){

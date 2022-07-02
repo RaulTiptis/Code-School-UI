@@ -12,7 +12,7 @@
       <div class="card-group mb-0">
         <div class="card p-4">
           <div class="card-body">
-            <div *ngIf="incorrectCredentials" class="alert alert-error">
+            <div *ngIf="incorrectCredentials" class="account-error">
               Invalid email or password
             </div>
             <form #loginForm="ngForm" (ngSubmit)="doLogin(loginForm)">

@@ -152,7 +152,7 @@
         <button style="margin-right: 10px; margin-left: 30px" class="btn-menu btn btn-success btn-toggle-menu try-button" type="button" [disabled]="trySolutionButton" (click)="trySolution(0)">
           Try Solution
         </button>
-        <button style="margin-right: 10px; background-color: #006DFE; border-color: #006DFE" class="btn-menu btn btn-success btn-toggle-menu" type="button">
+        <button style="margin-right: 10px; background-color: #006DFE; border-color: #006DFE" data-modal-target="#modalHint1" class="btn-menu btn btn-success btn-toggle-menu modalOpener" type="button" (click)="hint()">
           Hint&nbsp;<i class="fa fa-solid fa-lightbulb-o"></i>
         </button>
         <i *ngIf="login?.progress.levels[0]" style="color: chartreuse; transform: scale(3); padding-left: 20px" class="fa fa-solid fa-check"></i>
@@ -160,8 +160,19 @@
           <i class="fa fas-solid fa-arrow-right"></i></button>
         <button class="btn-logout btn btn-success btn-toggle-menu pull-right" style="margin-right: 10px" type="button" (click)="goBack()">
           <i style="margin-right: 5px" class="fa fas-solid fa-arrow-left"></i>Go Back
-        </button>
-      </p>
+        </button></p>
+      <div class="modalPop" id="modalHint1">
+        <div class="modalPop-header">
+          <div class="title">Solution</div>
+          <button class="close-button modalCloser">&times;</button>
+        </div>
+        <div class="modalPop-body">
+          <div class="modal-body">
+            <img style="width: 100%; height: 100%" src="assets/images/javalevel1.gif" alt=""/>
+          </div>
+        </div>
+      </div>
+      <div class="feedbackOverlay"></div>
     </div>
   </div>
 </div>
@@ -309,7 +320,7 @@
       <button style="margin-right: 10px; margin-left: 30px" class="btn-menu btn btn-success btn-toggle-menu try-button" type="button" [disabled]="trySolutionButton" (click)="trySolution(1)">
         Try Solution
       </button>
-      <button style="margin-right: 10px; background-color: #006DFE; border-color: #006DFE" class="btn-menu btn btn-success btn-toggle-menu" type="button">
+      <button style="margin-right: 10px; background-color: #006DFE; border-color: #006DFE" data-modal-target="#modalHint2" class="btn-menu btn btn-success btn-toggle-menu modalOpener" type="button" (click)="hint()">
         Hint&nbsp;<i class="fa fa-solid fa-lightbulb-o"></i>
       </button>
       <i *ngIf="login?.progress.levels[1]" style="color: chartreuse; transform: scale(3); padding-left: 20px" class="fa fa-solid fa-check"></i>
@@ -319,6 +330,18 @@
         <i style="margin-right: 5px" class="fa fas-solid fa-arrow-left"></i>Go Back
       </button>
       </p>
+      <div class="modalPop" id="modalHint2">
+        <div class="modalPop-header">
+          <div class="title">Solution</div>
+          <button class="close-button modalCloser">&times;</button>
+        </div>
+        <div class="modalPop-body">
+          <div class="modal-body">
+            <img style="width: 100%; height: 100%" src="assets/images/javalevel2.gif" alt=""/>
+          </div>
+        </div>
+      </div>
+      <div class="feedbackOverlay"></div>
     </div>
   </div>
 </div>
@@ -343,7 +366,7 @@
         <button style="margin-right: 10px; margin-left: 30px" class="btn-menu btn btn-success btn-toggle-menu try-button" type="button" [disabled]="trySolutionButton" (click)="trySolution(2)">
           Try Solution
         </button>
-        <button style="margin-right: 10px; background-color: #006DFE; border-color: #006DFE" class="btn-menu btn btn-success btn-toggle-menu" type="button">
+        <button style="margin-right: 10px; background-color: #006DFE; border-color: #006DFE" data-modal-target="#modalHint3" class="btn-menu btn btn-success btn-toggle-menu modalOpener" type="button" (click)="hint()">
           Hint&nbsp;<i class="fa fa-solid fa-lightbulb-o"></i>
         </button>
         <i *ngIf="login?.progress.levels[2]" style="color: chartreuse; transform: scale(3); padding-left: 20px" class="fa fa-solid fa-check"></i>
@@ -353,6 +376,18 @@
           <i style="margin-right: 5px" class="fa fas-solid fa-arrow-left"></i>Go Back
         </button>
       </p>
+      <div class="modalPop" id="modalHint3">
+        <div class="modalPop-header">
+          <div class="title">Solution</div>
+          <button class="close-button modalCloser">&times;</button>
+        </div>
+        <div class="modalPop-body">
+          <div class="modal-body">
+            <img style="width: 100%; height: 100%" src="assets/images/javalevel3.gif" alt=""/>
+          </div>
+        </div>
+      </div>
+      <div class="feedbackOverlay"></div>
     </div>
   </div>
 </div>
@@ -409,7 +444,7 @@
         <button style="margin-right: 10px; margin-left: 30px" class="btn-menu btn btn-success btn-toggle-menu try-button" type="button" [disabled]="trySolutionButton" (click)="trySolution(3)">
           Try Solution
         </button>
-        <button style="margin-right: 10px; background-color: #006DFE; border-color: #006DFE" class="btn-menu btn btn-success btn-toggle-menu" type="button">
+        <button style="margin-right: 10px; background-color: #006DFE; border-color: #006DFE" data-modal-target="#modalHint4" class="btn-menu btn btn-success btn-toggle-menu modalOpener" type="button" (click)="hint()">
           Hint&nbsp;<i class="fa fa-solid fa-lightbulb-o"></i>
         </button>
         <i *ngIf="login?.progress.levels[3]" style="color: chartreuse; transform: scale(3); padding-left: 20px" class="fa fa-solid fa-check"></i>
@@ -419,6 +454,18 @@
           <i style="margin-right: 5px" class="fa fas-solid fa-arrow-left"></i>Go Back
         </button>
       </p>
+      <div class="modalPop" id="modalHint4">
+        <div class="modalPop-header">
+          <div class="title">Solution</div>
+          <button class="close-button modalCloser">&times;</button>
+        </div>
+        <div class="modalPop-body">
+          <div class="modal-body">
+            <img style="width: 100%; height: 100%" src="assets/images/javalevel4.gif" alt=""/>
+          </div>
+        </div>
+      </div>
+      <div class="feedbackOverlay"></div>
     </div>
   </div>
 </div>
@@ -482,7 +529,7 @@
         <button style="margin-right: 10px; margin-left: 30px" class="btn-menu btn btn-success btn-toggle-menu try-button" type="button" [disabled]="trySolutionButton" (click)="trySolution(4)">
           Try Solution
         </button>
-        <button style="margin-right: 10px; background-color: #006DFE; border-color: #006DFE" class="btn-menu btn btn-success btn-toggle-menu" type="button">
+        <button style="margin-right: 10px; background-color: #006DFE; border-color: #006DFE" data-modal-target="#modalHint5" class="btn-menu btn btn-success btn-toggle-menu modalOpener" type="button" (click)="hint()">
           Hint&nbsp;<i class="fa fa-solid fa-lightbulb-o"></i>
         </button>
         <i *ngIf="login?.progress.levels[4]" style="color: chartreuse; transform: scale(3); padding-left: 20px" class="fa fa-solid fa-check"></i>
@@ -492,6 +539,18 @@
           <i style="margin-right: 5px" class="fa fas-solid fa-arrow-left"></i>Go Back
         </button>
       </p>
+      <div class="modalPop" id="modalHint5">
+        <div class="modalPop-header">
+          <div class="title">Solution</div>
+          <button class="close-button modalCloser">&times;</button>
+        </div>
+        <div class="modalPop-body">
+          <div class="modal-body">
+            <img style="width: 100%; height: 100%" src="assets/images/javalevel5.gif" alt=""/>
+          </div>
+        </div>
+      </div>
+      <div class="feedbackOverlay"></div>
     </div>
   </div>
 </div>
@@ -501,7 +560,7 @@
     <h1>Chapter II</h1>
     <h5>Arrays</h5>
     <p style="font-size: 20px">Java provides a data structure, <span style="font-weight: bold; color: #198754">the array</span>, which stores a fixed-size sequential collection of elements of the same type. An array is used to store a collection of data, but it is often more useful to think of an array as a collection of variables of the same type.</p>
-    <p style="font-size: 20px">Instead of declaring individual variables, such as number0, number1, ..., and number99, you declare one array variable such as numbers and use numbers[0], numbers[1], and ..., numbers[99] to represent individual variables.</p>
+    <p style="font-size: 20px">Instead of declaring individual variables, such as number0, number1, ..., and number99, you declare one array variable such as numbers and use numbers[0], numbers[1], and ..., numbers[99] to represent individual variables. A specific element in an array is accessed by an index.</p>
     <h5>Declaring Arrays</h5>
     <p style="font-size: 20px">double[] myList;   // preferred way.<br>or<br>double myList[];   // just like in C/C++, it works, but not the preferred way.</p>
     <h5>Creating Arrays</h5>
@@ -554,7 +613,7 @@
         <button style="margin-right: 10px; margin-left: 30px" class="btn-menu btn btn-success btn-toggle-menu try-button" type="button" [disabled]="trySolutionButton" (click)="trySolution(5)">
           Try Solution
         </button>
-        <button style="margin-right: 10px; background-color: #006DFE; border-color: #006DFE" class="btn-menu btn btn-success btn-toggle-menu" type="button">
+        <button style="margin-right: 10px; background-color: #006DFE; border-color: #006DFE" data-modal-target="#modalHint6" class="btn-menu btn btn-success btn-toggle-menu modalOpener" type="button" (click)="hint()">
           Hint&nbsp;<i class="fa fa-solid fa-lightbulb-o"></i>
         </button>
         <i *ngIf="login?.progress.levels[5]" style="color: chartreuse; transform: scale(3); padding-left: 20px" class="fa fa-solid fa-check"></i>
@@ -564,6 +623,18 @@
           <i style="margin-right: 5px" class="fa fas-solid fa-arrow-left"></i>Go Back
         </button>
       </p>
+      <div class="modalPop" id="modalHint6">
+        <div class="modalPop-header">
+          <div class="title">Solution</div>
+          <button class="close-button modalCloser">&times;</button>
+        </div>
+        <div class="modalPop-body">
+          <div class="modal-body">
+            <img style="width: 100%; height: 100%" src="assets/images/javalevel6.gif" alt=""/>
+          </div>
+        </div>
+      </div>
+      <div class="feedbackOverlay"></div>
     </div>
   </div>
 </div>
@@ -591,7 +662,6 @@
     <h5>Example of a method and a call</h5>
     <p style="font-size: 20px">int sum(int a, int b)&#123;<br>&nbsp;&nbsp;&nbsp;&nbsp;int x = a + b;<br>&nbsp;&nbsp;&nbsp;&nbsp;return x;<br>}<br>
     <br>int a = 5;<br>int b = 10;<br>int y = sum(a, b);<br>int bigSum = sum(y, y)<br>System.out.print(bigSum);<br><br>Result: 30</p>
-    &nbsp;&nbsp;&nbsp;&nbsp;
     <button class="btn-logout btn btn-success btn-toggle-menu pull-right" type="button" (click)="goForward()">Next
       <i class="fa fas-solid fa-arrow-right"></i></button>
     <button class="btn-logout btn btn-success btn-toggle-menu pull-right" style="margin-right: 10px" type="button" (click)="goBack()">
@@ -619,7 +689,7 @@
         <button style="margin-right: 10px; margin-left: 30px" class="btn-menu btn btn-success btn-toggle-menu try-button" type="button" [disabled]="trySolutionButton" (click)="trySolution(6)">
           Try Solution
         </button>
-        <button style="margin-right: 10px; background-color: #006DFE; border-color: #006DFE" class="btn-menu btn btn-success btn-toggle-menu" type="button">
+        <button style="margin-right: 10px; background-color: #006DFE; border-color: #006DFE" data-modal-target="#modalHint7" class="btn-menu btn btn-success btn-toggle-menu modalOpener" type="button" (click)="hint()">
           Hint&nbsp;<i class="fa fa-solid fa-lightbulb-o"></i>
         </button>
         <i *ngIf="login?.progress.levels[6]" style="color: chartreuse; transform: scale(3); padding-left: 20px" class="fa fa-solid fa-check"></i>
@@ -629,6 +699,18 @@
           <i style="margin-right: 5px" class="fa fas-solid fa-arrow-left"></i>Go Back
         </button>
       </p>
+      <div class="modalPop" id="modalHint7">
+        <div class="modalPop-header">
+          <div class="title">Solution</div>
+          <button class="close-button modalCloser">&times;</button>
+        </div>
+        <div class="modalPop-body">
+          <div class="modal-body">
+            <img style="width: 100%; height: 100%" src="assets/images/javalevel7.gif" alt=""/>
+          </div>
+        </div>
+      </div>
+      <div class="feedbackOverlay"></div>
     </div>
   </div>
 </div>
@@ -647,7 +729,7 @@
   </div>
 </div>
 
-<div *ngIf="changePageArray[18]" class="row">
+<div *ngIf="changePageArray[19]" class="row">
   <div class="col-lg-12">
     <h1>Chapter III</h1>
     <h5>Exercises</h5>
@@ -666,7 +748,7 @@
         <button style="margin-right: 10px; margin-left: 30px" class="btn-menu btn btn-success btn-toggle-menu try-button" type="button" [disabled]="trySolutionButton" (click)="trySolution(7)">
           Try Solution
         </button>
-        <button style="margin-right: 10px; background-color: #006DFE; border-color: #006DFE" class="btn-menu btn btn-success btn-toggle-menu" type="button">
+        <button style="margin-right: 10px; background-color: #006DFE; border-color: #006DFE" data-modal-target="#modalHint8" class="btn-menu btn btn-success btn-toggle-menu modalOpener" type="button" (click)="hint()">
           Hint&nbsp;<i class="fa fa-solid fa-lightbulb-o"></i>
         </button>
         <i *ngIf="login?.progress.levels[7]" style="color: chartreuse; transform: scale(3); padding-left: 20px" class="fa fa-solid fa-check"></i>
@@ -676,10 +758,118 @@
           <i style="margin-right: 5px" class="fa fas-solid fa-arrow-left"></i>Go Back
         </button>
       </p>
+      <div class="modalPop" id="modalHint8">
+        <div class="modalPop-header">
+          <div class="title">Solution</div>
+          <button class="close-button modalCloser">&times;</button>
+        </div>
+        <div class="modalPop-body">
+          <div class="modal-body">
+            <img style="width: 100%; height: 100%" src="assets/images/javalevel8.gif" alt=""/>
+          </div>
+        </div>
+      </div>
+      <div class="feedbackOverlay"></div>
     </div>
   </div>
 </div>
 
+<div *ngIf="changePageArray[20]" class="row">
+  <div class="col-lg-12">
+    <h1>Chapter III</h1>
+    <h5>Exercises</h5>
+    <h5>Please drag n' drop the solutions into the white rectangles</h5>
+    <p style="font-size: 20px">The desired result: Palindrome <span> <button style="margin-right: 10px; margin-left: 30px" class="btn-menu btn btn-success btn-toggle-menu" type="button" (click)="ex('arr[i].length()','maxLength',null,null)">
+      Start
+    </button> </span> </p>
+    <p style="font-size: 20px">String longestString(String[] arr)&#123;<br>&nbsp;&nbsp;&nbsp;&nbsp;int maxLength = 0;<br>&nbsp;&nbsp;&nbsp;&nbsp;String longest = "";<br>&nbsp;&nbsp;&nbsp;&nbsp;for(int i = 0;i < arr.length;i++)&#123;<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(<span class="exContainer1">&nbsp;&nbsp;&nbsp;</span> > <span class="exContainer2">&nbsp;&nbsp;&nbsp;</span>)&#123;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;maxLength = arr[i].length;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;longest = arr[i];}<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;return longest;<br>}<br>String[] arr = &#123;"Car", "Meow", "Palindrome", "Musician"};<br>System.out.print(longestString(arr));</p>
+    <div class="navbar-header col-lg-12">
+      <p style="margin-right: 10px;"><span class="solContainer">
+        <span class="draggable" id="sol33" draggable="true">array[i].length()</span>
+        <span class="draggable" id="sol34" draggable="true">arr[i].length()</span>
+        <span class="draggable" id="sol35" draggable="true">maxLength</span>
+        <span class="draggable" id="sol36" draggable="true">longest = "Palindrome"</span></span>
+        <button style="margin-right: 10px; margin-left: 30px" class="btn-menu btn btn-success btn-toggle-menu try-button" type="button" [disabled]="trySolutionButton" (click)="trySolution(8)">
+          Try Solution
+        </button>
+        <button style="margin-right: 10px; background-color: #006DFE; border-color: #006DFE" data-modal-target="#modalHint9" class="btn-menu btn btn-success btn-toggle-menu modalOpener" type="button" (click)="hint()">
+          Hint&nbsp;<i class="fa fa-solid fa-lightbulb-o"></i>
+        </button>
+        <i *ngIf="login?.progress.levels[8]" style="color: chartreuse; transform: scale(3); padding-left: 20px" class="fa fa-solid fa-check"></i>
+        <button class="btn-logout btn btn-success btn-toggle-menu pull-right" type="button" (click)="goForward()" [disabled]="!login?.progress.levels[8]">Next
+          <i class="fa fas-solid fa-arrow-right"></i></button>
+        <button class="btn-logout btn btn-success btn-toggle-menu pull-right" style="margin-right: 10px" type="button" (click)="goBack()">
+          <i style="margin-right: 5px" class="fa fas-solid fa-arrow-left"></i>Go Back
+        </button>
+      </p>
+      <div class="modalPop" id="modalHint9">
+        <div class="modalPop-header">
+          <div class="title">Solution</div>
+          <button class="close-button modalCloser">&times;</button>
+        </div>
+        <div class="modalPop-body">
+          <div class="modal-body">
+            <img style="width: 100%; height: 100%" src="assets/images/javalevel9.gif" alt=""/>
+          </div>
+        </div>
+      </div>
+      <div class="feedbackOverlay"></div>
+    </div>
+  </div>
+</div>
+
+
+<div *ngIf="changePageArray[21]" class="row">
+  <div class="col-lg-12">
+    <h1>Chapter III</h1>
+    <h5>Exercises</h5>
+    <h5>Please drag n' drop the solutions into the white rectangles</h5>
+    <p style="font-size: 20px">The desired result: Reverse the array <span> <button style="margin-right: 10px; margin-left: 30px" class="btn-menu btn btn-success btn-toggle-menu" type="button" (click)="ex('reverse[i]','arr.length','-i',null)">
+      Start
+    </button> </span> </p>
+    <p style="font-size: 20px">String[] arr = &#123;"one", "two","three","four", "five"};<br>String[] reverse = &#123;"", "", "", "", ""};<br>for(int i = 0;i < arr.length;i++)&#123;<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="exContainer1">&nbsp;&nbsp;&nbsp;</span> = arr[<span class="exContainer2">&nbsp;&nbsp;&nbsp;</span> <span class="exContainer3">&nbsp;&nbsp;&nbsp;</span>-(1)];<br>&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(reverse[i]);<br>}</p>
+    <div class="navbar-header col-lg-12">
+      <p style="margin-right: 10px;"><span class="solContainer">
+        <span class="draggable" id="sol37" draggable="true">+i</span>
+        <span class="draggable" id="sol38" draggable="true">arr.length</span>
+        <span class="draggable" id="sol39" draggable="true">-i</span>
+        <span class="draggable" id="sol40" draggable="true">reverse[i]</span></span>
+        <button style="margin-right: 10px; margin-left: 30px" class="btn-menu btn btn-success btn-toggle-menu try-button" type="button" [disabled]="trySolutionButton" (click)="trySolution(9)">
+          Try Solution
+        </button>
+        <button style="margin-right: 10px; background-color: #006DFE; border-color: #006DFE" data-modal-target="#modalHint10" class="btn-menu btn btn-success btn-toggle-menu modalOpener" type="button" (click)="hint()">
+          Hint&nbsp;<i class="fa fa-solid fa-lightbulb-o"></i>
+        </button>
+        <i *ngIf="login?.progress.levels[9]" style="color: chartreuse; transform: scale(3); padding-left: 20px" class="fa fa-solid fa-check"></i>
+        <button class="btn-logout btn btn-success btn-toggle-menu pull-right" type="button" (click)="goForward()" [disabled]="!login?.progress.levels[9]">Next
+          <i class="fa fas-solid fa-arrow-right"></i></button>
+        <button class="btn-logout btn btn-success btn-toggle-menu pull-right" style="margin-right: 10px" type="button" (click)="goBack()">
+          <i style="margin-right: 5px" class="fa fas-solid fa-arrow-left"></i>Go Back
+        </button>
+      </p>
+      <div class="modalPop" id="modalHint10">
+        <div class="modalPop-header">
+          <div class="title">Solution</div>
+          <button class="close-button modalCloser">&times;</button>
+        </div>
+        <div class="modalPop-body">
+          <div class="modal-body">
+            <img style="width: 100%; height: 100%" src="assets/images/javalevel10.gif" alt=""/>
+          </div>
+        </div>
+      </div>
+      <div class="feedbackOverlay"></div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="changePageArray[22]" class="row">
+  <div class="col-lg-12">
+    <h1 style="text-align: center">CONGRATULATIONS, YOU HAVE COMPLETED THIS MODULE.</h1>
+  </div>
+</div>
 
 
 </html>

@@ -1,0 +1,117 @@
+.draggable{
+  padding: 0.3rem;
+  background-color: #198754;
+  color: white;
+  cursor: move;
+  margin-right: 20px;
+}
+
+.solContainer{
+  padding: 1rem;
+  border: 1px solid black;
+}
+
+.exContainer1{
+}
+
+.exContainer2{
+}
+
+.exContainer3{}
+
+.exContainer4{}
+
+.exContainer1.noSolution{
+  padding: 0.2rem;
+  background-color: white;
+  border: 1px solid black;
+}
+
+.exContainer2.noSolution{
+  padding: 0.2rem;
+  background-color: white;
+  border: 1px solid black;
+}
+
+.exContainer3.noSolution{
+  padding: 0.2rem;
+  background-color: white;
+  border: 1px solid black;
+}
+
+.exContainer4.noSolution{
+  padding: 0.2rem;
+  background-color: white;
+  border: 1px solid black;
+}
+
+.draggable.dragging {
+  opacity: .5;
+}
+
+.try-button {}
+
+.modalPop {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: 200ms ease-in-out;
+  border: 1px solid black;
+  border-radius: 10px;
+  z-index: 10;
+  background-color: #ffffff;
+  width: 500px;
+  max-width: 80%;
+}
+
+.modalPop.active {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.modalPop-header {
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid black;
+}
+
+.modalPop-header .title {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.modalPop-header .close-button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.modalPop-body {
+  padding: 10px 15px;
+}
+
+.feedbackOverlay {
+  position: fixed;
+  transition: 200ms ease-in-out;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,.5);
+  pointer-events: none;
+}
+
+.feedbackOverlay.active {
+  opacity: 0;
+  pointer-events: all;
+}
+
+.modalOpener{}
+
+.modalCloser{}
