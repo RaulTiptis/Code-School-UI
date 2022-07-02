@@ -15,7 +15,7 @@
     <h5><br>Welcome to the C/C++ module!</h5>
     <h5><br>You may start your C/C++ learning journey by clicking the 'NEXT' button, or click any of the chapters below and go from there.</h5>
     <div class="navbar-header col-lg-12">
-      <button style="margin-top: 30px" class="btn-menu btn btn-success btn-toggle-menu" type="button" data-toggle="collapsible" data-target="#sidebar-wrapper" (click)="goToChapter(10)">
+      <button style="margin-top: 30px" class="btn-menu btn btn-success btn-toggle-menu" type="button" data-toggle="collapsible" data-target="#sidebar-wrapper" (click)="goToChapter(9)">
         Chapter II
       </button>
       <button style="margin-top: 30px;margin-left: 30px" class="btn-menu btn btn-success btn-toggle-menu" type="button" data-toggle="collapsible" data-target="#sidebar-wrapper" (click)="goToChapter(18)">
@@ -37,6 +37,7 @@
     <p style="font-size: 20px"><span style="font-weight: bold">Class</span> - A class can be defined as a template that describes the behavior/state that the object of its type supports.</p>
     <p style="font-size: 20px"><span style="font-weight: bold">Methods</span> - A method refers to a behaviour. A class can contain many methods.</p>
     <p style="font-size: 20px"><span style="font-weight: bold">Instance Variables</span> - Each object has its unique set of instance variables. An object's state is created by the values assigned to these instance variables.<br></p>
+    <p style="font-size: 20px"><span style="font-weight: bold">Printing out to the console syntax</span> - <span style="font-weight: bold">cout << </span>  \\thing to be printed</p>
     <p style="font-size: 20px">For now this is all that you need to know. All this information might seem like a lot at first, but as you go through the module, all of this information will become easier to digest.</p>
     <p style="font-size: 20px">Now that you are equipped with the basics of C/C++, we may start with <span style="font-weight: bold">Primitive Data Types</span></p>
     <button class="btn-logout btn btn-success btn-toggle-menu pull-right" type="button" (click)="goForward()">Next
@@ -125,6 +126,42 @@
     <button class="btn-logout btn btn-success btn-toggle-menu pull-right" style="margin-right: 10px" type="button" (click)="goBack()">
       <i style="margin-right: 5px" class="fa fas-solid fa-arrow-left"></i>Go Back
     </button>
+  </div>
+</div>
+
+
+<div *ngIf="changePageArray[3]" class="row">
+  <div class="col-lg-12">
+    <h1>Chapter I</h1>
+    <h5>Primitive Built-in Types</h5>
+    <h5>Please drag n' drop the solutions into the white rectangles</h5>
+    <p style="font-size: 20px"><span> <button style="margin-right: 10px; margin-left: 30px" class="btn-menu btn btn-success btn-toggle-menu" type="button" (click)="ex('boolean','float','char','int')">
+      Start
+    </button> </span> </p>
+    <p style="font-size: 20px"><span class="exContainer1">&nbsp;&nbsp;&nbsp;</span> x = true<br>
+      <span class="exContainer2">&nbsp;&nbsp;&nbsp;</span> y = 34.5f<br>
+      <span class="exContainer3">&nbsp;&nbsp;&nbsp;</span> z = 'N'<br>
+      <span class="exContainer4">&nbsp;&nbsp;&nbsp;</span> w = 42156</p>
+    <div class="navbar-header col-lg-12">
+      <p style="margin-right: 10px;"><span class="solContainer">
+        <span class="draggable" id="sol9" draggable="true">int</span>
+        <span class="draggable" id="sol10" draggable="true">float</span>
+        <span class="draggable" id="sol11" draggable="true">char</span>
+        <span class="draggable" id="sol12" draggable="true">boolean</span></span>
+        <button style="margin-right: 10px; margin-left: 30px" class="btn-menu btn btn-success btn-toggle-menu try-button" type="button" [disabled]="trySolutionButton" (click)="trySolution(49)">
+          Try Solution
+        </button>
+        <button style="margin-right: 10px; background-color: #006DFE; border-color: #006DFE" class="btn-menu btn btn-success btn-toggle-menu" type="button">
+          Hint&nbsp;<i class="fa fa-solid fa-lightbulb-o"></i>
+        </button>
+        <i *ngIf="login?.progress.levels[49]" style="color: chartreuse; transform: scale(3); padding-left: 20px" class="fa fa-solid fa-check"></i>
+        <button class="btn-logout btn btn-success btn-toggle-menu pull-right" type="button" (click)="goForward()" [disabled]="!login?.progress.levels[49]">Next
+          <i class="fa fas-solid fa-arrow-right"></i></button>
+        <button class="btn-logout btn btn-success btn-toggle-menu pull-right" style="margin-right: 10px" type="button" (click)="goBack()">
+          <i style="margin-right: 5px" class="fa fas-solid fa-arrow-left"></i>Go Back
+        </button>
+      </p>
+    </div>
   </div>
 </div>
 
@@ -253,9 +290,42 @@
   </div>
 </div>
 
+
+<div *ngIf="changePageArray[6]" class="row">
+  <div class="col-lg-12">
+    <h1>Chapter I</h1>
+    <h5>Loop Control</h5>
+    <h5>Please drag n' drop the solutions into the white rectangles</h5>
+    <p style="font-size: 20px">The desired answer is x = 5 <span> <button style="margin-right: 10px; margin-left: 30px" class="btn-menu btn btn-success btn-toggle-menu" type="button" (click)="ex(-1,3,null,null)">
+      Start
+    </button> </span> </p>
+    <p style="font-size: 20px">int x = 0<br><span style="font-weight: bold;color: #198754"> for</span>(int i = <span class="exContainer1">&nbsp;&nbsp;&nbsp;</span> ;i <= <span class="exContainer2">&nbsp;&nbsp;&nbsp;</span> ; i++) &#123;<br>&nbsp;&nbsp;&nbsp;&nbsp;x = x + i<br>&#125;</p>
+    <div class="navbar-header col-lg-12">
+      <p style="margin-right: 10px;"><span class="solContainer">
+        <span class="draggable" id="sol1" draggable="true">0</span>
+        <span class="draggable" id="sol2" draggable="true">-1</span>
+        <span class="draggable" id="sol3" draggable="true">3</span>
+        <span class="draggable" id="sol4" draggable="true">5</span></span>
+        <button style="margin-right: 10px; margin-left: 30px" class="btn-menu btn btn-success btn-toggle-menu try-button" type="button" [disabled]="trySolutionButton" (click)="trySolution(50)">
+          Try Solution
+        </button>
+        <button style="margin-right: 10px; background-color: #006DFE; border-color: #006DFE" class="btn-menu btn btn-success btn-toggle-menu" type="button">
+          Hint&nbsp;<i class="fa fa-solid fa-lightbulb-o"></i>
+        </button>
+        <i *ngIf="login?.progress.levels[50]" style="color: chartreuse; transform: scale(3); padding-left: 20px" class="fa fa-solid fa-check"></i>
+        <button class="btn-logout btn btn-success btn-toggle-menu pull-right" type="button" (click)="goForward()" [disabled]="!login?.progress.levels[50]">Next
+          <i class="fa fas-solid fa-arrow-right"></i></button>
+        <button class="btn-logout btn btn-success btn-toggle-menu pull-right" style="margin-right: 10px" type="button" (click)="goBack()">
+          <i style="margin-right: 5px" class="fa fas-solid fa-arrow-left"></i>Go Back
+        </button>
+      </p>
+    </div>
+  </div>
+</div>
+
 <!-- Chapter I decisions making -->
 
-<div *ngIf="changePageArray[8]" class="row">
+<div *ngIf="changePageArray[7]" class="row">
   <div class="col-lg-12">
     <h1>Chapter I</h1>
     <h5>Decision Making</h5>
@@ -285,9 +355,42 @@
   </div>
 </div>
 
+
+<div *ngIf="changePageArray[8]" class="row">
+  <div class="col-lg-12">
+    <h1>Chapter I</h1>
+    <h5>Decision Making</h5>
+    <h5>Please drag n' drop the solutions into the white rectangles</h5>
+    <p style="font-size: 20px">The desired answer is x = 100 <span> <button style="margin-right: 10px; margin-left: 30px" class="btn-menu btn btn-success btn-toggle-menu" type="button" (click)="ex(2,'else',null,null)">
+      Start
+    </button> </span> </p>
+    <p style="font-size: 20px">int x = 1<br><span style="color: #198754">if</span>(x > <span class="exContainer1">&nbsp;&nbsp;&nbsp;</span>)&#123;<br>&nbsp;&nbsp;&nbsp;&nbsp;x = 50;<br>&#125; <span class="exContainer2">&nbsp;&nbsp;&nbsp;</span> &#123;<br>&nbsp;&nbsp;&nbsp;&nbsp;x = 100;<br>&#125;</p>
+    <div class="navbar-header col-lg-12">
+      <p style="margin-right: 10px;"><span class="solContainer">
+        <span class="draggable" id="sol13" draggable="true">0</span>
+        <span class="draggable" id="sol14" draggable="true">else</span>
+        <span class="draggable" id="sol15" draggable="true">while</span>
+        <span class="draggable" id="sol16" draggable="true">2</span></span>
+        <button style="margin-right: 10px; margin-left: 30px" class="btn-menu btn btn-success btn-toggle-menu try-button" type="button" [disabled]="trySolutionButton" (click)="trySolution(51)">
+          Try Solution
+        </button>
+        <button style="margin-right: 10px; background-color: #006DFE; border-color: #006DFE" class="btn-menu btn btn-success btn-toggle-menu" type="button">
+          Hint&nbsp;<i class="fa fa-solid fa-lightbulb-o"></i>
+        </button>
+        <i *ngIf="login?.progress.levels[51]" style="color: chartreuse; transform: scale(3); padding-left: 20px" class="fa fa-solid fa-check"></i>
+        <button class="btn-logout btn btn-success btn-toggle-menu pull-right" type="button" (click)="goToChapter(9)" [disabled]="!login?.progress.levels[51]">Chapter II
+          <i class="fa fas-solid fa-arrow-right"></i></button>
+        <button class="btn-logout btn btn-success btn-toggle-menu pull-right" style="margin-right: 10px" type="button" (click)="goBack()">
+          <i style="margin-right: 5px" class="fa fas-solid fa-arrow-left"></i>Go Back
+        </button>
+      </p>
+    </div>
+  </div>
+</div>
+
 <!-- Chapter II intro -->
 
-<div *ngIf="changePageArray[10]" class="row">
+<div *ngIf="changePageArray[9]" class="row">
   <div class="col-lg-12">
     <h1>Chapter II</h1>
     <p style="font-size: 20px">This is the begging of chapter II. In this chapter you will learn about <span style="font-weight: bold; color: #198754">Strings, Arrays </span>and <span style="font-weight: bold; color: #198754">Methods</span>. All the while using the knowledge gained from chapter I.</p>
@@ -302,20 +405,17 @@
 
 <!-- Chapter II Strings -->
 
-<div *ngIf="changePageArray[11]" class="row">
+<div *ngIf="changePageArray[10]" class="row">
   <div class="col-lg-12">
     <h1>Chapter II</h1>
     <h5>Strings</h5>
-    <p style="font-size: 20px"><span style="font-weight: bold; color: #198754">Strings</span> are widely used in Java programming. They are a sequence of characters. In Java programming language, strings are treated as objects.</p>
-    <p style="font-size: 20px">The Java platform provides the String class to create and manipulate strings.</p>
-    <p style="font-size: 20px">Example: <span style="font-weight: bold; color: #198754">String</span> text = "This is a text example";</p>
-    <p style="font-size: 20px">There are a lot of ways you can work with strings, for example (using the <span style="font-weight: bold">text</span> variable):</p>
-    <p style="font-size: 20px">.length() is used to get how many characters a string is comprised of: <span style="font-weight: bold; color: #198754">text.length()</span>; Result: 22</p>
-    <p style="font-size: 20px">.concat() is used to concatenate another string to the original one: <span style="font-weight: bold; color: #198754">text.concat("cat")</span>; Result: This is a text examplecat</p>
-    <p style="font-size: 20px">The same can be achieved with the + operator: <span style="font-weight: bold; color: #198754">text + "cat"</span>; Result: This is a text examplecat</p>
-    <p style="font-size: 20px">.equals can be used to see if 2 strings are the same: <span style="font-weight: bold; color: #198754">text.equals("cat")</span>; Result: false</p>
-    <p style="font-size: 20px">.toLowerCase or .toUpperCase can be used to transform the string into all lowercase or uppercase respectively: <span style="font-weight: bold; color: #198754">"cat".toUpperCase()</span>; Result: CAT</p>
-    <p style="font-size: 20px">And there are many more ways to interact with strings, but for our purposes for now, this will suffice.</p>
+    <p style="font-size: 20px"><span style="font-weight: bold; color: #198754">Strings</span> are a sequence of characters. In C++ programming language, string is a provided class by the C++ library.</p>
+    <p style="font-size: 20px">Example: <span style="font-weight: bold; color: #198754">string</span> text = "This is a text example";</p>
+    <p style="font-size: 20px">There are a lot of ways you can work with strings, for example:</p>
+    <p style="font-size: 20px"><span style="font-weight: bold">strcpy(string1, string2)</span> - Copies string2 into string1.</p>
+    <p style="font-size: 20px"><span style="font-weight: bold">strcat(string1, string2)</span> - Concatenates string2 onto the end of string1(or alternatively use '+' between them).</p>
+    <p style="font-size: 20px"><span style="font-weight: bold">string.size()</span> - Returns the length of string1.</p>
+    <p style="font-size: 20px"><span style="font-weight: bold">strcmp(string1, string2)</span> - Returns 0 if string1 and string2 are the same; less than 0 if string1 < string2; greater than 0 if string1 > string2.</p>
     <button class="btn-logout btn btn-success btn-toggle-menu pull-right" type="button" (click)="goForward()">Next
       <i class="fa fas-solid fa-arrow-right"></i></button>
     <button class="btn-logout btn btn-success btn-toggle-menu pull-right" style="margin-right: 10px" type="button" (click)="goBack()">
@@ -325,6 +425,36 @@
 </div>
 
 
+<div *ngIf="changePageArray[11]" class="row">
+  <div class="col-lg-12">
+    <h1>Chapter II</h1>
+    <h5>Strings</h5>
+    <h5>Please drag n' drop the solutions into the white rectangles</h5>
+    <p style="font-size: 20px">The desired answer is x = 100 <span> <button style="margin-right: 10px; margin-left: 30px" class="btn-menu btn btn-success btn-toggle-menu" type="button" (click)="ex(2,'else',null,null)">
+      Start
+    </button> </span> </p>
 
+    <div class="navbar-header col-lg-12">
+      <p style="margin-right: 10px;"><span class="solContainer">
+        <span class="draggable" id="sol17" draggable="true">0</span>
+        <span class="draggable" id="sol18" draggable="true">else</span>
+        <span class="draggable" id="sol19" draggable="true">while</span>
+        <span class="draggable" id="sol20" draggable="true">2</span></span>
+        <button style="margin-right: 10px; margin-left: 30px" class="btn-menu btn btn-success btn-toggle-menu try-button" type="button" [disabled]="trySolutionButton" (click)="trySolution(52)">
+          Try Solution
+        </button>
+        <button style="margin-right: 10px; background-color: #006DFE; border-color: #006DFE" class="btn-menu btn btn-success btn-toggle-menu" type="button">
+          Hint&nbsp;<i class="fa fa-solid fa-lightbulb-o"></i>
+        </button>
+        <i *ngIf="login?.progress.levels[52]" style="color: chartreuse; transform: scale(3); padding-left: 20px" class="fa fa-solid fa-check"></i>
+        <button class="btn-logout btn btn-success btn-toggle-menu pull-right" type="button" (click)="goForward()" [disabled]="!login?.progress.levels[52]">Chapter II
+          <i class="fa fas-solid fa-arrow-right"></i></button>
+        <button class="btn-logout btn btn-success btn-toggle-menu pull-right" style="margin-right: 10px" type="button" (click)="goBack()">
+          <i style="margin-right: 5px" class="fa fas-solid fa-arrow-left"></i>Go Back
+        </button>
+      </p>
+    </div>
+  </div>
+</div>
 
 </html>

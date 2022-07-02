@@ -13,10 +13,10 @@ function ex(solutionArray) {
     draggable.addEventListener('dragstart', dragStart)
     draggable.addEventListener('dragend', () => {
       draggable.classList.remove('dragging');
-      if(container1.children.length == 0){
+      if(container1.children.length === 0){
         container1.classList.add('noSolution');
       }
-      if(container2.children.length == 0){
+      if(container2.children.length === 0){
         container2.classList.add('noSolution');
       }
     })
@@ -174,7 +174,7 @@ export class JavaModuleComponent implements OnInit {
     this.exerciseArray[1] = s1;
     this.exerciseArray[2] = s2;
     this.exerciseArray[3] = s3;
-    ex(this.solutionArray)
+    ex(this.solutionArray);
   }
 
   trySolution(levelNumber: any){

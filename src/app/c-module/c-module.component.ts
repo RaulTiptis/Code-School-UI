@@ -126,7 +126,8 @@ export class CModuleComponent implements OnInit {
   currentPosition = 0;
   solutionArray = [null, null, null, null];
   exerciseArray = [null, null, null, null];
-  changePageArray = [true, false, false, false, false, false, false, false, false, false, false, false,false,false,false,false,false,false]
+  changePageArray = [true, false, false, false, false, false, false, false,
+    false, false, false, false,false,false,false,false,false,false]
 
   constructor(private progressService: ProgressService) {
   }
